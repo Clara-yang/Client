@@ -1,0 +1,348 @@
+﻿<Page x:Class="UAM.Client.Views.Configure"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UAM.Client.Views" 
+      xmlns:loc ="clr-namespace:UAM.Model.Entity;assembly=UAM.Model"
+      mc:Ignorable="d"  
+      Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
+      Background="{StaticResource PrimaryHueDarkBrush}"
+      FontSize="16"
+      FontFamily="微软雅黑" 
+      Title="配置设备项"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:mvvm="http://www.galasoft.ch/mvvmlight">
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Margin" Value="0,0,5,0"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryHueDarkForegroundBrush}"/>
+            <Setter Property="Background"  Value="{StaticResource PrimaryHueDarkBrush}"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryHueDarkForegroundBrush}"/>
+            <Setter Property="Background"  Value="{StaticResource PrimaryHueDarkBrush}"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" Value="#F7937E"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="DockPanel">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Page.Resources>
+    <Grid Margin="21,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="4.8*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" x:Name="lbTitle"  Grid.ColumnSpan="2" 
+                     Background="Transparent" MouseDown="lbTitle_MouseDown">
+            <Label Content="配 置 设 备 项"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center"  
+               FontWeight="Bold"  
+               FontSize="30"/>
+        </StackPanel>
+        <DockPanel Grid.Row="1" Grid.Column="0" Margin="0,0,10,5">
+            <TextBox Text=" |①选择机型" DockPanel.Dock="Top"
+                         IsReadOnly="True" 
+                         BorderThickness="0" 
+                         FontSize="30"
+                         VerticalAlignment="Center"
+                         Background="#666666" 
+                         Height="42"/>
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0,5">
+                <DockPanel>
+                    <Border BorderBrush="LightGray" BorderThickness="1" DockPanel.Dock="Left">
+                        <DataGrid x:Name="aircraftData"  
+                                  ItemsSource="{Binding GridDataAir}" 
+                                  SelectedItem="{Binding SelectedAir}"    
+                                  Style="{StaticResource dgStyle}" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="序号" Width="1*" Binding="{Binding AircraftCode}"  ElementStyle="{StaticResource contentCenterStyle}"/>
+                                <DataGridTextColumn Header="载具名称" Width="3*" Binding="{Binding AircraftName}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                                <DataGridTextColumn Header="载具构型"  Width="2*" Binding="{Binding Configuration}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                                <DataGridTextColumn Header="出版商"  Width="3*" Binding="{Binding Publisher}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                                <DataGridTemplateColumn Header="默认"  Width="1*" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox IsEnabled="False" IsChecked="{Binding IsAircraftDefault}" HorizontalAlignment="Center" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Border>
+                    <DockPanel Margin="0">
+                        <TextBox Text="|机型信息" DockPanel.Dock="Top"
+                                 BorderThickness="1" 
+                                 BorderBrush="LightGray"
+                                 FontSize="25" />
+                        <Button Content="确认载具"  DockPanel.Dock="Bottom" 
+                                Margin="10"
+                                Height="45" 
+                                Width="150" 
+                                FontSize="24" 
+                                Command="{Binding VehicleCommand}" />
+                        <StackPanel Orientation="Vertical" Margin="5,10">
+                            <DockPanel Margin="5">
+                                <TextBlock Text="飞机名称:"/>
+                                <TextBlock x:Name="airName" Text="{Binding ElementName=aircraftData,Path=SelectedItem.AircraftName}"/>
+                            </DockPanel>
+                            <DockPanel Margin="5">
+                                <TextBlock Text="飞机零重:"/>
+                                <TextBlock x:Name="zeroWeight" Text="{Binding ElementName=aircraftData,Path=SelectedItem.ZeroWeight }"/>
+                            </DockPanel>
+                            <DockPanel Margin="5">
+                                <TextBlock Text="典型应用场景:"/>
+                                <TextBlock x:Name="usage" Text="{Binding ElementName=aircraftData,Path=SelectedItem.Usage}"/>
+                            </DockPanel>
+                            <DockPanel Margin="5">
+                                <TextBlock Text="最大巡航速度:"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="maxCruiseSpeedkts" Text="{Binding ElementName=aircraftData,Path=SelectedItem.MaxCruiseSpeedkts}" Margin="5,0"/>
+                                    <TextBlock x:Name="maxCruiseSpeedkmh" Text="{Binding ElementName=aircraftData,Path=SelectedItem.MaxCruiseSpeedkmh}"/>
+                                </StackPanel>
+                            </DockPanel>
+                            <DockPanel Margin="5">
+                                <TextBlock Text="最大飞行高度:"  />
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="maxAltitudeft" Text="{Binding ElementName=aircraftData,Path=SelectedItem.MaxAltitudeft}" Margin="5,0"/>
+                                    <TextBlock x:Name="maxAltitudem" Text="{Binding ElementName=aircraftData,Path=SelectedItem.MaxAltitudem}"/>
+                                </StackPanel>
+                            </DockPanel>
+                            <DockPanel Margin="5">
+                                <TextBlock Text="驾驶位人数:"/>
+                                <TextBlock x:Name="pilotSeat" Text="{Binding ElementName=aircraftData,Path=SelectedItem.PilotSeat}"/>
+                            </DockPanel>
+                            <DockPanel Margin="5">
+                                <TextBlock Text="载荷:"/>
+                                <TextBlock x:Name="load" Text="{Binding ElementName=aircraftData,Path=SelectedItem.Load}"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </DockPanel>
+                </DockPanel>
+            </Border>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="1" Margin="0,0,0,4">
+            <TextBox Text=" |③预设时间"  
+                         DockPanel.Dock="Top"
+                         IsReadOnly="True" 
+                         BorderThickness="0" 
+                         FontSize="30"
+                         VerticalAlignment="Center"
+                         Background="#666666" 
+                         Height="42"/>
+            <Border x:Name="preTime" BorderThickness="1" BorderBrush="LightGray" Margin="0,7" >
+                <DockPanel>
+                    <Button Content="重置为系统时间" DockPanel.Dock="Bottom"
+                            Height="45" 
+                            Width="200" 
+                            FontSize="24"
+                            Margin="10"
+                            Command="{Binding ChangeNowTimeCommand}"/>
+                    <StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="5">
+                            <TextBlock Text="晨昏" HorizontalAlignment="Left" Margin="10"/>
+                            <ComboBox  x:Name="dawnDusk" 
+                                           BorderThickness="1"   
+                                           ItemsSource="{Binding configModel.DawnDuskList}" 
+                                           SelectedValue="{Binding SelectedDawnDusk}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="SelectionChanged">
+                                        <mvvm:EventToCommand Command="{Binding ChangeDayCommand}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="5" >
+                            <TextBlock Text="季节"  HorizontalAlignment="Left" Margin="10"/>
+                            <ComboBox x:Name="season" 
+                                          BorderThickness="1"  
+                                          ItemsSource="{Binding configModel.SeasonList}" 
+                                          SelectedValue="{Binding SelectedSeason}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="SelectionChanged">
+                                        <mvvm:EventToCommand Command="{Binding ChangeSeasonCommand}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="5" >
+                            <TextBlock Text="时间" HorizontalAlignment="Left" Margin="10"/>
+                            <DatePicker SelectedDate="{Binding configModel.YearMonth}"  
+                                        SelectedDateFormat="Long"
+                                        Margin="5"/>
+                            <TextBox x:Name="nowTime" 
+                                         Text="{Binding configModel.NowTime}" 
+                                         Margin="5"
+                                         BorderThickness="1" 
+                                         IsReadOnly="True"  
+                                         VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DockPanel>
+            </Border>
+        </DockPanel>
+        <DockPanel Grid.Row="2" Grid.Column="0" Margin="0,5,10,0">
+            <TextBox Text=" |②选择场景" 
+                     DockPanel.Dock="Top"
+                         IsReadOnly="True" 
+                         BorderThickness="0" 
+                         FontSize="30"
+                         VerticalAlignment="Center"
+                         Background="#666666" 
+                         Height="42"/>
+            <Border BorderBrush="LightGray" BorderThickness="1"  Margin="0,7">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Left" Margin="0">
+                        <Grid DockPanel.Dock="Bottom">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <DockPanel Grid.Row="0" Grid.Column="0" Margin="5">
+                                <TextBox  DockPanel.Dock="Left"
+                                                 Margin="5" 
+                                                 IsReadOnly="True" 
+                                                 Text="From：" 
+                                                 BorderThickness="0"  />
+                                <TextBox   IsReadOnly="True" 
+                                                 Text="{Binding ElementName=routeData,Path=SelectedItem.DepartureVertiport}" 
+                                                 BorderThickness="1"  />
+                            </DockPanel>
+                            <DockPanel Grid.Row="0" Grid.Column="1"  Margin="5">
+                                <TextBox  DockPanel.Dock="Left"
+                                                 Margin="5" 
+                                                 IsReadOnly="True" 
+                                                 Text="To：" 
+                                                 BorderThickness="0"  />
+                                <TextBox  IsReadOnly="True" 
+                                                 Text="{Binding ElementName=routeData,Path=SelectedItem.DestinationVertiport}" 
+                                                 BorderThickness="1"  />
+                            </DockPanel>
+                            <DockPanel Grid.Row="1" Grid.Column="0" Margin="5">
+                                <TextBox  DockPanel.Dock="Left"
+                                                 Margin="5" 
+                                                 IsReadOnly="True" 
+                                                 Text="P1：" 
+                                                 BorderThickness="0"  />
+                                <TextBox  IsReadOnly="True" 
+                                                 Text="{Binding ElementName=routeData,Path=SelectedItem.DeparturePad}" 
+                                                 BorderThickness="1"  />
+                            </DockPanel>
+                            <DockPanel Grid.Row="1" Grid.Column="1"  Margin="5">
+                                <TextBox  DockPanel.Dock="Left"
+                                                 Margin="5" 
+                                                 IsReadOnly="True" 
+                                                 Text="P2：" 
+                                                 BorderThickness="0"  />
+                                <TextBox  IsReadOnly="True" 
+                                                 Text="{Binding ElementName=routeData,Path=SelectedItem.DestinationPad}" 
+                                                 BorderThickness="1"  />
+                            </DockPanel>
+                        </Grid>
+                        <Border BorderBrush="LightGray" BorderThickness="1">
+                            <DataGrid x:Name="routeData" 
+                                      ItemsSource="{Binding GridDataRoute}" 
+                                      SelectedItem="{Binding SelectedRoute}"  
+                                      Style="{StaticResource dgStyle}"  >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="序号" Width="1*" Binding="{Binding Id}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                                    <DataGridTextColumn Header="航线名称" Width="3*" Binding="{Binding RouteName}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                                    <DataGridTextColumn Header="飞行距离" Width="3*" Binding="{Binding Distance}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                                    <DataGridTextColumn Header="飞行时长" Width="3*" Binding="{Binding Interval}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                                    <DataGridTemplateColumn Header="默认" Width="1*" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <CheckBox  IsEnabled="False"  IsChecked="{Binding IsRouteDefault}" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Border>
+                    </DockPanel>
+                    <DockPanel Margin="0" DockPanel.Dock="Right">
+                        <TextBox Text="|场景信息" BorderThickness="1" BorderBrush="LightGray" DockPanel.Dock="Top" FontSize="25" Margin="0,0,0,10"/>
+                        <Button Content="确认航线" 
+                                DockPanel.Dock="Bottom" 
+                                HorizontalAlignment="Center"
+                                FontSize="24"
+                                Margin="5"
+                                Height="45"
+                                Width="150"
+                                Command="{Binding RouteCommand}" />
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <TextBlock Name="RouteDescription" 
+                                   Margin="5" 
+                                   VerticalAlignment="Top"
+                                   LineHeight="2.5"
+                                   Text="{Binding ElementName=routeData,Path=SelectedItem.Description}" 
+                                   TextWrapping="Wrap"/>
+                        </ScrollViewer>
+                    </DockPanel>
+                </DockPanel>
+            </Border>
+        </DockPanel>
+        <DockPanel Grid.Row="2" Grid.Column="1" Margin="0,5,0,7">
+            <TextBox Text=" |④选择操纵杆"  
+                         DockPanel.Dock="Top"
+                         IsReadOnly="True" 
+                         BorderThickness="0" 
+                         FontSize="30"
+                         VerticalAlignment="Center"
+                         Background="#666666" 
+                         Height="42"/>
+            <Border x:Name="stickSelect" BorderThickness="1" BorderBrush="LightGray" Margin="0,6,0,0">
+                <StackPanel>
+                    <TextBox Text="|操纵杆名称" 
+                             DockPanel.Dock="Top"
+                             BorderThickness="1" 
+                             BorderBrush="LightGray"
+                             FontSize="25" />
+                    <ComboBox Margin="10" 
+                                      x:Name="stickCbx"
+                                      SelectedItem="{Binding SelectedStick}"
+                                      ItemsSource="{Binding StickList}" 
+                                      SelectedValuePath="Id"
+                                      DisplayMemberPath="Name">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <mvvm:EventToCommand Command="{Binding ChangeStickCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+        </DockPanel>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
+            <Button x:Name="ExecBtn"
+                        Content="开始执行" 
+                        HorizontalAlignment="Right"   
+                        FontSize="25"
+                        Height="50"
+                        Width="180"
+                        Command="{Binding ExecuteCommand}"/>
+        </StackPanel>
+    </Grid>
+</Page>

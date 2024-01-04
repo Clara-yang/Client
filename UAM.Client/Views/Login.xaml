@@ -1,0 +1,80 @@
+﻿<Page x:Class="UAM.Client.Views.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UAM.Client.Views"
+      xmlns:url="clr-namespace:UAM.Plugin;assembly=UAM.Plugin"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" 
+      d:DesignWidth="800"
+      Title="Main">
+    <Viewbox>
+        <Grid>
+            <Image Source="/Images/picture/MainBackground.png" Stretch="Uniform"/>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical" Margin="800,0,0,0">
+                <Image Source="/Images/picture/LogoColor.png"  Width="500" Height="150"/>
+                <TextBlock FontFamily="Microsoft YaHei UI" 
+                           FontWeight="Bold" 
+                           Text="IAM/eVTOL STS 教员台控制软件"  
+                           HorizontalAlignment="Center"
+                           Foreground="#FF0078D7" 
+                           Margin="120" 
+                           FontSize="45"/>
+                <ComboBox x:Name="UserName"  
+                              Margin="30"
+                              HorizontalAlignment="Center"
+                              materialDesign:HintAssist.Hint="          用           户         名            "  
+                              FontSize="35"  
+                              BorderBrush="{StaticResource PrimaryHueLightBrush}"
+                              BorderThickness="0.5"
+                              MinHeight="70"
+                              MaxHeight="70"
+                              ItemsSource="{Binding loginModel.UserList}"  
+                              materialDesign:HintAssist.Foreground="{StaticResource PrimaryHueDarkForegroundBrush}" 
+                              materialDesign:TextFieldAssist.UnderlineBrush="{StaticResource PrimaryHueDarkBrush}" 
+                              SelectedValue="{Binding loginModel.Account}"
+                              materialDesign:HintAssist.FloatingScale="0.6" />
+                <PasswordBox  x:Name="PwdBox" 
+                                  HorizontalAlignment="Center"
+                                  Padding="10 0" 
+                                  Margin="30"
+                                  MaxLength="8" 
+                                  FontSize="35"   
+                                  BorderBrush="{StaticResource PrimaryHueLightBrush}"
+                                  BorderThickness="0.5"
+                                  MinHeight="65"
+                                  MaxHeight="65" 
+                                  materialDesign:HintAssist.Hint="              密                码               "
+                                  materialDesign:HintAssist.Foreground="{StaticResource PrimaryHueDarkForegroundBrush}" 
+                                  materialDesign:HintAssist.FloatingScale="0.6"  
+                                  materialDesign:TextFieldAssist.UnderlineBrush="{StaticResource PrimaryHueDarkBrush}" 
+                                  url:PasswordHelper.PasswordContent="{Binding loginModel.Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                  PreviewKeyDown="PwdBox_PreviewKeyDown">
+                </PasswordBox>
+                <Button FontSize="35" Content=" 登  录 " Margin="50" Height="60"
+                        HorizontalAlignment="Center"
+                        Command="{Binding loginModel.LoginVerifyCommand}" 
+                        Background="{StaticResource SecondaryAccentBrush}"  
+                        materialDesign:ButtonAssist.CornerRadius="15" />
+            </StackPanel>
+            <TextBlock x:Name="tbState"
+                   Margin="12px"
+                   VerticalAlignment="Bottom"
+                   Text="{Binding ProgressText}"
+                   FontFamily="Microsoft YaHei UI"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Foreground="White"/>
+            <ProgressBar Name="progressBar" Height="6" 
+                         VerticalAlignment="Bottom" 
+                         HorizontalAlignment="Stretch" 
+                         Background="#eee"
+                         Foreground="{StaticResource SecondaryAccentBrush}"
+                         Value="{Binding ProgressBarValue}" 
+                         Visibility="{Binding ProgressState}"/>
+        </Grid>
+
+    </Viewbox>
+</Page>

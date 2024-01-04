@@ -1,0 +1,50 @@
+﻿<Page x:Class="UAM.Client.Views.CustomGraphics.TakeOffPlot"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UAM.Client.Views.CustomGraphics"
+      mc:Ignorable="d"
+      Title="TakeOffPlot"
+      xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml"
+      xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+      xmlns:Chr="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"> 
+    <Page.Resources>
+        <Style TargetType="Border">
+            <Setter Property="BorderBrush" Value="Silver"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Margin" Value="20"/>
+        </Style>
+    </Page.Resources>
+    <Grid Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.Column="0">
+            <wfi:WindowsFormsHost>
+                <Chr:Chart x:Name="chartNorthHeight"/>
+            </wfi:WindowsFormsHost>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="1">
+            <wfi:WindowsFormsHost>
+                <Chr:Chart x:Name="chartStartPoint"/>
+            </wfi:WindowsFormsHost>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0">
+            <wfi:WindowsFormsHost>
+                <Chr:Chart x:Name="chartHeight"/>
+            </wfi:WindowsFormsHost>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1">
+            <wfi:WindowsFormsHost>
+                <Chr:Chart x:Name="chartEastHeight"/>
+            </wfi:WindowsFormsHost>
+        </Border>
+    </Grid>
+</Page>

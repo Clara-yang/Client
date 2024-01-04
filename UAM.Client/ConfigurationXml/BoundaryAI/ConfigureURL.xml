@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<URLs>
+  <UrlModel>
+    <MapName>MainMap</MapName>
+    <MapUrl>http://localhost:3000/ClientMap</MapUrl>
+
+    <AppName></AppName>
+    <AppUrl></AppUrl>
+  </UrlModel> 
+</URLs>

@@ -1,0 +1,273 @@
+﻿<Page x:Class="UAM.Client.Views.Maintain"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UAM.Client.Views"
+      xmlns:cuc="clr-namespace:UAM.Client.UILibrary"
+      xmlns:cov="clr-namespace:UAM.Client.Converters"
+      xmlns:cef="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+      xmlns:CustomControls="clr-namespace:UAM.Client.Views.CustomGraphics"
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+      Background="{StaticResource PrimaryHueMidBrush}" 
+      mc:Ignorable="d"
+      Title="Maintain">
+    <Page.Resources>
+        <cov:ValueToBoolConverter x:Key="Value2BoolCov"/>
+        <Style x:Key="IconButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="{StaticResource Color_Normal}"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Margin="{TemplateBinding Margin}">
+                            <StackPanel Orientation="{Binding RelativeSource={RelativeSource AncestorType=Button},Path=(cuc:ButtonHelper.Orientation)}">
+                                <Image x:Name="img_icon"
+                                       Source="{Binding RelativeSource={RelativeSource AncestorType=Button},Path=(cuc:ButtonHelper.MainIcon_Press)}"
+                                       Stretch="None"/>
+                                <TextBlock Text="{TemplateBinding Content}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           FontSize="{TemplateBinding FontSize}"
+                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                           Margin="{Binding RelativeSource={RelativeSource AncestorType=Button},Path=(cuc:ButtonHelper.TextMargin)}"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#00e500"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0"
+                Margin="10,5"
+                BorderBrush="{StaticResource PrimaryHueDarkBrush}"
+                BorderThickness="1"
+                CornerRadius="10">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Visibility="Hidden">
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                        <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                        <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                    </StackPanel>
+                    <Border BorderBrush="Gray" BorderThickness="0.5" CornerRadius="5" Margin="0,0,0,10" Height="36" Width="300">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="较弱" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                            <Button Content="弱" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                            <Button Content="较强" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                            <Button Content="强" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                        </StackPanel>
+                    </Border>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                        <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                        <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                    </StackPanel>
+                    <Border BorderBrush="Gray" BorderThickness="0.5" Margin="0,0,0,10" CornerRadius="5" Height="36" Width="300">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="较弱" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                            <Button Content="弱" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                            <Button Content="较强" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                            <Button Content="强" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Right" Visibility="Hidden">
+                    <StackPanel DockPanel.Dock="Left" Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                            <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                            <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                        </StackPanel>
+                        <Border BorderBrush="Gray" BorderThickness="0.5" CornerRadius="5" Margin="0,0,0,10" Height="36" Width="300">
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="较弱" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                                <Button Content="弱" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                                <Button Content="较强" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                                <Button Content="强" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                            </StackPanel>
+                        </Border>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                            <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                            <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
+                                cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
+                                Margin="10"
+                                Command="{Binding WindClearCommand}" />
+                        </StackPanel>
+                        <Border BorderBrush="Gray" BorderThickness="0.5" Margin="0,0,0,10" CornerRadius="5" Height="36" Width="300">
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="较弱" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                                <Button Content="弱" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                                <Button Content="较强" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                                <Button Content="强" Style="{StaticResource StrengthButtonStyle}" 
+                                    Command="{Binding SetCloudTypeCommand}" CommandParameter="0"
+                                    cuc:ButtonHelper.IsSelected="{Binding CloudType1,Converter={StaticResource Value2BoolCov},ConverterParameter=0}" />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+                <Border Margin="10,5" 
+                        Width="845" Height="413" 
+                        Background="Black"
+                        BorderThickness="1" 
+                        BorderBrush="{StaticResource PrimaryHueDarkBrush}">
+                    <cef:ChromiumWebBrowser x:Name="mapPanel"
+                                            Background="{StaticResource PrimaryHueDarkBrush}"
+                                            Margin="3"
+                                            Address="https://www.google.com"/>
+                </Border>
+            </DockPanel>
+        </Border>
+        <Border Grid.Row="1"
+                Margin="10,5"
+                BorderBrush="{StaticResource PrimaryHueDarkBrush}"
+                BorderThickness="1"
+                CornerRadius="10"
+                Height="420">
+            <DockPanel>
+                <Border Height="295" Width="1015" 
+                        CornerRadius="120" 
+                        BorderBrush="{StaticResource PrimaryHueDarkBrush}" 
+                        BorderThickness="2"
+                        Visibility="{Binding IsVirualStick}">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Left" Height="280" Width="280">
+                            <CustomControls:JoystickLeft x:Name="onScreenJoystickLeft" Moved="onScreenJoystickLeft_Moved"/>
+                        </StackPanel>
+                        <StackPanel DockPanel.Dock="Right" Height="280" Width="280">
+                            <CustomControls:JoystickRight x:Name="onScreenJoystickRight" Moved="onScreenJoystickRight_Moved"/>
+                        </StackPanel>
+                        <Grid Margin="5" Height="200" Width="400" Background="Black">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="55*"/>
+                                <ColumnDefinition Width="45*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Margin="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <DockPanel Grid.Row="0" VerticalAlignment="Center">
+                                    <Label Content="*Latitude:" HorizontalAlignment="Left"/>
+                                    <Label Content="{Binding Latitude}"/>
+                                    <Label Content="deg"  HorizontalAlignment="Right"/>
+                                </DockPanel>
+                                <DockPanel Grid.Row="1"  VerticalAlignment="Center">
+                                    <Label Content="*Longitude:" HorizontalAlignment="Left"/>
+                                    <Label Content="{Binding Longitude}"/>
+                                    <Label Content="deg"  HorizontalAlignment="Right"/>
+                                </DockPanel>
+                                <DockPanel Grid.Row="2"  VerticalAlignment="Center">
+                                    <Label Content="*Altitude:" HorizontalAlignment="Left"/>
+                                    <Label Content="{Binding Altitude}"/>
+                                    <Label Content="m"  HorizontalAlignment="Right"/>
+                                </DockPanel>
+                            </Grid>
+                            <Grid Grid.Column="1" Margin="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <DockPanel Grid.Row="0" VerticalAlignment="Center">
+                                    <Label Content="*Pitch:" HorizontalAlignment="Left"/>
+                                    <Label Content="{Binding Pitch}"/>
+                                    <Label Content="deg"  HorizontalAlignment="Right"/>
+                                </DockPanel>
+                                <DockPanel Grid.Row="1"  VerticalAlignment="Center">
+                                    <Label Content="*Roll:" HorizontalAlignment="Left"/>
+                                    <Label Content="{Binding Roll}"/>
+                                    <Label Content="deg"  HorizontalAlignment="Right"/>
+                                </DockPanel>
+                                <DockPanel Grid.Row="2"  VerticalAlignment="Center">
+                                    <Label Content="*Heading:" HorizontalAlignment="Left"/>
+                                    <Label Content="{Binding Heading}"/>
+                                    <Label Content="m"  HorizontalAlignment="Right"/>
+                                </DockPanel>
+                            </Grid>
+                        </Grid> 
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+
+
+        </Border>
+    </Grid>
+</Page>

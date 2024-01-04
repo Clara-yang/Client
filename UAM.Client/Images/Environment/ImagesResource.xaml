@@ -1,0 +1,498 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="Color_Normal" Color="LightGray"/>
+    <SolidColorBrush x:Key="Color_IsPressed" Color="#FF4D4D4D"/>
+    <SolidColorBrush x:Key="Color_Green" Color="#FF00FF00"/>
+    <SolidColorBrush x:Key="Color_Back_Button" Color="#B3B3B3"/>
+    <!--#region Environment-->
+
+    <!--#region Enviromnent-Weather -->
+    <DrawingImage x:Key="Icon_bar_3">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V6 H7 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,-0.125h7.96875v0.25h-7.96875z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,2.96875h7.96875v0.25h-7.96875z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,6.34375h7.96875v0.25h-7.96875z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon_bar_3_Pressed">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V6 H7 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,-0.125h7.96875v0.25h-7.96875z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,2.96875h7.96875v0.25h-7.96875z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,6.34375h7.96875v0.25h-7.96875z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+
+    <DrawingImage x:Key="Icon_sunny">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V39 H39 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M19.7198,10.7108c-4.9761,0 -9.01,4.0339 -9.01,9.01c0,4.9761 4.0339,9.02 9.01,9.02c4.9816,0 9.02,-4.0384 9.02,-9.02c0,-4.9816 -4.0384,-9.01 -9.02,-9.01zM19.7198,10.2108c5.2577,0 9.52,4.2522 9.52,9.51c0,5.2577 -4.2623,9.52 -9.52,9.52c-5.2522,0 -9.51,-4.2678 -9.51,-9.52c0,-5.2523 4.2578,-9.51 9.51,-9.51z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M19.9732,34.9082v4.5381h-0.5v-4.5381z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M19.9732,0v4.54004h-0.5v-4.54004z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M34.9082,19.4732h4.5381v0.5h-4.5381z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,19.4732h4.54004v0.5h-4.54004z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M30.6374,30.2839l3.2089,3.2089l-0.3535,0.3535l-3.2089,-3.2089z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M5.95356,5.6l3.21029,3.2103l-0.35355,0.35355l-3.2103,-3.21029z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M30.2839,8.80891l3.2089,-3.20891l0.3535,0.35356l-3.2089,3.2089z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M5.6,33.4928l3.2103,-3.2103l0.35355,0.3535l-3.21029,3.2103z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon_sunny_Pressed">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V39 H39 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M19.7198,10.7108c-4.9761,0 -9.01,4.0339 -9.01,9.01c0,4.9761 4.0339,9.02 9.01,9.02c4.9816,0 9.02,-4.0384 9.02,-9.02c0,-4.9816 -4.0384,-9.01 -9.02,-9.01zM19.7198,10.2108c5.2577,0 9.52,4.2522 9.52,9.51c0,5.2577 -4.2623,9.52 -9.52,9.52c-5.2522,0 -9.51,-4.2678 -9.51,-9.52c0,-5.2523 4.2578,-9.51 9.51,-9.51z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M19.9732,34.9082v4.5381h-0.5v-4.5381z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M19.9732,0v4.54004h-0.5v-4.54004z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M34.9082,19.4732h4.5381v0.5h-4.5381z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,19.4732h4.54004v0.5h-4.54004z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M30.6374,30.2839l3.2089,3.2089l-0.3535,0.3535l-3.2089,-3.2089z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M5.95356,5.6l3.21029,3.2103l-0.35355,0.35355l-3.2103,-3.21029z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M30.2839,8.80891l3.2089,-3.20891l0.3535,0.35356l-3.2089,3.2089z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M5.6,33.4928l3.2103,-3.2103l0.35355,0.3535l-3.21029,3.2103z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_rain">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V28 H34 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M28.19,19.52M28.19,19.52c0.89687,0 1.79617,-0.23903 2.6979,-0.7171c1.78807,-0.94807 2.6821,-2.6157 2.6821,-5.0029c0,-2.27347 -0.87477,-4.07893 -2.6243,-5.41639c-1.9386,-1.48195 -4.4215,-1.86868 -7.4487,-1.16019l-0.358,0.08378l0.0537,-0.3637l-0.0537,0.3637l0.0537,-0.3637c0.1638,-1.10991 -0.04477,-2.22259 -0.6257,-3.33803c-1.16493,-2.23698 -3.6406,-3.35547 -7.427,-3.35547c-3.78397,0 -6.30052,1.2253 -7.54967,3.67589c-0.62583,1.22775 -0.87637,2.454 -0.75162,3.67877v-0.00008l0.02432,0.23793l-0.23662,0.03483l0.23662,-0.03483l-0.23662,0.03483c-1.06703,0.15706 -2.136,0.54313 -3.2069,1.1582c-2.11301,1.21364 -3.16951,2.94513 -3.16951,5.19446c0,2.21587 0.70078,3.761 2.10233,4.6354c0.69951,0.4364 1.3954,0.6546 2.08767,0.6546zM28.19,20.02h-23.75c-0.78773,0 -1.57184,-0.24347 -2.35233,-0.7304c-1.55845,-0.97227 -2.33767,-2.6588 -2.33767,-5.0596c0,-2.44233 1.14016,-4.31835 3.42049,-5.62804c1.12577,-0.64659 2.25347,-1.05302 3.3831,-1.21929l0.03641,0.24733l-0.03641,-0.24733l0.03641,0.24733l-0.2487,0.02542l-0.00001,-0.00009c-0.1347,-1.32245 0.13316,-2.64129 0.80358,-3.95651c1.34192,-2.63255 4.00696,-3.94882 7.99513,-3.94882c3.9886,0 6.6121,1.20818 7.8705,3.62453c0.63073,1.21122 0.85633,2.42521 0.6768,3.64197l-0.2473,-0.0365l0.2473,0.0365l-0.2473,-0.0365l-0.057,-0.24342c3.18053,-0.74438 5.80263,-0.32778 7.8663,1.24981c1.88047,1.43754 2.8207,3.37541 2.8207,5.81361c0,2.5878 -0.98263,4.40267 -2.9479,5.4446c-0.97493,0.51693 -1.9523,0.7754 -2.9321,0.7754z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M6.34596,23.1908l2.27789,4.3811l-0.44362,0.2307l-2.27789,-4.3812z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M12.9988,23.1908l2.2779,4.3811l-0.4436,0.2307l-2.2779,-4.3812z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M20.0156,23.1908l2.2779,4.3811l-0.4436,0.2307l-2.2779,-4.3812z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M26.6685,23.1908l2.2779,4.3811l-0.4436,0.2307l-2.2779,-4.3812z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon_rain_Pressed">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V28 H34 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M28.19,19.52M28.19,19.52c0.89687,0 1.79617,-0.23903 2.6979,-0.7171c1.78807,-0.94807 2.6821,-2.6157 2.6821,-5.0029c0,-2.27347 -0.87477,-4.07893 -2.6243,-5.41639c-1.9386,-1.48195 -4.4215,-1.86868 -7.4487,-1.16019l-0.358,0.08378l0.0537,-0.3637l-0.0537,0.3637l0.0537,-0.3637c0.1638,-1.10991 -0.04477,-2.22259 -0.6257,-3.33803c-1.16493,-2.23698 -3.6406,-3.35547 -7.427,-3.35547c-3.78397,0 -6.30052,1.2253 -7.54967,3.67589c-0.62583,1.22775 -0.87637,2.454 -0.75162,3.67877v-0.00008l0.02432,0.23793l-0.23662,0.03483l0.23662,-0.03483l-0.23662,0.03483c-1.06703,0.15706 -2.136,0.54313 -3.2069,1.1582c-2.11301,1.21364 -3.16951,2.94513 -3.16951,5.19446c0,2.21587 0.70078,3.761 2.10233,4.6354c0.69951,0.4364 1.3954,0.6546 2.08767,0.6546zM28.19,20.02h-23.75c-0.78773,0 -1.57184,-0.24347 -2.35233,-0.7304c-1.55845,-0.97227 -2.33767,-2.6588 -2.33767,-5.0596c0,-2.44233 1.14016,-4.31835 3.42049,-5.62804c1.12577,-0.64659 2.25347,-1.05302 3.3831,-1.21929l0.03641,0.24733l-0.03641,-0.24733l0.03641,0.24733l-0.2487,0.02542l-0.00001,-0.00009c-0.1347,-1.32245 0.13316,-2.64129 0.80358,-3.95651c1.34192,-2.63255 4.00696,-3.94882 7.99513,-3.94882c3.9886,0 6.6121,1.20818 7.8705,3.62453c0.63073,1.21122 0.85633,2.42521 0.6768,3.64197l-0.2473,-0.0365l0.2473,0.0365l-0.2473,-0.0365l-0.057,-0.24342c3.18053,-0.74438 5.80263,-0.32778 7.8663,1.24981c1.88047,1.43754 2.8207,3.37541 2.8207,5.81361c0,2.5878 -0.98263,4.40267 -2.9479,5.4446c-0.97493,0.51693 -1.9523,0.7754 -2.9321,0.7754z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M6.34596,23.1908l2.27789,4.3811l-0.44362,0.2307l-2.27789,-4.3812z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M12.9988,23.1908l2.2779,4.3811l-0.4436,0.2307l-2.2779,-4.3812z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M20.0156,23.1908l2.2779,4.3811l-0.4436,0.2307l-2.2779,-4.3812z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M26.6685,23.1908l2.2779,4.3811l-0.4436,0.2307l-2.2779,-4.3812z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_snow">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V31 H31 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M15.7795,0v31.0591h-0.5v-31.0591z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M15.3781,6.2458l-4.0313,-3.06926l0.3029,-0.39782l4.0313,3.06926z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M15.3781,5.84798l4.0312,-3.06926l0.3029,0.39782l-4.0312,3.06926z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M15.681,25.2111l-4.0313,3.0692l-0.3029,-0.3978l4.0313,-3.0692z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M19.4093,28.2803l-4.0312,-3.0692l0.3029,-0.3978l4.0312,3.0692z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,15.2795h31.0591v0.5h-31.0591z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M6.24581,15.681l-3.06927,4.0312l-0.39782,-0.3028l3.06928,-4.0313z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M5.848,15.681l-3.06928,-4.0313l0.39782,-0.3029l3.06927,4.0313z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M25.2111,15.3781l3.0693,4.0313l-0.3978,0.3028l-3.0693,-4.0312z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M28.2804,11.6497l-3.0693,4.0313l-0.3978,-0.3029l3.0693,-4.0313z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M4.72527,4.37172l21.96203,21.96208l-0.3535,0.3536l-21.96208,-21.96213z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M8.85787,9.07203l-5.02084,0.68024l-0.06713,-0.49548l5.02085,-0.68023z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M8.57657,8.79073l0.68024,-5.02083l0.49547,0.06713l-0.68023,5.02083z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M22.4825,22.2684l-0.6802,5.0208l-0.4955,-0.0671l0.6803,-5.0209z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M27.2892,21.8023l-5.0208,0.6802l-0.0672,-0.4955l5.0209,-0.6802z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M4.37172,26.3338l21.96208,-21.96208l0.3535,0.35355l-21.96203,21.96213z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M9.07205,22.2012l0.68023,5.0209l-0.49547,0.0671l-0.68024,-5.0208z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M8.79075,22.4825l-5.02085,-0.6802l0.06713,-0.4955l5.02084,0.6802z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M22.2684,8.57656l5.0208,0.68023l-0.0671,0.49548l-5.0209,-0.68024z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M21.8023,3.7699l0.6802,5.02083l-0.4954,0.06713l-0.6803,-5.02083z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon_snow_Pressed">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V31 H31 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M15.7795,0v31.0591h-0.5v-31.0591z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M15.3781,6.2458l-4.0313,-3.06926l0.3029,-0.39782l4.0313,3.06926z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M15.3781,5.84798l4.0312,-3.06926l0.3029,0.39782l-4.0312,3.06926z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M15.681,25.2111l-4.0313,3.0692l-0.3029,-0.3978l4.0313,-3.0692z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M19.4093,28.2803l-4.0312,-3.0692l0.3029,-0.3978l4.0312,3.0692z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,15.2795h31.0591v0.5h-31.0591z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M6.24581,15.681l-3.06927,4.0312l-0.39782,-0.3028l3.06928,-4.0313z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M5.848,15.681l-3.06928,-4.0313l0.39782,-0.3029l3.06927,4.0313z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M25.2111,15.3781l3.0693,4.0313l-0.3978,0.3028l-3.0693,-4.0312z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M28.2804,11.6497l-3.0693,4.0313l-0.3978,-0.3029l3.0693,-4.0313z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M4.72527,4.37172l21.96203,21.96208l-0.3535,0.3536l-21.96208,-21.96213z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M8.85787,9.07203l-5.02084,0.68024l-0.06713,-0.49548l5.02085,-0.68023z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M8.57657,8.79073l0.68024,-5.02083l0.49547,0.06713l-0.68023,5.02083z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M22.4825,22.2684l-0.6802,5.0208l-0.4955,-0.0671l0.6803,-5.0209z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M27.2892,21.8023l-5.0208,0.6802l-0.0672,-0.4955l5.0209,-0.6802z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M4.37172,26.3338l21.96208,-21.96208l0.3535,0.35355l-21.96203,21.96213z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M9.07205,22.2012l0.68023,5.0209l-0.49547,0.0671l-0.68024,-5.0208z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M8.79075,22.4825l-5.02085,-0.6802l0.06713,-0.4955l5.02084,0.6802z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M22.2684,8.57656l5.0208,0.68023l-0.0671,0.49548l-5.0209,-0.68024z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M21.8023,3.7699l0.6802,5.02083l-0.4954,0.06713l-0.6803,-5.02083z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_thunder">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V35 H33 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M1.92372,20.7689l2.96075,3.6592l-0.38869,0.3145l-2.96076,-3.6592z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M6.32057,21.4195l2.96075,3.6592l-0.38869,0.3145l-2.96076,-3.6592z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M7.06404,27.1217l2.96076,3.6592l-0.3887,0.3145l-2.96076,-3.6592z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M25.0351,25.0722l2.389,4.0557l-0.4308,0.2538l-2.389,-4.0557z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M26.6607,21.7524l2.389,4.0557l-0.4308,0.2537l-2.389,-4.0556z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M13.107,21.3367l1.922,3.6661h-3.8834v-0.25l0.197,-0.154l7.98,10.21l-0.197,0.154l-0.2499,-0.0071l0.2169,-7.6529h2.783v0.25l-0.2404,0.0686l-1.74,-6.1l0.4808,-0.1372l1.8309,6.4186h-2.8713v-0.25l0.2499,0.0071l-0.2296,8.1034l-8.723,-11.1605h3.9827v0.25l-0.2214,0.1161l-1.73,-3.3z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M26.87,18.6M26.87,18.6c0.85187,0 1.70613,-0.22737 2.5628,-0.6821c1.69813,-0.90133 2.5472,-2.4873 2.5472,-4.7579c0,-2.16561 -0.8315,-3.88529 -2.4945,-5.15903c-1.84307,-1.41164 -4.2024,-1.77753 -7.078,-1.09768l-0.3585,0.08476l0.0537,-0.36445l-0.0537,0.36445l0.0537,-0.36445c0.15547,-1.0566 -0.0435,-2.11596 -0.5969,-3.17808c-1.10993,-2.13035 -3.46853,-3.19552 -7.0758,-3.19552c-3.60197,0 -5.99729,1.1678 -7.18594,3.50339c-0.59527,1.16965 -0.83372,2.33676 -0.71534,3.50133l0.02419,0.23797l-0.23667,0.03467l0.23667,-0.03467l-0.23667,0.03467c-1.01538,0.14875 -2.03268,0.51526 -3.05191,1.09953c-2.00955,1.15201 -3.01433,2.79638 -3.01433,4.93311c0,2.1118 0.66585,3.58407 1.99754,4.4168c0.66445,0.41547 1.32527,0.6232 1.98246,0.6232v0zM26.87,19.1h-22.64v0c-0.75282,0 -1.502,-0.2331 -2.24755,-0.6993c-1.4883,-0.9306 -2.23245,-2.54417 -2.23245,-4.8407c0,-2.32987 1.08856,-4.11883 3.26567,-5.36689c1.0741,-0.61573 2.15013,-1.00255 3.22809,-1.16047l0.03624,0.24736l-0.03624,-0.24736l0.03624,0.24736l-0.24872,0.02528c-0.12829,-1.26209 0.12743,-2.52165 0.76716,-3.77867c1.28137,-2.51774 3.82522,-3.77661 7.63156,-3.77661c3.80947,0 6.31587,1.15483 7.5192,3.46448c0.60327,1.15786 0.8193,2.3185 0.6481,3.48191l-0.2473,-0.03639l0.2473,0.03639l-0.2473,-0.03639l-0.0575,-0.24329c3.02947,-0.71623 5.52847,-0.32045 7.497,1.18732c1.79367,1.3738 2.6905,3.22579 2.6905,5.55597c0,2.47107 -0.9376,4.20427 -2.8128,5.1996c-0.93,0.4936 -1.8624,0.7404 -2.7972,0.7404z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon_thunder_Pressed">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V35 H33 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M1.92372,20.7689l2.96075,3.6592l-0.38869,0.3145l-2.96076,-3.6592z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M6.32057,21.4195l2.96075,3.6592l-0.38869,0.3145l-2.96076,-3.6592z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M7.06404,27.1217l2.96076,3.6592l-0.3887,0.3145l-2.96076,-3.6592z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M25.0351,25.0722l2.389,4.0557l-0.4308,0.2538l-2.389,-4.0557z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M26.6607,21.7524l2.389,4.0557l-0.4308,0.2537l-2.389,-4.0556z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M13.107,21.3367l1.922,3.6661h-3.8834v-0.25l0.197,-0.154l7.98,10.21l-0.197,0.154l-0.2499,-0.0071l0.2169,-7.6529h2.783v0.25l-0.2404,0.0686l-1.74,-6.1l0.4808,-0.1372l1.8309,6.4186h-2.8713v-0.25l0.2499,0.0071l-0.2296,8.1034l-8.723,-11.1605h3.9827v0.25l-0.2214,0.1161l-1.73,-3.3z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M26.87,18.6M26.87,18.6c0.85187,0 1.70613,-0.22737 2.5628,-0.6821c1.69813,-0.90133 2.5472,-2.4873 2.5472,-4.7579c0,-2.16561 -0.8315,-3.88529 -2.4945,-5.15903c-1.84307,-1.41164 -4.2024,-1.77753 -7.078,-1.09768l-0.3585,0.08476l0.0537,-0.36445l-0.0537,0.36445l0.0537,-0.36445c0.15547,-1.0566 -0.0435,-2.11596 -0.5969,-3.17808c-1.10993,-2.13035 -3.46853,-3.19552 -7.0758,-3.19552c-3.60197,0 -5.99729,1.1678 -7.18594,3.50339c-0.59527,1.16965 -0.83372,2.33676 -0.71534,3.50133l0.02419,0.23797l-0.23667,0.03467l0.23667,-0.03467l-0.23667,0.03467c-1.01538,0.14875 -2.03268,0.51526 -3.05191,1.09953c-2.00955,1.15201 -3.01433,2.79638 -3.01433,4.93311c0,2.1118 0.66585,3.58407 1.99754,4.4168c0.66445,0.41547 1.32527,0.6232 1.98246,0.6232v0zM26.87,19.1h-22.64v0c-0.75282,0 -1.502,-0.2331 -2.24755,-0.6993c-1.4883,-0.9306 -2.23245,-2.54417 -2.23245,-4.8407c0,-2.32987 1.08856,-4.11883 3.26567,-5.36689c1.0741,-0.61573 2.15013,-1.00255 3.22809,-1.16047l0.03624,0.24736l-0.03624,-0.24736l0.03624,0.24736l-0.24872,0.02528c-0.12829,-1.26209 0.12743,-2.52165 0.76716,-3.77867c1.28137,-2.51774 3.82522,-3.77661 7.63156,-3.77661c3.80947,0 6.31587,1.15483 7.5192,3.46448c0.60327,1.15786 0.8193,2.3185 0.6481,3.48191l-0.2473,-0.03639l0.2473,0.03639l-0.2473,-0.03639l-0.0575,-0.24329c3.02947,-0.71623 5.52847,-0.32045 7.497,1.18732c1.79367,1.3738 2.6905,3.22579 2.6905,5.55597c0,2.47107 -0.9376,4.20427 -2.8128,5.1996c-0.93,0.4936 -1.8624,0.7404 -2.7972,0.7404z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_hail">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V29 H32 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M26.4,18.27M26.4,18.27c0.83687,0 1.67617,-0.2232 2.5179,-0.6696c1.66807,-0.88473 2.5021,-2.44153 2.5021,-4.6704c0,-2.12675 -0.8169,-3.81559 -2.4507,-5.0665c-1.81027,-1.38601 -4.12757,-1.74607 -6.9519,-1.08017l-0.3582,0.08444l0.0535,-0.36408l-0.0535,0.36408l0.0535,-0.36408c0.15213,-1.03659 -0.0435,-2.07596 -0.5869,-3.11811c-1.08993,-2.09038 -3.4052,-3.13558 -6.9458,-3.13558c-3.53949,0 -5.89273,1.14614 -7.05971,3.43842c-0.74155,1.45661 -0.97925,2.58411 -0.71312,3.38252c0.00582,0.01746 0.00967,0.03535 0.01154,0.05367l0.02428,0.23783l-0.23651,0.03488l0.23651,-0.03488l-0.23651,0.03488c-0.99711,0.14707 -1.99613,0.50774 -2.99707,1.08202c-1.97294,1.13197 -2.95941,2.74553 -2.95941,4.84066c0,2.07427 0.65417,3.52027 1.9625,4.338c0.6528,0.408 1.30197,0.612 1.9475,0.612zM26.4,18.77h-22.24c-0.74113,0 -1.47863,-0.22933 -2.2125,-0.688c-1.465,-0.9156 -2.1975,-2.50293 -2.1975,-4.762c0,-2.28819 1.0702,-4.0463 3.21059,-5.27434c1.05571,-0.60571 2.11335,-0.98671 3.17293,-1.14298l0.03648,0.24732l-0.03648,-0.24732l0.03648,0.24732l-0.24871,0.02539c0.00187,0.01831 0.00572,0.0362 0.01154,0.05367c-0.31025,-0.93074 -0.06295,-2.18657 0.74188,-3.76748c1.25969,-2.47439 3.76145,-3.71158 7.50529,-3.71158c3.74273,0 6.2058,1.13481 7.3892,3.40442c0.59327,1.13786 0.80597,2.27849 0.6381,3.42189l-0.2473,-0.03631l0.2473,0.03631l-0.2473,-0.03631l-0.0574,-0.24333c2.97807,-0.70215 5.43493,-0.3122 7.3706,1.16983c1.76453,1.35098 2.6468,3.17215 2.6468,5.4635c0,2.4294 -0.92263,4.13343 -2.7679,5.1121c-0.91493,0.48527 -1.8323,0.7279 -2.7521,0.7279z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M8.72277 20.9541C7.88277 20.9541 7.21277 21.6241 7.21277 22.4641C7.21277 23.2941 7.88277 23.9641 8.72277 23.9641C9.55277 23.9641 10.2228 23.2941 10.2228 22.4641C10.2228 21.6241 9.55277 20.9541 8.72277 20.9541Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M16.9786 20.9541C16.1386 20.9541 15.4686 21.6241 15.4686 22.4641C15.4686 23.2941 16.1386 23.9641 16.9786 23.9641C17.8086 23.9641 18.4786 23.2941 18.4786 22.4641C18.4786 21.6241 17.8086 20.9541 16.9786 20.9541Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M25.3903 20.9541C24.5503 20.9541 23.8803 21.6241 23.8803 22.4641C23.8803 23.2941 24.5503 23.9641 25.3903 23.9641C26.2203 23.9641 26.8903 23.2941 26.8903 22.4641C26.8903 21.6241 26.2203 20.9541 25.3903 20.9541Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M11.0074 26.7003C10.1674 26.7003 9.49738 27.3703 9.49738 28.2103C9.49738 29.0403 10.1674 29.7103 11.0074 29.7103C11.8374 29.7103 12.5074 29.0403 12.5074 28.2103C12.5074 27.3703 11.8374 26.7003 11.0074 26.7003Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M19.2633 26.7003C18.4233 26.7003 17.7533 27.3703 17.7533 28.2103C17.7533 29.0403 18.4233 29.7103 19.2633 29.7103C20.0933 29.7103 20.7633 29.0403 20.7633 28.2103C20.7633 27.3703 20.0933 26.7003 19.2633 26.7003Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M27.675 26.7003C26.835 26.7003 26.165 27.3703 26.165 28.2103C26.165 29.0403 26.835 29.7103 27.675 29.7103C28.505 29.7103 29.175 29.0403 29.175 28.2103C29.175 27.3703 28.505 26.7003 27.675 26.7003Z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon_hail_Pressed">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V29 H32 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M26.4,18.27M26.4,18.27c0.83687,0 1.67617,-0.2232 2.5179,-0.6696c1.66807,-0.88473 2.5021,-2.44153 2.5021,-4.6704c0,-2.12675 -0.8169,-3.81559 -2.4507,-5.0665c-1.81027,-1.38601 -4.12757,-1.74607 -6.9519,-1.08017l-0.3582,0.08444l0.0535,-0.36408l-0.0535,0.36408l0.0535,-0.36408c0.15213,-1.03659 -0.0435,-2.07596 -0.5869,-3.11811c-1.08993,-2.09038 -3.4052,-3.13558 -6.9458,-3.13558c-3.53949,0 -5.89273,1.14614 -7.05971,3.43842c-0.74155,1.45661 -0.97925,2.58411 -0.71312,3.38252c0.00582,0.01746 0.00967,0.03535 0.01154,0.05367l0.02428,0.23783l-0.23651,0.03488l0.23651,-0.03488l-0.23651,0.03488c-0.99711,0.14707 -1.99613,0.50774 -2.99707,1.08202c-1.97294,1.13197 -2.95941,2.74553 -2.95941,4.84066c0,2.07427 0.65417,3.52027 1.9625,4.338c0.6528,0.408 1.30197,0.612 1.9475,0.612zM26.4,18.77h-22.24c-0.74113,0 -1.47863,-0.22933 -2.2125,-0.688c-1.465,-0.9156 -2.1975,-2.50293 -2.1975,-4.762c0,-2.28819 1.0702,-4.0463 3.21059,-5.27434c1.05571,-0.60571 2.11335,-0.98671 3.17293,-1.14298l0.03648,0.24732l-0.03648,-0.24732l0.03648,0.24732l-0.24871,0.02539c0.00187,0.01831 0.00572,0.0362 0.01154,0.05367c-0.31025,-0.93074 -0.06295,-2.18657 0.74188,-3.76748c1.25969,-2.47439 3.76145,-3.71158 7.50529,-3.71158c3.74273,0 6.2058,1.13481 7.3892,3.40442c0.59327,1.13786 0.80597,2.27849 0.6381,3.42189l-0.2473,-0.03631l0.2473,0.03631l-0.2473,-0.03631l-0.0574,-0.24333c2.97807,-0.70215 5.43493,-0.3122 7.3706,1.16983c1.76453,1.35098 2.6468,3.17215 2.6468,5.4635c0,2.4294 -0.92263,4.13343 -2.7679,5.1121c-0.91493,0.48527 -1.8323,0.7279 -2.7521,0.7279z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M8.72277 20.9541C7.88277 20.9541 7.21277 21.6241 7.21277 22.4641C7.21277 23.2941 7.88277 23.9641 8.72277 23.9641C9.55277 23.9641 10.2228 23.2941 10.2228 22.4641C10.2228 21.6241 9.55277 20.9541 8.72277 20.9541Z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M16.9786 20.9541C16.1386 20.9541 15.4686 21.6241 15.4686 22.4641C15.4686 23.2941 16.1386 23.9641 16.9786 23.9641C17.8086 23.9641 18.4786 23.2941 18.4786 22.4641C18.4786 21.6241 17.8086 20.9541 16.9786 20.9541Z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M25.3903 20.9541C24.5503 20.9541 23.8803 21.6241 23.8803 22.4641C23.8803 23.2941 24.5503 23.9641 25.3903 23.9641C26.2203 23.9641 26.8903 23.2941 26.8903 22.4641C26.8903 21.6241 26.2203 20.9541 25.3903 20.9541Z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M11.0074 26.7003C10.1674 26.7003 9.49738 27.3703 9.49738 28.2103C9.49738 29.0403 10.1674 29.7103 11.0074 29.7103C11.8374 29.7103 12.5074 29.0403 12.5074 28.2103C12.5074 27.3703 11.8374 26.7003 11.0074 26.7003Z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M19.2633 26.7003C18.4233 26.7003 17.7533 27.3703 17.7533 28.2103C17.7533 29.0403 18.4233 29.7103 19.2633 29.7103C20.0933 29.7103 20.7633 29.0403 20.7633 28.2103C20.7633 27.3703 20.0933 26.7003 19.2633 26.7003Z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M27.675 26.7003C26.835 26.7003 26.165 27.3703 26.165 28.2103C26.165 29.0403 26.835 29.7103 27.675 29.7103C28.505 29.7103 29.175 29.0403 29.175 28.2103C29.175 27.3703 28.505 26.7003 27.675 26.7003Z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_haze">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V20 H31 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M26.507,19.3212h5.3313v0.5h-5.3313z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M24.3839,13.0877h7.4545v0.5h-7.4545z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,-0.25h18.2138v0.5h-18.2138z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,6.41885h6.66943v0.5h-6.66943z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M31.8383,6.91885h-18.2138v-0.5h18.2138z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M19.5935,13.5876h-19.5935v-0.5h19.5935z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M31.8384,0.25h-6.6695v-0.5h6.6695z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,19.3212h6.66943v0.5h-6.66943z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M12.9241,19.3212h6.6694v0.5h-6.6694z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon_haze_Pressed">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V20 H31 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M26.507,19.3212h5.3313v0.5h-5.3313z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M24.3839,13.0877h7.4545v0.5h-7.4545z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,-0.25h18.2138v0.5h-18.2138z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,6.41885h6.66943v0.5h-6.66943z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M31.8383,6.91885h-18.2138v-0.5h18.2138z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M19.5935,13.5876h-19.5935v-0.5h19.5935z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M31.8384,0.25h-6.6695v-0.5h6.6695z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,19.3212h6.66943v0.5h-6.66943z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M12.9241,19.3212h6.6694v0.5h-6.6694z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_sandstorm">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V25 H32 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M29.6759,21.7614h1.5616v0.5h-1.5616z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M24.3538,21.7614h2.0952v0.5h-2.0952z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M28.9043,15.6455h2.3332v0.5h-2.3332z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M23.1871,15.6455h2.3334v0.5h-2.3334z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,2.55945h2.77393v0.5h-2.77393z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M6.82349,2.55945h2.77392v0.5h-2.77392z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M6.82349,9.10246h2.77392v0.5h-2.77392z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M13.2961,2.55945h2.6036v0.5h-2.6036z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,9.10246h2.77393v0.5h-2.77393z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,21.7614h2.14258v0.5h-2.14258z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M24.5901,9.10246h2.2491v0.5h-2.2491z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M18.873,9.10246h3.2576v0.5h-3.2576z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M13.2961,9.10246h2.6036v0.5h-2.6036z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M11.627,22.805M11.627,22.805c-0.42113,-0.643 -0.73633,-1.42313 -0.9456,-2.3404l0.4875,-0.1112c0.19593,0.85887 0.48807,1.58473 0.8764,2.1776z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M16.3311,24.848M16.3311,24.848c-0.3902,0.06133 -0.7215,0.092 -0.9939,0.092c-0.54207,0 -1.12087,-0.1398 -1.7364,-0.4194l0.2068,-0.4552c0.5498,0.24973 1.05967,0.3746 1.5296,0.3746c0.24633,0 0.55173,-0.02867 0.9162,-0.086z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M20.7628,20.8966M20.7628,20.8966c-0.1072,1.00333 -0.5022,1.83443 -1.185,2.4933l-0.3472,-0.3598c0.59567,-0.5748 0.94067,-1.30367 1.035,-2.1866z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M17.7618,15.7505M17.7618,15.7505c1.24667,0.31167 2.11667,1.057 2.61,2.236l-0.4613,0.193c-0.4288,-1.02487 -1.18547,-1.67287 -2.27,-1.944z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M24.0705,2.29521M24.0705,2.29521c-0.3828,0.59535 -0.66813,1.32371 -0.856,2.18507l-0.4885,-0.10656c0.20067,-0.92006 0.50863,-1.70303 0.9239,-2.34892z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M28.3242,0.33596M28.3242,0.33596c-0.36373,-0.0573 -0.6691,-0.08595 -0.9161,-0.08595c-0.46987,0 -0.97973,0.12487 -1.5296,0.37462l-0.2067,-0.45524c0.61547,-0.27959 1.19423,-0.41938 1.7363,-0.41938c0.27307,0 0.60437,0.03068 0.9939,0.09204z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M32.3366,3.8473M32.3366,3.8473c-0.09327,-0.88181 -0.43827,-1.61061 -1.035,-2.18639l0.3472,-0.35981c0.684,0.65999 1.079,1.49119 1.185,2.49361z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M29.7116,8.45248M29.7116,8.45248c1.08447,-0.27113 1.84113,-0.91912 2.27,-1.94397l0.4612,0.193c-0.49333,1.17903 -1.3633,1.92438 -2.6099,2.23604z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M11.2794,15.6455h3.6039v0.5h-3.6039z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M4.83447,15.6455h3.2356v0.5h-3.2356z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,15.6455h2.14258v0.5h-2.14258z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M23.5268,2.35409l0.0002,0.00006l-0.2236,0.44722l-0.0002,-0.00007z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon_sandstorm_Pressed">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V25 H32 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M29.6759,21.7614h1.5616v0.5h-1.5616z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M24.3538,21.7614h2.0952v0.5h-2.0952z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M28.9043,15.6455h2.3332v0.5h-2.3332z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M23.1871,15.6455h2.3334v0.5h-2.3334z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,2.55945h2.77393v0.5h-2.77393z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M6.82349,2.55945h2.77392v0.5h-2.77392z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M6.82349,9.10246h2.77392v0.5h-2.77392z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M13.2961,2.55945h2.6036v0.5h-2.6036z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,9.10246h2.77393v0.5h-2.77393z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,21.7614h2.14258v0.5h-2.14258z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M24.5901,9.10246h2.2491v0.5h-2.2491z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M18.873,9.10246h3.2576v0.5h-3.2576z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M13.2961,9.10246h2.6036v0.5h-2.6036z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M11.627,22.805M11.627,22.805c-0.42113,-0.643 -0.73633,-1.42313 -0.9456,-2.3404l0.4875,-0.1112c0.19593,0.85887 0.48807,1.58473 0.8764,2.1776z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M16.3311,24.848M16.3311,24.848c-0.3902,0.06133 -0.7215,0.092 -0.9939,0.092c-0.54207,0 -1.12087,-0.1398 -1.7364,-0.4194l0.2068,-0.4552c0.5498,0.24973 1.05967,0.3746 1.5296,0.3746c0.24633,0 0.55173,-0.02867 0.9162,-0.086z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M20.7628,20.8966M20.7628,20.8966c-0.1072,1.00333 -0.5022,1.83443 -1.185,2.4933l-0.3472,-0.3598c0.59567,-0.5748 0.94067,-1.30367 1.035,-2.1866z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M17.7618,15.7505M17.7618,15.7505c1.24667,0.31167 2.11667,1.057 2.61,2.236l-0.4613,0.193c-0.4288,-1.02487 -1.18547,-1.67287 -2.27,-1.944z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M24.0705,2.29521M24.0705,2.29521c-0.3828,0.59535 -0.66813,1.32371 -0.856,2.18507l-0.4885,-0.10656c0.20067,-0.92006 0.50863,-1.70303 0.9239,-2.34892z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M28.3242,0.33596M28.3242,0.33596c-0.36373,-0.0573 -0.6691,-0.08595 -0.9161,-0.08595c-0.46987,0 -0.97973,0.12487 -1.5296,0.37462l-0.2067,-0.45524c0.61547,-0.27959 1.19423,-0.41938 1.7363,-0.41938c0.27307,0 0.60437,0.03068 0.9939,0.09204z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M32.3366,3.8473M32.3366,3.8473c-0.09327,-0.88181 -0.43827,-1.61061 -1.035,-2.18639l0.3472,-0.35981c0.684,0.65999 1.079,1.49119 1.185,2.49361z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M29.7116,8.45248M29.7116,8.45248c1.08447,-0.27113 1.84113,-0.91912 2.27,-1.94397l0.4612,0.193c-0.49333,1.17903 -1.3633,1.92438 -2.6099,2.23604z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M11.2794,15.6455h3.6039v0.5h-3.6039z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M4.83447,15.6455h3.2356v0.5h-3.2356z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M0,15.6455h2.14258v0.5h-2.14258z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M23.5268,2.35409l0.0002,0.00006l-0.2236,0.44722l-0.0002,-0.00007z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!--#endregion Enviromnent-Weather -->
+
+    <!--#region Environment-Precipitation -->
+    <DrawingImage x:Key="Icon_sparse">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V42 H64 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M54.2646,36.8525M54.2646,36.8525c6.09027,-0.87 9.1354,-4.49417 9.1354,-10.8725c0,-4.353 -1.67607,-7.8118 -5.0282,-10.3764c-3.70507,-2.83473 -8.43657,-3.5748 -14.1945,-2.2202l-0.3584,0.0843l0.0538,-0.3642l-0.0538,0.3642l0.0538,-0.3642c0.3154,-2.13659 -0.08483,-4.27593 -1.2007,-6.418c-2.23493,-4.29033 -6.96227,-6.4355 -14.182,-6.4355c-10.56,0 -15.84,4.70667 -15.84,14.12c0,-0.00847 -0.00043,-0.01693 -0.0013,-0.0254l0.0244,0.238l-0.2368,0.0347l0.2368,-0.0347l-0.2368,0.0347c-2.03539,0.2988 -4.07271,1.03283 -6.11195,2.2021c-4.04957,2.32193 -6.07435,5.6388 -6.07435,9.9506c0,4.2576 1.35251,7.23193 4.05752,8.923c1.35113,0.84467 2.69862,1.267 4.04248,1.267h1.41v0.5h-1.41c-1.43948,0 -2.87532,-0.44767 -4.30752,-1.343c-2.86165,-1.789 -4.29248,-4.90467 -4.29248,-9.347c0,-4.50487 2.10855,-7.96633 6.32564,-10.3844c2.09409,-1.20073 4.19011,-1.95503 6.28806,-2.2629l0.0363,0.2473l-0.0363,-0.2473l0.0363,0.2473l-0.2487,0.0254c-0.00087,-0.0084 -0.0013,-0.01687 -0.0013,-0.0254c0,-9.74667 5.44667,-14.62 16.34,-14.62c7.42193,0 12.2971,2.23483 14.6255,6.7045c1.1658,2.23789 1.58307,4.47855 1.2518,6.722l-0.2473,-0.0365l0.2473,0.0365l-0.2473,-0.0365l-0.0572,-0.2434c5.91153,-1.39067 10.7825,-0.62073 14.6129,2.3098c3.48287,2.66473 5.2243,6.25593 5.2243,10.7736c-0.00007,6.6674 -3.18827,10.45657 -9.5646,11.3675z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M21.9589,34.05l5.0805,8.3063l-0.2132,0.1304l-5.0805,-8.3062z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M37.4666,34.05l5.0805,8.3063l-0.2133,0.1304l-5.0805,-8.3062z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_lesser">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V42 H63 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M51.99,36.84h0.89c1.71853,0 3.4395,-0.45697 5.1629,-1.3709c3.43147,-1.81967 5.14717,-5.0127 5.1471,-9.5791c0.00007,-4.337 -1.6693,-7.78247 -5.0081,-10.3364c-3.69087,-2.82327 -8.40573,-3.56 -14.1446,-2.2102l-0.358,0.0841l0.0533,-0.3638l-0.0533,0.3638l0.0533,-0.3638c0.3122,-2.12991 -0.0884,-4.26261 -1.2018,-6.39812c-2.22993,-4.27705 -6.9402,-6.41558 -14.1308,-6.41558c-7.1936,0 -11.9814,2.34112 -14.3634,7.02336c-1.19193,2.34289 -1.6679,4.68327 -1.4279,7.02114l0.0244,0.238l-0.2367,0.0348l0.2367,-0.0348l-0.2367,0.0348c-2.02873,0.29873 -4.05938,1.0315 -6.09194,2.1983c-4.03631,2.31693 -6.05446,5.62507 -6.05446,9.9244c0,4.241 1.3475,7.20367 4.0425,8.888c1.34613,0.84133 2.68863,1.262 4.0275,1.262h3.32v0.5h-3.32c-1.43447,0 -2.8653,-0.446 -4.2925,-1.338c-2.85167,-1.78227 -4.2775,-4.88627 -4.2775,-9.312c0,-4.49233 2.10185,-7.94503 6.30554,-10.3581c2.08739,-1.1982 4.17675,-1.95127 6.26806,-2.2592l0.0364,0.2473l-0.0364,-0.2473l0.0364,0.2473l-0.2487,0.0255c-0.25,-2.43547 0.2432,-4.86842 1.4796,-7.29886c2.47473,-4.86443 7.4111,-7.29664 14.8091,-7.29664c7.39273,-0.00001 12.2508,2.22813 14.5742,6.68442c1.16327,2.23119 1.581,4.46515 1.2532,6.70188l-0.2474,-0.0363l0.2474,0.0363l-0.2474,-0.0363l-0.0572,-0.2434c5.89247,-1.38587 10.74673,-0.61927 14.5628,2.2998c3.46953,2.65407 5.20433,6.23193 5.2044,10.7336c-0.00007,4.76693 -1.80437,8.10723 -5.4129,10.0209c-1.7966,0.95273 -3.59563,1.4291 -5.3971,1.4291h-0.89z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M16.8402,33.9378l5.0637,8.2789l-0.2132,0.1304l-5.0638,-8.2789z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M30.0105,33.9378l5.0638,8.2789l-0.2133,0.1304l-5.0638,-8.2789z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M42.9307,33.9378l5.0638,8.2789l-0.2133,0.1304l-5.0638,-8.2789z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_moderate">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V42 H63 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M53.8444,36.5725M53.8444,36.5725c6.04373,-0.8696 9.0656,-4.4671 9.0656,-10.7925c0,-4.31907 -1.66187,-7.74997 -4.9856,-10.2927c-3.67307,-2.80993 -8.3655,-3.54457 -14.0773,-2.2039l-0.3577,0.084l0.0532,-0.3636l-0.0532,0.3636l0.0532,-0.3636c0.31053,-2.11999 -0.0884,-4.24273 -1.1968,-6.36821c-2.21993,-4.25706 -6.90853,-6.38559 -14.0658,-6.38559c-7.15787,0 -11.92323,2.32962 -14.2961,6.98887c-1.18767,2.33189 -1.66273,4.66383 -1.4252,6.99583v-0.0002l0.0244,0.238l-0.2367,0.0348l0.2367,-0.0348l-0.2367,0.0348c-2.02042,0.29707 -4.04276,1.0261 -6.06702,2.1871c-4.01959,2.30527 -6.02938,5.59713 -6.02938,9.8756c0,4.22427 1.34249,7.17527 4.02748,8.853c1.34113,0.838 2.67864,1.257 4.01252,1.257h1.39v0.5h-1.39c-1.42946,0 -2.85529,-0.44433 -4.27748,-1.333c-2.84168,-1.7756 -4.26252,-4.86793 -4.26252,-9.277c0,-4.47153 2.09354,-7.908 6.28062,-10.3094c2.07907,-1.1924 4.16007,-1.9417 6.24298,-2.2479l0.0364,0.2473l-0.0364,-0.2473l0.0364,0.2473l-0.2487,0.0255v-0.0002c-0.24747,-2.42953 0.24487,-4.85398 1.477,-7.27334c2.46567,-4.84131 7.37957,-7.26196 14.7417,-7.26196c7.35933,0 12.19573,2.21814 14.5092,6.65441c1.15827,2.22115 1.57433,4.44508 1.2482,6.67179l-0.2474,-0.0362l0.2474,0.0362l-0.2474,-0.0362l-0.0571,-0.2434c5.86527,-1.37667 10.69703,-0.61213 14.4953,2.2936c3.45453,2.6428 5.1818,6.20607 5.1818,10.6898c0,6.6142 -3.1648,10.3767 -9.4944,11.2875z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M16.286,33.3646l5.0416,8.2427l-0.4265,0.2608l-5.0417,-8.2426z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M25.844,33.3646l5.0417,8.2427l-0.4266,0.2608l-5.0416,-8.2426z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M34.0532,33.3646l5.0417,8.2427l-0.4266,0.2608l-5.0416,-8.2426z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M42.2624,33.3646l5.0417,8.2427l-0.4266,0.2608l-5.0416,-8.2426z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_more">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V45 H63 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M51.42,36.43h0.88c1.69853,0 3.39947,-0.45193 5.1028,-1.3558c3.39153,-1.79973 5.08727,-4.9578 5.0872,-9.4742c0.00007,-4.28753 -1.65057,-7.69343 -4.9519,-10.2177c-3.64927,-2.79033 -8.31293,-3.51997 -13.991,-2.1889l-0.3581,0.0839l0.0537,-0.3638l-0.0537,0.3638l0.0537,-0.3638c0.3104,-2.10492 -0.084,-4.21259 -1.1832,-6.32301c-2.2016,-4.22699 -6.8581,-6.34049 -13.9695,-6.34049c-7.11447,0 -11.84853,2.31444 -14.2022,6.94331c-1.17773,2.31619 -1.64743,4.62989 -1.4091,6.94109l0.0245,0.2381l-0.2368,0.0348l0.2368,-0.0348l-0.2368,0.0348c-2.00707,0.2954 -4.01607,1.01983 -6.02701,2.1733c-3.99293,2.29033 -5.98939,5.56013 -5.98939,9.8094c0,4.19513 1.33251,7.12573 3.99752,8.7918c1.33113,0.83213 2.65863,1.2482 3.98248,1.2482h3.28v0.5h-3.28c-1.41947,0 -2.83531,-0.44143 -4.24752,-1.3243c-2.82165,-1.76393 -4.23248,-4.83583 -4.23248,-9.2157c0,-4.4424 2.0802,-7.85677 6.24061,-10.2431c2.06574,-1.18487 4.1334,-1.9296 6.20299,-2.2342l0.0364,0.2473l-0.0364,-0.2473l0.0364,0.2473l-0.2487,0.0256c-0.24833,-2.40887 0.23863,-4.81517 1.4609,-7.21891c2.44627,-4.81113 7.32887,-7.21669 14.6478,-7.21669c7.3136,0 12.11793,2.20317 14.413,6.60951c1.14907,2.20621 1.5605,4.4152 1.2343,6.62699l-0.2473,-0.0365l0.2473,0.0365l-0.2473,-0.0365l-0.0571,-0.2434c5.83153,-1.36707 10.63453,-0.60753 14.409,2.2786c3.43207,2.62427 5.1481,6.16253 5.1481,10.6148c0,4.71693 -1.78427,8.0222 -5.3528,9.9158c-1.7766,0.9428 -3.55567,1.4142 -5.3372,1.4142h-0.88z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M15.6314,33.1413l5.008,8.1877l-0.4266,0.2609l-5.0079,-8.1877z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M37.3055,36.5728l5.008,8.1877l-0.4265,0.2609l-5.008,-8.1877z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M24.7943,36.5728l5.008,8.1877l-0.4265,0.2609l-5.008,-8.1877z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M28.5329,32.4577l5.008,8.1877l-0.4265,0.2609l-5.008,-8.1877z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M41.4345,33.1413l5.008,8.1877l-0.4266,0.2609l-5.0079,-8.1877z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_intensive">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V45 H63 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M53.485,36.3225M53.485,36.3225c6.00333,-0.84833 9.005,-4.4225 9.005,-10.7225c0.00007,-4.28753 -1.65057,-7.69343 -4.9519,-10.2177c-3.64927,-2.79033 -8.31293,-3.51997 -13.991,-2.1889l-0.3581,0.0839l0.0537,-0.3638l-0.0537,0.3638l0.0537,-0.3638c0.3104,-2.10492 -0.084,-4.21259 -1.1832,-6.32301c-2.2016,-4.22699 -6.8581,-6.34049 -13.9695,-6.34049c-7.11447,0 -11.84853,2.31444 -14.2022,6.94331c-1.17773,2.31619 -1.64743,4.62989 -1.4091,6.94109l0.0245,0.2381l-0.2368,0.0348l0.2368,-0.0348l-0.2368,0.0348c-2.00707,0.2954 -4.01607,1.01983 -6.02701,2.1733c-3.99293,2.29033 -5.98939,5.56013 -5.98939,9.8094c0,4.19513 1.33251,7.12573 3.99752,8.7918c1.33113,0.83213 2.65863,1.2482 3.98248,1.2482h1.39v0.5h-1.39c-1.41947,0 -2.83531,-0.44143 -4.24752,-1.3243c-2.82165,-1.76393 -4.23248,-4.83583 -4.23248,-9.2157c0,-4.4424 2.0802,-7.85677 6.24061,-10.2431c2.06574,-1.18487 4.1334,-1.9296 6.20299,-2.2342l0.0364,0.2473l-0.0364,-0.2473l0.0364,0.2473l-0.2487,0.0256c-0.24833,-2.40887 0.23863,-4.81517 1.4609,-7.21891c2.44627,-4.81113 7.32887,-7.21669 14.6478,-7.21669c7.3136,0 12.11793,2.20317 14.413,6.60951c1.14907,2.20621 1.5605,4.4152 1.2343,6.62699l-0.2473,-0.0365l0.2473,0.0365l-0.2473,-0.0365l-0.0571,-0.2434c5.83153,-1.36707 10.63453,-0.60753 14.409,2.2786c3.43207,2.62427 5.1481,6.16253 5.1481,10.6148c-0.00007,6.5896 -3.14507,10.32877 -9.435,11.2175z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M16.1782,32.7847l5.008,8.1876l-0.4265,0.2609l-5.008,-8.1877z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M25.6725,32.7847l5.008,8.1876l-0.4266,0.2609l-5.008,-8.1877z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M33.8269,32.7847l5.008,8.1876l-0.4266,0.2609l-5.008,-8.1877z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M22.3899,36.5513l5.008,8.1876l-0.4265,0.2609l-5.008,-8.1877z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M31.8842,36.5513l5.008,8.1876l-0.4266,0.2609l-5.008,-8.1877z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M40.0386,36.5513l5.008,8.1876l-0.4266,0.2609l-5.008,-8.1877z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M41.9813,32.7847l5.008,8.1876l-0.4265,0.2609l-5.008,-8.1877z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+
+    <DrawingImage x:Key="Icon_Precipitation">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V11 H27 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Back_Button}" Geometry="M1.51 10.52L25.96 10.52C26.79 10.52 27.46 9.84 27.46 9.01L27.46 1.51C27.46 0.68 26.79 0 25.96 0L1.51 0C0.68 0 0 0.68 0 1.51L0 9.01C0 9.84 0.68 10.52 1.51 10.52Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M1.51,10.27h24.45c0.6959,0 1.25,-0.56412 1.25,-1.26v-7.5c0,-0.69036 -0.5596,-1.26 -1.25,-1.26h-24.45c-0.69588,0 -1.26,0.56412 -1.26,1.26v7.5c0,0.69588 0.56412,1.26 1.26,1.26zM1.51,10.77c-0.97202,0 -1.76,-0.78798 -1.76,-1.76v-7.5c0,-0.97202 0.78798,-1.76 1.76,-1.76h24.45c0.9665,0 1.75,0.7935 1.75,1.76v7.5c0,0.97202 -0.778,1.76 -1.75,1.76z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M1.23 10.52L12.5 10.52C13.18 10.52 13.73 9.97 13.73 9.29L13.73 1.23C13.73 0.55 13.18 0 12.5 0L1.23 0C0.55 0 0 0.55 0 1.23L0 9.29C0 9.97 0.55 10.52 1.23 10.52Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M1.23,10.27h11.27c0.5412,0 0.98,-0.43876 0.98,-0.98v-8.06c0,-0.54124 -0.4388,-0.98 -0.98,-0.98h-11.27c-0.54124,0 -0.98,0.43876 -0.98,0.98v8.06c0,0.54124 0.43876,0.98 0.98,0.98zM1.23,10.77c-0.81738,0 -1.48,-0.6626 -1.48,-1.48v-8.06c0,-0.81738 0.66262,-1.48 1.48,-1.48h11.27c0.8174,0 1.48,0.66262 1.48,1.48v8.06c0,0.8174 -0.6626,1.48 -1.48,1.48z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M2.69489,0v10.5188h-0.5v-10.5188z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M4.1684,0v10.5188h-0.5v-10.5188z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M5.64194,0v10.5188h-0.5v-10.5188z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M6.61545,10.2571v-9.99544h0.5v9.99544z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M8.58899,0v10.5188h-0.5v-10.5188z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M10.0625,0v10.5188h-0.5v-10.5188z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M11.536,0v10.5188h-0.5v-10.5188z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_Precipitation_Pressed">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V11 H27 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Back_Button}" Geometry="M1.51 10.52L25.96 10.52C26.79 10.52 27.46 9.84 27.46 9.01L27.46 1.51C27.46 0.68 26.79 0 25.96 0L1.51 0C0.68 0 0 0.68 0 1.51L0 9.01C0 9.84 0.68 10.52 1.51 10.52Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M1.51,10.27h24.45c0.6959,0 1.25,-0.56412 1.25,-1.26v-7.5c0,-0.69036 -0.5596,-1.26 -1.25,-1.26h-24.45c-0.69588,0 -1.26,0.56412 -1.26,1.26v7.5c0,0.69588 0.56412,1.26 1.26,1.26zM1.51,10.77c-0.97202,0 -1.76,-0.78798 -1.76,-1.76v-7.5c0,-0.97202 0.78798,-1.76 1.76,-1.76h24.45c0.9665,0 1.75,0.7935 1.75,1.76v7.5c0,0.97202 -0.778,1.76 -1.75,1.76z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M1.23 10.52L12.5 10.52C13.18 10.52 13.73 9.97 13.73 9.29L13.73 1.23C13.73 0.55 13.18 0 12.5 0L1.23 0C0.55 0 0 0.55 0 1.23L0 9.29C0 9.97 0.55 10.52 1.23 10.52Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M1.23,10.27h11.27c0.5412,0 0.98,-0.43876 0.98,-0.98v-8.06c0,-0.54124 -0.4388,-0.98 -0.98,-0.98h-11.27c-0.54124,0 -0.98,0.43876 -0.98,0.98v8.06c0,0.54124 0.43876,0.98 0.98,0.98zM1.23,10.77c-0.81738,0 -1.48,-0.6626 -1.48,-1.48v-8.06c0,-0.81738 0.66262,-1.48 1.48,-1.48h11.27c0.8174,0 1.48,0.66262 1.48,1.48v8.06c0,0.8174 -0.6626,1.48 -1.48,1.48z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M2.69489,0v10.5188h-0.5v-10.5188z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M4.1684,0v10.5188h-0.5v-10.5188z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M5.64194,0v10.5188h-0.5v-10.5188z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M6.61545,10.2571v-9.99544h0.5v9.99544z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M8.58899,0v10.5188h-0.5v-10.5188z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M10.0625,0v10.5188h-0.5v-10.5188z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M11.536,0v10.5188h-0.5v-10.5188z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!--#endregion Environment-Precipitation -->
+
+    <DrawingImage x:Key="Icon_toggle_off">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V14 H26 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Back_Button}" Geometry="M7.01 14.02L19.82 14.02C23.69 14.02 26.83 10.88 26.83 7.01L26.83 7.01C26.83 3.14 23.69 0 19.82 0L7.01 0C3.14 0 0 3.14 0 7.01L0 7.01C0 10.88 3.14 14.02 7.01 14.02Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M7.50933 12.9131L7.50933 12.9131C10.7693 12.9131 13.4093 10.2731 13.4093 7.01315L13.4093 7.01315C13.4093 3.75315 10.7693 1.10315 7.50933 1.10315L7.50933 1.10315C4.24933 1.10315 1.59933 3.75315 1.59933 7.01315L1.59933 7.01315C1.59933 10.2731 4.24933 12.9131 7.50933 12.9131Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M20.1325,4.69385c-1.2813,0 -2.32,1.0387 -2.32,2.32c0,1.2813 1.0387,2.31 2.32,2.31c1.2758,0 2.31,-1.03422 2.31,-2.31c0,-1.27578 -1.0342,-2.32 -2.31,-2.32zM20.1325,4.19385c1.5519,0 2.81,1.26808 2.81,2.82c0,1.55192 -1.2581,2.81 -2.81,2.81c-1.5574,0 -2.82,-1.25256 -2.82,-2.81c0,-1.55745 1.2626,-2.82 2.82,-2.82z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_toggle_on">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V14 H26 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M7.01 14.02L19.82 14.02C23.69 14.02 26.83 10.88 26.83 7.01L26.83 7.01C26.83 3.14 23.69 0 19.82 0L7.01 0C3.14 0 0 3.14 0 7.01L0 7.01C0 10.88 3.14 14.02 7.01 14.02Z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M19.448 12.9131L19.448 12.9131C22.708 12.9131 25.348 10.2731 25.348 7.01315L25.348 7.01315C25.348 3.75315 22.708 1.10315 19.448 1.10315L19.448 1.10315C16.188 1.10315 13.538 3.75315 13.538 7.01315L13.538 7.01315C13.538 10.2731 16.188 12.9131 19.448 12.9131Z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M3.98096,6.88525h4.87646v0.25h-4.87646z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_wind">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V23 H31 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M25.2434,20.5731h5.0771v0.5h-5.0771z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M23.2214,14.6367h7.0991v0.5h-7.0991z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,1.93488h17.3456v0.5h-17.3456z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,8.28577h6.3515v0.5h-6.3515z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,20.5731h6.3515v0.5h-6.3515z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M11.1995,8.29h16.53c2.10667,-0.00001 3.16,-1.35334 3.16,-4.06c0,-1.65161 -0.79053,-2.80849 -2.3716,-3.47066c-0.81073,-0.33956 -1.6202,-0.50934 -2.4284,-0.50934c-0.63613,0 -1.27577,0.19804 -1.9189,0.59412c-1.2874,0.79285 -1.9311,2.19481 -1.9311,4.20588h-0.5c0,-2.19726 0.72297,-3.74113 2.1689,-4.63162c0.72353,-0.44559 1.45057,-0.66838 2.1811,-0.66838c0.87513,0 1.749,0.18272 2.6216,0.54816c1.7856,0.74784 2.6784,2.05845 2.6784,3.93184c0,1.88767 -0.60713,3.2152 -1.8214,3.98259c-0.60913,0.38494 -1.222,0.57741 -1.8386,0.57741h-16.53z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0.00049,14.637h16.53001c0.61647,0 1.22923,0.192 1.8383,0.576c1.21447,0.76567 1.8217,2.09033 1.8217,3.974c0,1.87747 -0.89273,3.19097 -2.6782,3.9405c-0.87267,0.36633 -1.7466,0.5495 -2.6218,0.5495c-0.7306,0 -1.4577,-0.22327 -2.1813,-0.6698c-1.4458,-0.89213 -2.1687,-2.43887 -2.1687,-4.6402h0.5c0,2.01533 0.64377,3.42023 1.9313,4.2147c0.64307,0.39687 1.28263,0.5953 1.9187,0.5953c0.80807,0 1.61747,-0.17017 2.4282,-0.5105c1.5812,-0.6638 2.3718,-1.82363 2.3718,-3.4795c0,-1.69973 -0.52943,-2.88343 -1.5883,-3.5511c-0.5276,-0.3326 -1.0515,-0.4989 -1.5717,-0.4989h-16.53001z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_cloud">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V21 H41 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M31.27,15.15M31.27,15.15c0,-2.4058 -0.9857,-4.25486 -2.9571,-5.54717c-0.994,-0.65164 -1.98543,-1.0604 -2.9743,-1.22627l-0.228,-0.03826l0.0204,-0.23035l-0.0204,0.23035l0.0204,-0.23035c0.1162,-1.31193 -0.119,-2.62564 -0.7056,-3.94114c-1.16427,-2.61121 -3.50273,-3.91681 -7.0154,-3.91681c-3.51787,0 -5.81957,1.18959 -6.9051,3.56877c-0.5452,1.19501 -0.74085,2.38808 -0.58696,3.57919l0.0478,0.36995l-0.36035,-0.0964l0.36035,0.0964l-0.36035,-0.0964c-2.8062,-0.75076 -5.10773,-0.34061 -6.90458,1.23045c-1.63387,1.42856 -2.45081,3.36124 -2.45081,5.79804c0,2.55193 0.83318,4.33273 2.49955,5.3424c0.83352,0.50507 1.66367,0.7576 2.49045,0.7576h22.14c0.63667,0 1.2783,-0.23037 1.9249,-0.6911c1.31007,-0.93347 1.9651,-2.58643 1.9651,-4.9589zM31.77,15.15c0,2.54427 -0.72497,4.33297 -2.1749,5.3661c-0.7334,0.5226 -1.47177,0.7839 -2.2151,0.7839h-22.14c-0.91989,0 -1.8364,-0.27663 -2.74955,-0.8299c-1.82697,-1.107 -2.74045,-3.03037 -2.74045,-5.7701c0,-2.58813 0.8739,-4.64629 2.6217,-6.17446c1.93068,-1.68807 4.38498,-2.13376 7.36291,-1.33705l-0.06461,0.24151l0.06461,-0.24151l-0.06461,0.24151l-0.24794,0.03204c-0.1661,-1.28556 0.04325,-2.56916 0.62804,-3.85081c1.17447,-2.57415 3.62777,-3.86123 7.3599,-3.86123c3.729,0 6.2197,1.4044 7.4721,4.21319c0.62173,1.39451 0.8707,2.79079 0.7469,4.18886l-0.249,-0.02205l0.249,0.02205l-0.249,-0.02205l0.0414,-0.24655c1.05787,0.17746 2.1131,0.6112 3.1657,1.30122c2.12193,1.39102 3.1829,3.37946 3.1829,5.96533z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M33.716,16.707h3.2c0.5926,0 1.18913,-0.1934 1.7896,-0.5802c1.20693,-0.77747 1.8104,-2.15407 1.8104,-4.1298c0,-1.88614 -0.59383,-3.38137 -1.7815,-4.48569c-1.29853,-1.20744 -2.96187,-1.52208 -4.99,-0.94391l-0.3618,0.10315l0.0451,-0.37353l-0.0451,0.37353l0.0451,-0.37353c0.11127,-0.92221 -0.03137,-1.84608 -0.4279,-2.77159c-0.785,-1.8323 -2.44963,-2.74845 -4.9939,-2.74845c-1.04853,0 -1.9608,0.1759 -2.7368,0.52769l-0.2064,-0.45539c0.8416,-0.38154 1.82267,-0.5723 2.9432,-0.5723c2.76407,0 4.5819,1.01718 5.4535,3.05154c0.4318,1.00782 0.5867,2.01729 0.4647,3.02841l-0.2482,-0.02995l0.2482,0.02995l-0.2482,-0.02995l-0.0686,-0.24042c2.20887,-0.62969 4.0314,-0.27683 5.4676,1.05858c1.294,1.20322 1.941,2.82051 1.941,4.85186c0,2.15753 -0.67987,3.67423 -2.0396,4.5501c-0.68293,0.43993 -1.36973,0.6599 -2.0604,0.6599h-3.2z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon_cloud_Pressed">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V21 H41 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M31.27,15.15M31.27,15.15c0,-2.4058 -0.9857,-4.25486 -2.9571,-5.54717c-0.994,-0.65164 -1.98543,-1.0604 -2.9743,-1.22627l-0.228,-0.03826l0.0204,-0.23035l-0.0204,0.23035l0.0204,-0.23035c0.1162,-1.31193 -0.119,-2.62564 -0.7056,-3.94114c-1.16427,-2.61121 -3.50273,-3.91681 -7.0154,-3.91681c-3.51787,0 -5.81957,1.18959 -6.9051,3.56877c-0.5452,1.19501 -0.74085,2.38808 -0.58696,3.57919l0.0478,0.36995l-0.36035,-0.0964l0.36035,0.0964l-0.36035,-0.0964c-2.8062,-0.75076 -5.10773,-0.34061 -6.90458,1.23045c-1.63387,1.42856 -2.45081,3.36124 -2.45081,5.79804c0,2.55193 0.83318,4.33273 2.49955,5.3424c0.83352,0.50507 1.66367,0.7576 2.49045,0.7576h22.14c0.63667,0 1.2783,-0.23037 1.9249,-0.6911c1.31007,-0.93347 1.9651,-2.58643 1.9651,-4.9589zM31.77,15.15c0,2.54427 -0.72497,4.33297 -2.1749,5.3661c-0.7334,0.5226 -1.47177,0.7839 -2.2151,0.7839h-22.14c-0.91989,0 -1.8364,-0.27663 -2.74955,-0.8299c-1.82697,-1.107 -2.74045,-3.03037 -2.74045,-5.7701c0,-2.58813 0.8739,-4.64629 2.6217,-6.17446c1.93068,-1.68807 4.38498,-2.13376 7.36291,-1.33705l-0.06461,0.24151l0.06461,-0.24151l-0.06461,0.24151l-0.24794,0.03204c-0.1661,-1.28556 0.04325,-2.56916 0.62804,-3.85081c1.17447,-2.57415 3.62777,-3.86123 7.3599,-3.86123c3.729,0 6.2197,1.4044 7.4721,4.21319c0.62173,1.39451 0.8707,2.79079 0.7469,4.18886l-0.249,-0.02205l0.249,0.02205l-0.249,-0.02205l0.0414,-0.24655c1.05787,0.17746 2.1131,0.6112 3.1657,1.30122c2.12193,1.39102 3.1829,3.37946 3.1829,5.96533z" />
+                <GeometryDrawing Brush="{StaticResource Color_IsPressed}" Geometry="M33.716,16.707h3.2c0.5926,0 1.18913,-0.1934 1.7896,-0.5802c1.20693,-0.77747 1.8104,-2.15407 1.8104,-4.1298c0,-1.88614 -0.59383,-3.38137 -1.7815,-4.48569c-1.29853,-1.20744 -2.96187,-1.52208 -4.99,-0.94391l-0.3618,0.10315l0.0451,-0.37353l-0.0451,0.37353l0.0451,-0.37353c0.11127,-0.92221 -0.03137,-1.84608 -0.4279,-2.77159c-0.785,-1.8323 -2.44963,-2.74845 -4.9939,-2.74845c-1.04853,0 -1.9608,0.1759 -2.7368,0.52769l-0.2064,-0.45539c0.8416,-0.38154 1.82267,-0.5723 2.9432,-0.5723c2.76407,0 4.5819,1.01718 5.4535,3.05154c0.4318,1.00782 0.5867,2.01729 0.4647,3.02841l-0.2482,-0.02995l0.2482,0.02995l-0.2482,-0.02995l-0.0686,-0.24042c2.20887,-0.62969 4.0314,-0.27683 5.4676,1.05858c1.294,1.20322 1.941,2.82051 1.941,4.85186c0,2.15753 -0.67987,3.67423 -2.0396,4.5501c-0.68293,0.43993 -1.36973,0.6599 -2.0604,0.6599h-3.2z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+
+    <DrawingImage x:Key="Icon_clear_toggle_off">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V122 H53 V0 H0 Z">
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M25.591 60.141L25.591 60.141C29.391 60.141 32.481 57.051 32.481 53.251L32.481 27.561C32.481 23.761 29.391 20.671 25.591 20.671L25.591 20.671C21.791 20.671 18.701 23.761 18.701 27.561L18.701 53.251C18.701 57.051 21.791 60.141 25.591 60.141Z" />
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M25.591,59.641c3.5291,0 6.39,-2.8609 6.39,-6.39v-25.69c0,-3.5291 -2.8609,-6.39 -6.39,-6.39c-3.529,0 -6.39,2.8609 -6.39,6.39v25.69c0,3.5291 2.861,6.39 6.39,6.39zM25.591,60.641c-4.0813,0 -7.39,-3.3087 -7.39,-7.39v-25.69c0,-4.0814 3.3087,-7.39 7.39,-7.39c4.0814,0 7.39,3.3086 7.39,7.39v25.69c0,4.0813 -3.3086,7.39 -7.39,7.39z" />
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M0.19067,14.6051zM6.66067,40.1051l-6.47,-25.5h24.51003l-6.47,25.5c0,3.19 -2.59,5.79 -5.79,5.79c-3.19003,0 -5.78003,-2.6 -5.78003,-5.79z" />
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M12.45 0C5.57 0 0 5.57 0 12.45C0 19.32 5.57 24.89 12.45 24.89C19.32 24.89 24.89 19.32 24.89 12.45C24.89 5.57 19.32 0 12.45 0Z" />
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M11.6763,0.82422M11.6763,0.82422c-7.11753,4.88998 -10.6763,11.64857 -10.6763,20.27578c0,8.6166 3.55903,15.3754 10.6771,20.2764l-1.1342,1.6472c-7.69527,-5.29833 -11.5429,-12.6062 -11.5429,-21.9236c0,-9.32885 3.8479,-16.63693 11.5437,-21.92422z" />
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M39.5089,41.3764M39.5089,41.3764c7.11807,-4.901 10.6771,-11.6598 10.6771,-20.2764c0,-8.62723 -3.55877,-15.38582 -10.6763,-20.27578l1.1326,-1.64844c7.6958,5.28729 11.5437,12.59537 11.5437,21.92422c0,9.3174 -3.84763,16.62527 -11.5429,21.9236z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_bar_title">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V9 H9 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,4.09377h9.1875v0.25h-9.1875z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,-0.125h9.1875v0.25h-9.1875z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,8.68752h9.1875v0.25h-9.1875z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_cloud_bar">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V5 H12 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,-0.125h12.7969v0.25h-12.7969z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,2.26562h12.7969v0.25h-12.7969z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,4.79688h12.7969v0.25h-12.7969z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_cloud_bar_Pressed">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V5 H12 V0 H0 Z">
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M0,-0.125h12.7969v0.25h-12.7969z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M0,2.26562h12.7969v0.25h-12.7969z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M0,4.79688h12.7969v0.25h-12.7969z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Icon_Slider_Thumb_1">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0, 0 V7 H19 V0 H0 Z">
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M15.9103 -0.00243521L3.30033 -0.00243521C1.48033 -0.00243521 0.000328064 1.47756 0.000328064 3.29756L0.000328064 3.29756C0.000328064 5.11756 1.48033 6.59756 3.30033 6.59756L15.9103 6.59756C17.7303 6.59756 19.2103 5.11756 19.2103 3.29756L19.2103 3.29756C19.2103 1.47756 17.7303 -0.00243521 15.9103 -0.00243521Z" />
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M15.9103,0.37257h-12.60997c-1.61544,0 -2.925,1.30956 -2.925,2.925c0,1.61544 1.30956,2.925 2.925,2.925h12.60997c1.6155,0 2.925,-1.30956 2.925,-2.925c0,-1.61543 -1.3095,-2.92499 -2.925,-2.92499zM15.9103,-0.37743c2.0297,0 3.675,1.64536 3.675,3.675c0,2.02965 -1.6453,3.675 -3.675,3.675h-12.60997c-2.02965,0 -3.675,-1.64535 -3.675,-3.675c0,-2.02964 1.64535,-3.67499 3.675,-3.67499z" />
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M9.98022,0.16415v6.26932h-0.75v-6.26932z" />
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M13.0944,0.16415v6.26932h-0.75v-6.26932z" />
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M16.2086,0.16415v6.26932h-0.75v-6.26932z" />
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M6.86072,0.16415v6.26932h-0.75v-6.26932z" />
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="M3.74121,0.16415v6.26932h-0.75v-6.26932z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <!--#endregion Environment-->
+</ResourceDictionary>

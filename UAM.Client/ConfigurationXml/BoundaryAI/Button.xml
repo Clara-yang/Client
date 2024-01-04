@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Buttons>
+  <ButtonModel>
+    <ButtonName>simFreezeBtn</ButtonName>
+    <Parameter>simFreeze</Parameter>
+    <Text>模 拟 冻 结</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>flightFreezeBtn</ButtonName>
+    <Parameter>flightFreeze</Parameter>
+    <Text>飞 行 冻 结</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>locationFreezeBtn</ButtonName>
+    <Parameter>locationFreeze</Parameter>
+    <Text>位 置 冻 结</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>highlyFreezeBtn</ButtonName>
+    <Parameter>highlyFreeze</Parameter>
+    <Text>高 度 冻 结</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>powerFreezeBtn</ButtonName>
+    <Parameter>powerFreeze</Parameter>
+    <Text>电 源 冻 结</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>powerResetBtn</ButtonName>
+    <Parameter>powerReset</Parameter>
+    <Text>电 源 重 置</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>powerOnBtn</ButtonName>
+    <Parameter>powerOn</Parameter>
+    <Text>启 动 电 源</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>enginOnBtn</ButtonName>
+    <Parameter>engineOn</Parameter>
+    <Text>启 动 引 擎</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>crashBtn</ButtonName>
+    <Parameter>crashOverride</Parameter>
+    <Text>坠 毁 抑 制</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>cleanCrashBtn</ButtonName>
+    <Parameter>cleanCrash</Parameter>
+    <Text>清 除 坠 毁</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>hostConnectBtn</ButtonName>
+    <Parameter>hostConnect</Parameter>
+    <Text>连 接 主 机</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>visualConnectBtn</ButtonName>
+    <Parameter>visualConnect</Parameter>
+    <Text>连 接 视 景</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>motionPreBtn</ButtonName>
+    <Parameter>motionPre</Parameter>
+    <Text>运 动 预 位</Text>
+    <Position>Top</Position>
+    <Visible>false</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>motionFreezeBtn</ButtonName>
+    <Parameter>motionFreeze</Parameter>
+    <Text>运 动 冻 结</Text>
+    <Position>Top</Position>
+    <Visible>false</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>cockpitBtn</ButtonName>
+    <Parameter>cockpitView</Parameter>
+    <Text>驾 驶 员 视 角</Text>
+    <Position>Bottom</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>thirdBtn</ButtonName>
+    <Parameter>thirdView</Parameter>
+    <Text>第 三 人 称 视 角</Text>
+    <Position>Bottom</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>flyPlanBtn</ButtonName>
+    <Parameter>newFlyPlans</Parameter>
+    <Text>飞 行 计 划</Text>
+    <Position>Bottom</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>apBtn</ButtonName>
+    <Parameter>APActive</Parameter>
+    <Text>A P</Text>
+    <Position>Bottom</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>expectBtn</ButtonName>
+    <Parameter></Parameter>
+    <Text>预 期 流 量</Text>
+    <Position>Bottom</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>unexpectBtn</ButtonName>
+    <Parameter></Parameter>
+    <Text>未 预 期 流 量</Text>
+    <Position>Bottom</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+</Buttons>

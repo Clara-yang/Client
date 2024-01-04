@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Malfunctions>
+  <MalfunctionModel>
+    <ATAChapterID>34</ATAChapterID>
+    <ATAChapterName>NAVIGATION</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>VOR Antenna Fail</MalfunctionName>
+    <ATADescription>https://translate.google.com/?hl=zh-CN</ATADescription>
+    <MalfunctionDescription>https://translate.google.com/?hl=zh-CN</MalfunctionDescription>
+    <MalMsg></MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>34</ATAChapterID>
+    <ATAChapterName>wefsaf</ATAChapterName>
+    <MalfunctionID>2</MalfunctionID>
+    <MalfunctionName>VOR gdgrrrtrtr Fail</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://baidu.com</MalfunctionDescription>
+    <MalMsg></MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>Lock 0</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>2</MalfunctionID>
+    <MalfunctionName>Lock 1</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>3</MalfunctionID>
+    <MalfunctionName>Lock 2</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>4</MalfunctionID>
+    <MalfunctionName>Lock 3</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>5</MalfunctionID>
+    <MalfunctionName>Lock 4</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>6</MalfunctionID>
+    <MalfunctionName>Lock 5</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>7</MalfunctionID>
+    <MalfunctionName>Lock 6</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>8</MalfunctionID>
+    <MalfunctionName>Lock 7</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>9</MalfunctionID>
+    <MalfunctionName>Lock 8</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>10</MalfunctionID>
+    <MalfunctionName>Lock 9</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>63</ATAChapterID>
+    <ATAChapterName>马达故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>LossEffectiveness 0</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
+    <MalMsg>LossEffectiveness:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>63</ATAChapterID>
+    <ATAChapterName>马达故障</ATAChapterName>
+    <MalfunctionID>2</MalfunctionID>
+    <MalfunctionName>LossEffectiveness 1</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
+    <MalMsg>LossEffectiveness:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>63</ATAChapterID>
+    <ATAChapterName>马达故障</ATAChapterName>
+    <MalfunctionID>3</MalfunctionID>
+    <MalfunctionName>LossEffectiveness 2</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
+    <MalMsg>LossEffectiveness:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>63</ATAChapterID>
+    <ATAChapterName>马达故障</ATAChapterName>
+    <MalfunctionID>4</MalfunctionID>
+    <MalfunctionName>LossEffectiveness 3</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
+    <MalMsg>LossEffectiveness:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>63</ATAChapterID>
+    <ATAChapterName>马达故障</ATAChapterName>
+    <MalfunctionID>5</MalfunctionID>
+    <MalfunctionName>LossEffectiveness 4</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
+    <MalMsg>LossEffectiveness:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>63</ATAChapterID>
+    <ATAChapterName>马达故障</ATAChapterName>
+    <MalfunctionID>6</MalfunctionID>
+    <MalfunctionName>LossEffectiveness 5</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
+    <MalMsg>LossEffectiveness:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>63</ATAChapterID>
+    <ATAChapterName>马达故障</ATAChapterName>
+    <MalfunctionID>7</MalfunctionID>
+    <MalfunctionName>LossEffectiveness 6</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
+    <MalMsg>LossEffectiveness:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>63</ATAChapterID>
+    <ATAChapterName>马达故障</ATAChapterName>
+    <MalfunctionID>8</MalfunctionID>
+    <MalfunctionName>LossEffectiveness 7</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
+    <MalMsg>LossEffectiveness:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>63</ATAChapterID>
+    <ATAChapterName>马达故障</ATAChapterName>
+    <MalfunctionID>9</MalfunctionID>
+    <MalfunctionName>LossEffectiveness 8</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
+    <MalMsg>LossEffectiveness:</MalMsg>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>63</ATAChapterID>
+    <ATAChapterName>马达故障</ATAChapterName>
+    <MalfunctionID>10</MalfunctionID>
+    <MalfunctionName>LossEffectiveness 9</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
+    <MalMsg>LossEffectiveness:</MalMsg>
+  </MalfunctionModel>
+</Malfunctions>

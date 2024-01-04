@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Joysticks>
+  <StickModel>
+    <Name>罗技操纵杆</Name>
+    <Id>1</Id>
+    <Default>false</Default>
+    <Visible>false</Visible>
+  </StickModel>
+  <StickModel>
+    <Name>安胜操纵杆</Name>
+    <Id>2</Id>
+    <Default>false</Default>
+    <Visible>true</Visible>
+  </StickModel>
+  <StickModel>
+    <Name>VOLANT操纵杆</Name>
+    <Id>3</Id>
+    <Default>false</Default>
+    <Visible>true</Visible>
+  </StickModel>
+  <StickModel>
+    <Name>HELICOPTER操纵杆</Name>
+    <Id>4</Id>
+    <Default>false</Default>
+    <Visible>true</Visible>
+  </StickModel>
+  <StickModel>
+    <Name>HELICOPTER Accel操纵杆</Name>
+    <Id>5</Id>
+    <Default>false</Default>
+    <Visible>true</Visible>
+  </StickModel>
+  <StickModel>
+    <Name>Vertax操纵杆</Name>
+    <Id>6</Id>
+    <Default>false</Default>
+    <Visible>true</Visible>
+  </StickModel>
+  <StickModel>
+    <Name>VKB Sim操纵杆</Name>
+    <Id>7</Id>
+    <Default>false</Default>
+    <Visible>true</Visible>
+  </StickModel>
+  <StickModel>
+    <Name>虚拟操纵杆</Name>
+    <Id>8</Id>
+    <Default>true</Default>
+    <Visible>true</Visible>
+  </StickModel>
+</Joysticks>

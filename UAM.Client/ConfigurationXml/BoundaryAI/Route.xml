@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Routes>
+  <RouteModel>
+    <RouteId>1</RouteId>
+    <RouteName>Tourism</RouteName>
+    <DepartureId>66</DepartureId>
+    <DepartureCity>ShangHai</DepartureCity>
+    <DepartureVertiport>The Peninsula Hotel Shanghai</DepartureVertiport>
+    <DeparturePad>P1</DeparturePad> 
+    <DestinationId>67</DestinationId>
+    <DestinationCity>ShangHai</DestinationCity>
+    <DestinationVertiport>Longhua Airport Heliport</DestinationVertiport>
+    <DestinationPad>P1</DestinationPad> 
+    <Distance>33 km</Distance>
+    <Interval>17 min</Interval>  
+    <IsRouteDefault>true</IsRouteDefault> 
+    <Description>TourismBJDescription</Description>
+    <Visible>true</Visible>
+</RouteModel>
+  <RouteModel>
+    <RouteId>2</RouteId>
+    <RouteName>Commute</RouteName>
+    <DepartureId>64</DepartureId>
+    <DepartureCity>Hongkong</DepartureCity>
+    <DepartureVertiport>Shun Tak Centre</DepartureVertiport>
+    <DeparturePad>P1</DeparturePad>
+    <DestinationId>65</DestinationId>
+    <DestinationCity>Macao</DestinationCity>
+    <DestinationVertiport>Outer Harbour Ferry Terminal</DestinationVertiport>
+    <DestinationPad>P1</DestinationPad>
+    <Distance>28 km</Distance>
+    <Interval>10 min</Interval>
+    <IsRouteDefault>false</IsRouteDefault>
+    <Description>CommuteBJDescription</Description>
+    <Visible>true</Visible>
+  </RouteModel>
+</Routes>

@@ -1,0 +1,254 @@
+﻿<Page x:Class="UAM.Client.Views.MapPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UAM.Client.Views"
+      xmlns:cef="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+      Background="{StaticResource PrimaryHueMidBrush}"
+      Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
+      xmlns:uc="clr-namespace:UAM.Client.Views"
+      FontSize="15"
+      FontFamily="微软雅黑" 
+      mc:Ignorable="d">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Right" Width="338">
+            <DockPanel>
+                <Border DockPanel.Dock="Top"
+                        Background="{StaticResource PrimaryHueDarkBrush}"
+                        CornerRadius="15">
+                    <StackPanel Orientation="Vertical">
+                        <DockPanel Background="{StaticResource SecondaryAccentBrush}" Margin="80,10">
+                            <TextBlock Text="当前场景：" VerticalAlignment="Center" DockPanel.Dock="Left" FontWeight="Bold" Margin="5,0"/>
+                            <TextBlock Text="{Binding RouteName}"/>
+                        </DockPanel>
+                        <StackPanel  Margin="5">
+                            <DockPanel Background="{StaticResource PrimaryHueMidBrush}" Opacity="0.5" Margin="10,2">
+                                <TextBlock Text="出发：" VerticalAlignment="Center" DockPanel.Dock="Left" FontWeight="Bold" Margin="5,0"/>
+                                <TextBlock Text="{Binding Departure}"/>
+                            </DockPanel>
+                            <DockPanel Background="{StaticResource PrimaryHueMidBrush}" Opacity="0.8" Margin="10,2">
+                                <TextBlock Text="From：" VerticalAlignment="Center" DockPanel.Dock="Left" FontWeight="Bold" Margin="5,0"/>
+                                <TextBlock Text="{Binding DeparturePad}"/>
+                            </DockPanel>
+                        </StackPanel>
+                        <StackPanel  Margin="5">
+                            <DockPanel Background="{StaticResource PrimaryHueMidBrush}" Opacity="0.5" Margin="10,2">
+                                <TextBlock Text="到达：" VerticalAlignment="Center" DockPanel.Dock="Left" FontWeight="Bold" Margin="5,0"/>
+                                <TextBlock Text="{Binding Destination}"/>
+                            </DockPanel>
+                            <DockPanel Background="{StaticResource PrimaryHueMidBrush}" Opacity="0.8" Margin="10,2">
+                                <TextBlock Text="To：" VerticalAlignment="Center" DockPanel.Dock="Left" FontWeight="Bold" Margin="5,0"/>
+                                <TextBlock Text="{Binding DestinationPad}"/>
+                            </DockPanel>
+                        </StackPanel>
+                        <Image Source="/Images/picture/AS02.png" Stretch="Fill"/>
+                        <DockPanel Margin="15,5">
+                            <Button Content="更换配置" DockPanel.Dock="Right" Command="{Binding ChangeAirCommand}" VerticalAlignment="Center" />
+                            <Label Content="当前机型：" DockPanel.Dock="Left" FontWeight="Bold" VerticalAlignment="Center"/> 
+                            <Label Content="{Binding Aircraft}" BorderThickness="0" />
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <Border DockPanel.Dock="Bottom" 
+                        Background="{StaticResource PrimaryHueDarkBrush}" 
+                        CornerRadius="10">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="AOE指令" Margin="10,0" FontSize="15"/>
+                        <StackPanel Orientation="Horizontal" >
+                            <Button Content="许可飞行" Style="{StaticResource  GeneralButton}"/>
+                            <Button Content="拒绝飞行" Style="{StaticResource  GeneralButton}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border Background="{StaticResource PrimaryHueDarkBrush}" 
+                        BorderThickness="0"
+                        CornerRadius="10"
+                        Margin="0,5">
+                    <DockPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Image Source="/Images/picture/location.png" Width="25"/>
+                            <Label Content="定位" FontSize="19" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Margin="3,0">
+                            <Button Background="{StaticResource PrimaryHueMidBrush}" Margin="10" Height="88" Width="147">
+                                <Image Source="/Images/picture/Takeoff.png" Stretch="Fill" />
+                            </Button>
+                            <Button Background="{StaticResource PrimaryHueMidBrush}" Margin="10" Height="88" Width="147">
+                                <Image Source="/Images/picture/Landing.png" Stretch="Fill" />
+                            </Button>
+                        </StackPanel>
+                        <DockPanel>
+                            <Border DockPanel.Dock="Top" Background="{StaticResource PrimaryHueMidBrush}" 
+                                    CornerRadius="5" Margin="3">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                                    <Button Content="3" Background="{StaticResource SecondaryAccentBrush}" 
+                                         VerticalAlignment="Center" 
+                                         HorizontalContentAlignment="Center" 
+                                         Command="{Binding ChangePositionCommand}"
+                                         CommandParameter="3"
+                                         Width="40" 
+                                         Height="40" 
+                                         BorderThickness="0" />
+                                    <Image Source="/Images/picture/Right.png" Width="50"  Margin="10,0" Stretch="Fill"/>
+                                    <Button Content="4" Background="{StaticResource SecondaryAccentBrush}" 
+                                         VerticalAlignment="Center" 
+                                         HorizontalContentAlignment="Center"
+                                         Command="{Binding ChangePositionCommand}"
+                                         CommandParameter="4"
+                                         Width="40" 
+                                         Height="40" 
+                                         BorderThickness="0" />
+                                    <Image Source="/Images/picture/Right.png" Width="50"  Margin="10,0" Stretch="Fill"/>
+                                    <Button Content="5" Background="{StaticResource SecondaryAccentBrush}" 
+                                         VerticalAlignment="Center" 
+                                         HorizontalContentAlignment="Center"
+                                         Command="{Binding ChangePositionCommand}"
+                                         CommandParameter="5"
+                                         Width="40" 
+                                         Height="40" 
+                                         BorderThickness="0" />
+                                </StackPanel>
+                            </Border>
+                            <Border DockPanel.Dock="Left" Background="{StaticResource PrimaryHueMidBrush}" 
+                                     CornerRadius="5" Margin="3">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Source="/Images/picture/Up.png" 
+                                           Height="43" Width="30" 
+                                           Margin="0,20"
+                                           HorizontalAlignment="Right"
+                                           Stretch="Fill">
+                                        <Image.RenderTransform>
+                                            <RotateTransform Angle="25"/>
+                                        </Image.RenderTransform>
+                                    </Image>
+                                    <Button Content="2"  
+                                         Background="{StaticResource SecondaryAccentBrush}" 
+                                         VerticalAlignment="Center" 
+                                         HorizontalContentAlignment="Center" 
+                                         BorderThickness="0"
+                                         Command="{Binding ChangePositionCommand}"
+                                         CommandParameter="2"
+                                         Width="40" 
+                                         Height="40" 
+                                         Margin="2"/>
+                                    <Image Source="/Images/picture/Up.png" 
+                                           Height="43" Width="30" 
+                                           Margin="0,20"
+                                           Stretch="Fill"/>
+                                    <Button Content="1" 
+                                         Background="{StaticResource SecondaryAccentBrush}"
+                                         VerticalAlignment="Center" 
+                                         HorizontalContentAlignment="Center" 
+                                         BorderThickness="0"
+                                         Command="{Binding ChangePositionCommand}"
+                                         CommandParameter="1"
+                                         Width="40" 
+                                         Height="40" 
+                                         Margin="2"/>
+                                </StackPanel>
+                            </Border>
+                            <Border DockPanel.Dock="Right" Background="{StaticResource PrimaryHueMidBrush}" 
+                                    CornerRadius="5" Margin="3">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Source="/Images/picture/Down.png" 
+                                           Height="43" Width="30" 
+                                           Margin="0,20" 
+                                           HorizontalAlignment="Left"
+                                           Stretch="Fill">
+                                        <Image.RenderTransform>
+                                            <RotateTransform Angle="-25"/>
+                                        </Image.RenderTransform>
+                                    </Image>
+                                    <Button Content="6" Background="{StaticResource SecondaryAccentBrush}" 
+                                         VerticalAlignment="Center" 
+                                         HorizontalContentAlignment="Center" 
+                                         Command="{Binding ChangePositionCommand}"
+                                         CommandParameter="6"
+                                         Width="40" 
+                                         Height="40" 
+                                         BorderThickness="0"
+                                         Margin="2"/>
+                                    <Image Source="/Images/picture/Down.png" Height="43" Width="30" Margin="0,20" Stretch="Fill"/>
+                                    <Button Content="7" Background="{StaticResource SecondaryAccentBrush}" 
+                                         VerticalAlignment="Center" 
+                                         HorizontalContentAlignment="Center"
+                                         Command="{Binding ChangePositionCommand}"
+                                         CommandParameter="7"
+                                         Width="40" 
+                                         Height="40" 
+                                         BorderThickness="0"
+                                         Margin="2"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Background="{StaticResource PrimaryHueMidBrush}" 
+                                    CornerRadius="15" Margin="5">
+                                <Viewbox Margin="5">
+                                    <Canvas Name="svg20" Width="132" Height="150">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform X="0" Y="0"/>
+                                        </Canvas.RenderTransform>
+                                        <Canvas.Resources/>
+                                        <!--Unknown tag: sodipodi:namedview-->
+                                        <Canvas Name="g18">
+                                            <Canvas.RenderTransform>
+                                                <TransformGroup>
+                                                    <RotateTransform Angle="0"/>
+                                                    <TranslateTransform X="2.5" Y="2.88677978515625"/>
+                                                </TransformGroup>
+                                            </Canvas.RenderTransform>
+                                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="路径37" Fill="#FFFFFFFF" Opacity="1">
+                                                <Path.Data>
+                                                    <PathGeometry Figures="M0 36.7zM0 110.09v-73.39l63.56 -36.7l63.57 36.7v73.39l-63.57 36.7z" FillRule="EvenOdd"/>
+                                                </Path.Data>
+                                            </Path>
+                                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path3" Fill="#FF333333">
+                                                <Path.Data>
+                                                    <PathGeometry Figures="M62.3101 144.625l63.5699 -36.7l1.25 2.165h-2.5v-73.39h2.5l-1.25 2.1651l-63.5699 -36.7l1.2499 -2.1651l1.2501 2.16501l-63.56001 36.69999l-1.25009 -2.165h2.5v73.39h-2.5l1.25009 -2.165l63.56001 36.7l-1.2501 2.165zM63.5599 149.677l-66.0599 -38.144v-76.2763l66.0599 -38.14347l66.0701 38.14337v76.2764l-64.8201 37.422z" FillRule="NonZero"/>
+                                                </Path.Data>
+                                            </Path>
+                                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="Pointer" Fill="#FF4D4D4D" Opacity="1">
+                                                <Path.Data>
+                                                    <PathGeometry Figures="M59.2152 81.7476l3.9 -49.64c0.04 -0.48 0.74 -0.48 0.78 0l4.27 49.64l-3.27 -2.26c-0.66 -0.52 -1.59 -0.55 -2.28 -0.07zM66.2577 75.8854c0.26 -1.69 -1.18 -3.13 -2.87 -2.87c-1.06 0.16 -1.92 1.02 -2.08 2.08c-0.26 1.69 1.18 3.13 2.87 2.87c1.05 -0.16 1.92 -1.03 2.08 -2.08z" FillRule="EvenOdd"/>
+                                                </Path.Data>
+                                            </Path>
+                                            <Canvas Name="g10">
+                                                <Canvas.RenderTransform>
+                                                    <TransformGroup>
+                                                        <RotateTransform Angle="0"/>
+                                                        <TranslateTransform X="59.4671630859375" Y="10.832763671875"/>
+                                                    </TransformGroup>
+                                                </Canvas.RenderTransform>
+                                                <TextBlock xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" FontSize="12" Name="text8">
+                                                       <Span Foreground="#FF000000" FontSize="15" FontWeight="normal" FontFamily="Roboto-Regular">0°</Span>
+                                                </TextBlock>
+                                            </Canvas>
+                                            <Canvas Name="g16">
+                                                <Canvas.RenderTransform>
+                                                    <TransformGroup>
+                                                        <RotateTransform Angle="0"/>
+                                                        <TranslateTransform X="51.84716796875" Y="116.74273681640625"/>
+                                                    </TransformGroup>
+                                                </Canvas.RenderTransform>
+                                                <TextBlock xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" FontSize="12" Name="text14">
+                                                      <Span Foreground="#FF000000" FontSize="15" FontWeight="normal" FontFamily="Roboto-Regular" >180°</Span>
+                                                </TextBlock>
+                                            </Canvas>
+                                        </Canvas>
+                                    </Canvas>
+                                </Viewbox>
+                            </Border>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+        </StackPanel>
+        <Border DockPanel.Dock="Bottom" CornerRadius="10" Background="{StaticResource PrimaryHueDarkBrush}">
+            <ListBox ItemsSource="{Binding BtnCollection}"
+                     Style="{StaticResource ListBoxBtnStyle}"
+                     Margin="15,0"
+                     ItemContainerStyle="{StaticResource BottomRowButton}"/>
+        </Border>
+        <cef:ChromiumWebBrowser x:Name="mapPanel" Address="{Binding Url}"/>
+    </DockPanel>
+</Page>

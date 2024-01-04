@@ -1,0 +1,57 @@
+﻿<Page x:Class="UAM.Client.Views.Malfunction"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UAM.Client.Views"
+      xmlns:cuc="clr-namespace:UAM.Client.UILibrary" 
+      xmlns:cov="clr-namespace:UAM.Client.Converters"
+      xmlns:cef="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+      Background="{StaticResource PrimaryHueMidBrush}" 
+      Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
+      FontFamily="微软雅黑" 
+      FontSize="18"
+      mc:Ignorable="d"
+      Title="Malfunction">
+    <Page.Resources>
+        <cov:ValueToBoolConverter x:Key="Value2BoolCov"/>
+    </Page.Resources>
+    <DockPanel>
+        <cuc:CustomGroupBox Header="ATA章节"
+                            DockPanel.Dock="Left"
+                            Style="{StaticResource GroupBoxStyle}"
+                            Background="{StaticResource PrimaryHueDarkBrush}"
+                            Width="200"
+                            Margin="3,3,0,0">
+            <ListBox Name="lbATA"
+                     ItemsSource="{Binding Chapters}" 
+                     ScrollViewer.VerticalScrollBarVisibility="Visible"
+                     ItemContainerStyle="{StaticResource ChapterItemSytle}"/>
+        </cuc:CustomGroupBox>
+        <cuc:CustomGroupBox Header="说明"
+                            DockPanel.Dock="Right"
+                            Style="{StaticResource GroupBoxStyle}"
+                            Background="{StaticResource PrimaryHueDarkBrush}"
+                            Width="880"
+                            Margin="3,3,3,0">
+            <cef:ChromiumWebBrowser x:Name="mapPanel"
+                                    Margin="5"
+                                    Address="{Binding Description}"/>
+        </cuc:CustomGroupBox>
+        <cuc:CustomGroupBox Header="故障列表" 
+                            Style="{StaticResource GroupBoxStyle}"
+                            Background="{StaticResource PrimaryHueDarkBrush}" 
+                            Margin="0,3,0,0">
+            <ListBox x:Name="lbMal"
+                     ScrollViewer.VerticalScrollBarVisibility="Visible"
+                     ItemsSource="{Binding Malfunctions}"
+                     ItemContainerStyle="{StaticResource MalfunctionItemSytle}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </cuc:CustomGroupBox>
+    </DockPanel>
+</Page>

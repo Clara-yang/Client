@@ -1,0 +1,206 @@
+﻿<Window x:Class="UAM.Client.Views.CustomGraphics.NumricKeypad"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UAM.Client.Views.CustomGraphics"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Title="NumricKeypad"
+        Width="400"
+        Height="380"
+        Foreground="White"
+        Background="#666666"
+        d:DesignHeight="450"
+        d:DesignWidth="800">
+    <Border>
+        <AdornerDecorator>
+            <Grid>
+                <Border x:Name="highlightborder" />
+                <Border x:Name="mainborder">
+                    <Grid ButtonBase.Click="Grid_Click">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="2*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            x:Name="titlelbl"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            HorizontalAlignment="Center"
+                            Content="Title"
+                            FontWeight="Bold" />
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Label Content="Enter Value(" />
+                                <Label
+                                    x:Name="minlbl"
+                                    Content="0"
+                                    FontWeight="Bold" />
+                                <Label Content="to" />
+                                <Label
+                                    x:Name="maxlbl"
+                                    Content="100"
+                                    FontWeight="Bold" />
+                                <Label Content=")" />
+                                <Label
+                                    x:Name="unitlbl"
+                                    Content="(kts)"
+                                    FontWeight="Bold" />
+                            </StackPanel>
+                            <TextBox
+                                x:Name="inputtxttb"
+                                Grid.Row="1"
+                                input:InputMethod.IsInputMethodEnabled="False"
+                                FontSize="18"
+                                PreviewTextInput="tb_PreviewTextInput"
+                                Text="" />
+                            <Label
+                                x:Name="outofrangelbl"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Content="Out of Range"
+                                Foreground="Red"
+                                Visibility="Hidden" />
+                        </Grid>
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Height="67"
+                            Content="7"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Height="67"
+                            Content="4"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Height="67"
+                            Content="1"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Height="67"
+                            Content="8"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Height="67"
+                            Content="5"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Height="67"
+                            Content="2"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Height="67"
+                            Content="9"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            Height="67"
+                            Content="6"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            Grid.Row="4"
+                            Grid.Column="2"
+                            Height="67"
+                            Content="3"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Height="67"
+                            Content="+/-"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Height="67"
+                            Content="0"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            x:Name="backbtn"
+                            Grid.Row="5"
+                            Grid.Column="2"
+                            Height="67"
+                            Content="."
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="3"
+                            Height="67"
+                            Content="Back"
+                            FontSize="20"
+                            FontWeight="Normal" />
+                        <Button
+                            Grid.Row="3"
+                            Grid.Column="3"
+                            Height="67"
+                            Content="Clear"
+                            FontSize="20"
+                            FontWeight="Normal" />
+                        <Button
+                            Grid.Row="4"
+                            Grid.Column="3"
+                            Height="67"
+                            Content="Enter"
+                            FontSize="20"
+                            FontWeight="Normal" />
+                        <Button
+                            Grid.Row="5"
+                            Grid.Column="3"
+                            Height="67"
+                            Content="Cancel"
+                            FontSize="20"
+                            FontWeight="Normal" />
+                    </Grid>
+                </Border>
+            </Grid>
+        </AdornerDecorator>
+    </Border>
+</Window>

@@ -1,0 +1,29 @@
+﻿<Page x:Class="UAM.Client.Views.Sensor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UAM.Client.Views"
+      mc:Ignorable="d" 
+      Background="{StaticResource PrimaryHueMidBrush}"
+      Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
+      Title="Sensor">
+    <DockPanel>
+        <ListBox Name="pageMenu" 
+                 DockPanel.Dock="Left"
+                 Background="{StaticResource PrimaryHueDarkBrush}"
+                 Height="280"
+                 Width="150"
+                 VerticalAlignment="Top" 
+                 ItemsSource="{Binding Pages}"
+                 SelectedIndex="0"
+                 ItemContainerStyle="{StaticResource PageItemSytle}"/>
+        <Border BorderBrush="Transparent"
+                BorderThickness="1"
+                Margin="10"
+                CornerRadius="15">
+            <Frame Content="{Binding FunctionPage}" NavigationUIVisibility="Hidden"/>
+        </Border>
+
+    </DockPanel>
+</Page>

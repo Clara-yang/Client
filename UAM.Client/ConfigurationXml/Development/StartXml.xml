@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<connectFields>
+  <Host IP="192.168.100.2"
+        VdnPort="22000"
+        User="accel"
+        Password="000000"  
+        Host_Exec_Cmd="cd /home/accel/UAM_Projects/development/uam_host  &amp;&amp; ./build/UAMHostExecD -c conf/UAMHostCsf_"
+        Host_Stop_Cmd="ps -ef |grep UAMHostExecD |grep -v grep |awk '{ print $2 }'|xargs kill -9">
+  </Host>
+  <Visual VisualType="P3D">
+
+  </Visual>
+</connectFields>
+ 
