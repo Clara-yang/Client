@@ -15,6 +15,20 @@
     <Visible>true</Visible>
   </ButtonModel>
   <ButtonModel>
+    <ButtonName>locationFreezeBtn</ButtonName>
+    <Parameter>locationFreeze</Parameter>
+    <Text>位 置 冻 结</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>highlyFreezeBtn</ButtonName>
+    <Parameter>highlyFreeze</Parameter>
+    <Text>高 度 冻 结</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
     <ButtonName>powerFreezeBtn</ButtonName>
     <Parameter>powerFreeze</Parameter>
     <Text>电 源 冻 结</Text>
@@ -44,8 +58,15 @@
   </ButtonModel>
   <ButtonModel>
     <ButtonName>crashBtn</ButtonName>
-    <Parameter>crashDetection</Parameter>
+    <Parameter>crashOverride</Parameter>
     <Text>坠 毁 抑 制</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
+    <ButtonName>cleanCrashBtn</ButtonName>
+    <Parameter>cleanCrash</Parameter>
+    <Text>清 除 坠 毁</Text>
     <Position>Top</Position>
     <Visible>true</Visible>
   </ButtonModel>
@@ -57,18 +78,25 @@
     <Visible>true</Visible>
   </ButtonModel>
   <ButtonModel>
+    <ButtonName>visualConnectBtn</ButtonName>
+    <Parameter>visualConnect</Parameter>
+    <Text>连 接 视 景</Text>
+    <Position>Top</Position>
+    <Visible>true</Visible>
+  </ButtonModel>
+  <ButtonModel>
     <ButtonName>motionPreBtn</ButtonName>
     <Parameter>motionPre</Parameter>
     <Text>运 动 预 位</Text>
     <Position>Top</Position>
-    <Visible>true</Visible>
+    <Visible>false</Visible>
   </ButtonModel>
   <ButtonModel>
     <ButtonName>motionFreezeBtn</ButtonName>
     <Parameter>motionFreeze</Parameter>
     <Text>运 动 冻 结</Text>
     <Position>Top</Position>
-    <Visible>true</Visible>
+    <Visible>false</Visible>
   </ButtonModel>
   <ButtonModel>
     <ButtonName>cockpitBtn</ButtonName>

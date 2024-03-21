@@ -2,9 +2,20 @@
 <URLs>
   <UrlModel>
     <MapName>MainMap</MapName>
-    <MapUrl>http://192.168.100.5/ClientMap</MapUrl>
-
+    <MapUrl>http://localhost:3000/ClientMap</MapUrl>
     <AppName></AppName>
     <AppUrl></AppUrl>
-  </UrlModel> 
+  </UrlModel>
+  <UrlModel>
+    <MapName></MapName>
+    <MapUrl></MapUrl>
+    <AppName>Visual</AppName>
+    <AppUrl></AppUrl>
+  </UrlModel>
+  <UrlModel>
+    <MapName></MapName>
+    <MapUrl></MapUrl>
+    <AppName>Binary</AppName>
+    <AppUrl></AppUrl>
+  </UrlModel>
 </URLs>

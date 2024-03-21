@@ -19,6 +19,7 @@ using UAM.Plugin.NetVDN;
 using System.Xml.Serialization;
 using System.ComponentModel;
 using System.Windows.Controls;
+using System.Windows.Forms;
 
 namespace UAM.Client.ViewModel
 {
@@ -97,15 +98,15 @@ namespace UAM.Client.ViewModel
                 thread = new Thread(VirualStickSend);
                 thread.Start();
             }
-            else if(PubVar.g_CurrentStick.Id == 1)
+            else if (PubVar.g_CurrentStick.Id == 1)
             {
                 IsVirualStick = Visibility.Hidden;
-                thread = new Thread(LJStickSend);
-                thread.Start();
+                StartJoystick();
             }
             else
             {
                 IsVirualStick = Visibility.Hidden;
+                StopJoystick();
             }
             GetBinding();
             dataUpdate.PropertyChanged += DataUpdate_PropertyChanged;
@@ -191,7 +192,7 @@ namespace UAM.Client.ViewModel
                 local_rightX = 0;
                 local_rightY = 0;
             }
-            while(true)
+            while (true)
             {
                 Thread.Sleep(50);
                 if (!(Math.Abs(leftX - local_leftX) < 0.00001))
@@ -237,5 +238,21 @@ namespace UAM.Client.ViewModel
             Pitch = dataUpdate.Pitch;
             Heading = dataUpdate.Heading;
         }
+
+        private void StartJoystick()
+        {
+            myControl.ThreadJoystick();
+            thread = new Thread(LJStickSend);
+            thread.Start();
+        }
+        private void StopJoystick()
+        {
+            myControl.StopThreadJoystick();
+            if (thread != null)
+            {
+                thread.Abort();
+            }
+        }
+
     }
 }

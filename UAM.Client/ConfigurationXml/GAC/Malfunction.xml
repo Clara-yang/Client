@@ -1,201 +1,363 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Malfunctions>
   <MalfunctionModel>
-    <ATAChapterID>34</ATAChapterID>
-    <ATAChapterName>NAVIGATION</ATAChapterName>
-    <MalfunctionID>1</MalfunctionID>
-    <MalfunctionName>VOR Antenna Fail</MalfunctionName>
-    <ATADescription>https://translate.google.com/?hl=zh-CN</ATADescription>
-    <MalfunctionDescription>https://translate.google.com/?hl=zh-CN</MalfunctionDescription>
-    <MalMsg></MalMsg>
-  </MalfunctionModel>
-  <MalfunctionModel>
-    <ATAChapterID>34</ATAChapterID>
-    <ATAChapterName>wefsaf</ATAChapterName>
-    <MalfunctionID>2</MalfunctionID>
-    <MalfunctionName>VOR gdgrrrtrtr Fail</MalfunctionName>
-    <ATADescription>https://baidu.com</ATADescription>
-    <MalfunctionDescription>https://baidu.com</MalfunctionDescription>
-    <MalMsg></MalMsg>
-  </MalfunctionModel>
-  <MalfunctionModel>
     <ATAChapterID>27</ATAChapterID>
     <ATAChapterName>舵面故障</ATAChapterName>
     <MalfunctionID>1</MalfunctionID>
-    <MalfunctionName>Lock 0</MalfunctionName>
+    <MalfunctionName>ControlSurLoss0</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
     <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLoss0IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLoss0IsEnable</VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>ControlSurLoss1</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLoss1IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLoss1IsEnable</VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>ControlSurLoss2</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLoss2IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLoss2IsEnable</VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>ControlSurLoss3</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLoss3IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLoss3IsEnable</VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>ControlSurLoss4</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLoss4IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLoss4IsEnable</VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>ControlSurLoss5</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLoss5IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLoss5IsEnable</VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>ControlSurLoss6</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLoss6IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLoss6IsEnable</VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>ControlSurLoss7</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLoss7IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLoss7IsEnable</VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>ControlSurLoss8</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLoss8IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLoss8IsEnable</VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>ControlSurLoss9</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLoss9IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLoss9IsEnable</VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>27</ATAChapterID>
+    <ATAChapterName>舵面故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>ControlSurLock0</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLock0IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLock0IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>27</ATAChapterID>
     <ATAChapterName>舵面故障</ATAChapterName>
     <MalfunctionID>2</MalfunctionID>
-    <MalfunctionName>Lock 1</MalfunctionName>
+    <MalfunctionName>ControlSurLock1</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
     <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLock1IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLock1IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>27</ATAChapterID>
     <ATAChapterName>舵面故障</ATAChapterName>
     <MalfunctionID>3</MalfunctionID>
-    <MalfunctionName>Lock 2</MalfunctionName>
+    <MalfunctionName>ControlSurLock2</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
     <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLock2IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLock2IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>27</ATAChapterID>
     <ATAChapterName>舵面故障</ATAChapterName>
     <MalfunctionID>4</MalfunctionID>
-    <MalfunctionName>Lock 3</MalfunctionName>
+    <MalfunctionName>ControlSurLock3</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
     <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLock3IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLock3IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>27</ATAChapterID>
     <ATAChapterName>舵面故障</ATAChapterName>
     <MalfunctionID>5</MalfunctionID>
-    <MalfunctionName>Lock 4</MalfunctionName>
+    <MalfunctionName>ControlSurLock4</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
     <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLock4IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLock4IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>27</ATAChapterID>
     <ATAChapterName>舵面故障</ATAChapterName>
     <MalfunctionID>6</MalfunctionID>
-    <MalfunctionName>Lock 5</MalfunctionName>
+    <MalfunctionName>ControlSurLock5</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
     <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLock5IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLock5IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>27</ATAChapterID>
     <ATAChapterName>舵面故障</ATAChapterName>
     <MalfunctionID>7</MalfunctionID>
-    <MalfunctionName>Lock 6</MalfunctionName>
+    <MalfunctionName>ControlSurLock6</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
     <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLock6IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLock6IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>27</ATAChapterID>
     <ATAChapterName>舵面故障</ATAChapterName>
     <MalfunctionID>8</MalfunctionID>
-    <MalfunctionName>Lock 7</MalfunctionName>
+    <MalfunctionName>ControlSurLock7</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
     <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLock7IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLock7IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>27</ATAChapterID>
     <ATAChapterName>舵面故障</ATAChapterName>
     <MalfunctionID>9</MalfunctionID>
-    <MalfunctionName>Lock 8</MalfunctionName>
+    <MalfunctionName>ControlSurLock8</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
     <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLock8IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLock8IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>27</ATAChapterID>
     <ATAChapterName>舵面故障</ATAChapterName>
     <MalfunctionID>10</MalfunctionID>
-    <MalfunctionName>Lock 9</MalfunctionName>
+    <MalfunctionName>ControlSurLock9</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
     <MalMsg>StuckPosition:</MalMsg>
+    <VdnActiveField>CtrSurLock9IsActive</VdnActiveField>
+    <VdnEnableField>CtrSurLock9IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>63</ATAChapterID>
     <ATAChapterName>马达故障</ATAChapterName>
     <MalfunctionID>1</MalfunctionID>
-    <MalfunctionName>LossEffectiveness 0</MalfunctionName>
+    <MalfunctionName>MotorLossEffectiveness0</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
     <MalMsg>LossEffectiveness:</MalMsg>
+    <VdnActiveField>MotorLoss0IsActive</VdnActiveField>
+    <VdnEnableField>MotorLoss0IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>63</ATAChapterID>
     <ATAChapterName>马达故障</ATAChapterName>
     <MalfunctionID>2</MalfunctionID>
-    <MalfunctionName>LossEffectiveness 1</MalfunctionName>
+    <MalfunctionName>MotorLossEffectiveness1</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
     <MalMsg>LossEffectiveness:</MalMsg>
+    <VdnActiveField>MotorLoss1IsActive</VdnActiveField>
+    <VdnEnableField>MotorLoss1IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>63</ATAChapterID>
     <ATAChapterName>马达故障</ATAChapterName>
     <MalfunctionID>3</MalfunctionID>
-    <MalfunctionName>LossEffectiveness 2</MalfunctionName>
+    <MalfunctionName>MotorLossEffectiveness2</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
     <MalMsg>LossEffectiveness:</MalMsg>
+    <VdnActiveField>MotorLoss2IsActive</VdnActiveField>
+    <VdnEnableField>MotorLoss2IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>63</ATAChapterID>
     <ATAChapterName>马达故障</ATAChapterName>
     <MalfunctionID>4</MalfunctionID>
-    <MalfunctionName>LossEffectiveness 3</MalfunctionName>
+    <MalfunctionName>MotorLossEffectiveness3</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
     <MalMsg>LossEffectiveness:</MalMsg>
+    <VdnActiveField>MotorLoss3IsActive</VdnActiveField>
+    <VdnEnableField>MotorLoss3IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>63</ATAChapterID>
     <ATAChapterName>马达故障</ATAChapterName>
     <MalfunctionID>5</MalfunctionID>
-    <MalfunctionName>LossEffectiveness 4</MalfunctionName>
+    <MalfunctionName>MotorLossEffectiveness4</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
     <MalMsg>LossEffectiveness:</MalMsg>
+    <VdnActiveField>MotorLoss4IsActive</VdnActiveField>
+    <VdnEnableField>MotorLoss4IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>63</ATAChapterID>
     <ATAChapterName>马达故障</ATAChapterName>
     <MalfunctionID>6</MalfunctionID>
-    <MalfunctionName>LossEffectiveness 5</MalfunctionName>
+    <MalfunctionName>MotorLossEffectiveness5</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
     <MalMsg>LossEffectiveness:</MalMsg>
+    <VdnActiveField>MotorLoss5IsActive</VdnActiveField>
+    <VdnEnableField>MotorLoss5IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>63</ATAChapterID>
     <ATAChapterName>马达故障</ATAChapterName>
     <MalfunctionID>7</MalfunctionID>
-    <MalfunctionName>LossEffectiveness 6</MalfunctionName>
+    <MalfunctionName>MotorLossEffectiveness6</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
     <MalMsg>LossEffectiveness:</MalMsg>
+    <VdnActiveField>MotorLoss6IsActive</VdnActiveField>
+    <VdnEnableField>MotorLoss6IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>63</ATAChapterID>
     <ATAChapterName>马达故障</ATAChapterName>
     <MalfunctionID>8</MalfunctionID>
-    <MalfunctionName>LossEffectiveness 7</MalfunctionName>
+    <MalfunctionName>MotorLossEffectiveness7</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
     <MalMsg>LossEffectiveness:</MalMsg>
+    <VdnActiveField>MotorLoss7IsActive</VdnActiveField>
+    <VdnEnableField>MotorLoss7IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>63</ATAChapterID>
     <ATAChapterName>马达故障</ATAChapterName>
     <MalfunctionID>9</MalfunctionID>
-    <MalfunctionName>LossEffectiveness 8</MalfunctionName>
+    <MalfunctionName>MotorLossEffectiveness8</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
     <MalMsg>LossEffectiveness:</MalMsg>
+    <VdnActiveField>MotorLoss8IsActive</VdnActiveField>
+    <VdnEnableField>MotorLoss8IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
   <MalfunctionModel>
     <ATAChapterID>63</ATAChapterID>
     <ATAChapterName>马达故障</ATAChapterName>
     <MalfunctionID>10</MalfunctionID>
-    <MalfunctionName>LossEffectiveness 9</MalfunctionName>
+    <MalfunctionName>MotorLossEffectiveness9</MalfunctionName>
     <ATADescription>https://baidu.com</ATADescription>
     <MalfunctionDescription>https://www.cadict.net/</MalfunctionDescription>
     <MalMsg>LossEffectiveness:</MalMsg>
+    <VdnActiveField>MotorLoss9IsActive</VdnActiveField>
+    <VdnEnableField>MotorLoss9IsEnable</VdnEnableField>
+    <Visible>true</Visible>
   </MalfunctionModel>
 </Malfunctions>

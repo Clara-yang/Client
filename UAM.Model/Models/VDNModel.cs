@@ -47,13 +47,10 @@ namespace UAM.Model.Models
             {
                 get { return _SendParameters; }
                 set { _SendParameters = value; RaisePropertyChanged("SendParameters"); }
-            }
-            //public object _VdnValue;
-            public string VdnField;
-            //{
-            //    get { return _VdnValue; }
-            //    set { _VdnValue = value; RaisePropertyChanged("VdnValue"); }
-            //}
+            } 
+
+            public string VdnField { get; set; }
+             
 
         }
 

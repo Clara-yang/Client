@@ -42,6 +42,9 @@ namespace UAM.Model.Models
         public object MalfunctionSelectEvent { get; set; }
         public object ActiveMalEvent { get; set; }
 
+        public string VdnActiveField { get; set; }
+        public string VdnEnableField { get; set; }
+
         public Visibility _ValueEnable = Visibility.Collapsed;
         public Visibility ValueEnable
         {

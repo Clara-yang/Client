@@ -1,467 +1,1139 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <SendRequests>
+  <!-- 舵面故障 -->
   <SendRequest>
-    <ControlName>VOR Antenna Fail</ControlName>
+    <ControlId>1</ControlId>
+    <ControlName>ControlSurLock0</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>ControlSurLock 0</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>1</ControlId>
+    <ControlName>ControlSurLock0</ControlName>
     <IsInput>false</IsInput>
-    <InputHeader>0</InputHeader>
-    <InPutMin>0</InPutMin>
-    <InPutMax>0</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>true</SendParameters>
+    <InputHeader>ControlSurLock 0</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField>CtrSurLock0IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>VOR gdgrrrtrtr Fail</ControlName>
+    <ControlId>2</ControlId>
+    <ControlName>ControlSurLock1</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>ControlSurLock 1</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>2</ControlId>
+    <ControlName>ControlSurLock1</ControlName>
     <IsInput>false</IsInput>
-    <InputHeader>0</InputHeader>
-    <InPutMin>0</InPutMin>
-    <InPutMax>0</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>true</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>Lock 0</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock1</InputHeader>
+    <InputHeader>ControlSurLock 1</InputHeader>
     <InPutMin>-45</InPutMin>
     <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField>CtrSurLock1IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 0</ControlName>
+    <ControlId>3</ControlId>
+    <ControlName>ControlSurLock2</ControlName>
     <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock1</InputHeader>
+    <InputHeader>ControlSurLock 2</InputHeader>
     <InPutMin>-45</InPutMin>
     <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 1</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock1</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>Lock 1</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Loss4</InputHeader>
-    <InPutMin>-30</InPutMin>
-    <InPutMax>30</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>Lock 2</ControlName>
+    <ControlId>3</ControlId>
+    <ControlName>ControlSurLock2</ControlName>
     <IsInput>false</IsInput>
-    <InputHeader>ATA55_Lock1</InputHeader>
+    <InputHeader>ControlSurLock 2</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField>CtrSurLock2IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>4</ControlId>
+    <ControlName>ControlSurLock3</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>ControlSurLock 3</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>4</ControlId>
+    <ControlName>ControlSurLock3</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLock 3</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField>CtrSurLock3IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>5</ControlId>
+    <ControlName>ControlSurLock4</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>ControlSurLock 4</InputHeader>
+    <InPutMin>-30</InPutMin>
+    <InPutMax>30</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>5</ControlId>
+    <ControlName>ControlSurLock4</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLock 4</InputHeader>
+    <InPutMin>-30</InPutMin>
+    <InPutMax>30</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField>CtrSurLock4IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>6</ControlId>
+    <ControlName>ControlSurLock5</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>ControlSurLock 5</InputHeader>
+    <InPutMin>-30</InPutMin>
+    <InPutMax>30</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>6</ControlId>
+    <ControlName>ControlSurLock5</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLock 5</InputHeader>
+    <InPutMin>-30</InPutMin>
+    <InPutMax>30</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField>CtrSurLock5IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>7</ControlId>
+    <ControlName>ControlSurLock6</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>ControlSurLock 6</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>7</ControlId>
+    <ControlName>ControlSurLock6</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLock 6</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField>CtrSurLock6IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>8</ControlId>
+    <ControlName>ControlSurLock7</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>ControlSurLock 7</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>8</ControlId>
+    <ControlName>ControlSurLock7</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLock 7</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField>CtrSurLock7IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>9</ControlId>
+    <ControlName>ControlSurLock8</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>ControlSurLock 8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>9</ControlId>
+    <ControlName>ControlSurLock8</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLock 8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField>CtrSurLock8IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>10</ControlId>
+    <ControlName>ControlSurLock9</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>ControlSurLock 9</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>10</ControlId>
+    <ControlName>ControlSurLock9</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLock 9</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_Lock_Malfunction</SendRequestName>
+    <VdnField>CtrSurLock9IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>1</ControlId>
+    <ControlName>ControlSurLoss0</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>ControlSurLoss 0</InputHeader>
     <InPutMin>0</InPutMin>
-    <InPutMax>0</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 2</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Loss4</InputHeader>
-    <InPutMin>-30</InPutMin>
-    <InPutMax>30</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <ControlId>1</ControlId>
+    <ControlName>ControlSurLoss0</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLoss 0</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>CtrSurLoss0IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 3</ControlName>
+    <ControlId>2</ControlId>
+    <ControlName>ControlSurLoss1</ControlName>
     <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock0</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <InputHeader>ControlSurLoss 1</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 3</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Loss5</InputHeader>
-    <InPutMin>-30</InPutMin>
-    <InPutMax>30</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <ControlId>2</ControlId>
+    <ControlName>ControlSurLoss1</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLoss 1</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>CtrSurLoss1IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 4</ControlName>
+    <ControlId>3</ControlId>
+    <ControlName>ControlSurLoss2</ControlName>
     <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock0</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <InputHeader>ControlSurLoss 2</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 4</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Loss5</InputHeader>
-    <InPutMin>-30</InPutMin>
-    <InPutMax>30</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <ControlId>3</ControlId>
+    <ControlName>ControlSurLoss2</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLoss 2</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>CtrSurLoss2IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 5</ControlName>
+    <ControlId>4</ControlId>
+    <ControlName>ControlSurLoss3</ControlName>
     <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock1</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <InputHeader>ControlSurLoss 3</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 5</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Loss6</InputHeader>
-    <InPutMin>-30</InPutMin>
-    <InPutMax>30</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <ControlId>4</ControlId>
+    <ControlName>ControlSurLoss3</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLoss 3</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>CtrSurLoss3IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 6</ControlName>
+    <ControlId>5</ControlId>
+    <ControlName>ControlSurLoss4</ControlName>
     <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock1</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <InputHeader>ControlSurLoss 4</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 6</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock1</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <ControlId>5</ControlId>
+    <ControlName>ControlSurLoss4</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLoss 4</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>CtrSurLoss4IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 7</ControlName>
+    <ControlId>6</ControlId>
+    <ControlName>ControlSurLoss5</ControlName>
     <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock2</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <InputHeader>ControlSurLoss 5</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>CtrSurLoss5IsActive</VdnField>
+    <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 7</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Loss7</InputHeader>
-    <InPutMin>-30</InPutMin>
-    <InPutMax>30</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <ControlId>6</ControlId>
+    <ControlName>ControlSurLoss5</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLoss 5</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>CtrSurLoss5IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 8</ControlName>
+    <ControlId>7</ControlId>
+    <ControlName>ControlSurLoss6</ControlName>
     <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock2</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <InputHeader>ControlSurLoss 6</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 8</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Loss7</InputHeader>
-    <InPutMin>-30</InPutMin>
-    <InPutMax>30</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <ControlId>7</ControlId>
+    <ControlName>ControlSurLoss6</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLoss 6</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>CtrSurLoss6IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 9</ControlName>
+    <ControlId>8</ControlId>
+    <ControlName>ControlSurLoss7</ControlName>
     <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock3</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <InputHeader>ControlSurLoss 7</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>Lock 9</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Loss8</InputHeader>
-    <InPutMin>-30</InPutMin>
-    <InPutMax>30</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <ControlId>8</ControlId>
+    <ControlName>ControlSurLoss7</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLoss 7</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>CtrSurLoss7IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>LossEffectiveness 0</ControlName>
+    <ControlId>9</ControlId>
+    <ControlName>ControlSurLoss8</ControlName>
     <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock3</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <InputHeader>ControlSurLoss 8</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>LossEffectiveness 0</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock3</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <ControlId>9</ControlId>
+    <ControlName>ControlSurLoss8</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLoss 8</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>CtrSurLoss8IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>LossEffectiveness 1</ControlName>
+    <ControlId>10</ControlId>
+    <ControlName>ControlSurLoss9</ControlName>
     <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock4</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <InputHeader>ControlSurLoss 9</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <SendRequest>
-    <ControlName>LossEffectiveness 1</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock4</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
+    <ControlId>10</ControlId>
+    <ControlName>ControlSurLoss9</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLoss 9</InputHeader>
+    <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>ControlSurface</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>CtrlSurface_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>CtrSurLoss9IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
   </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 2</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock4</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 2</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock4</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 3</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock5</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 3</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock5</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 4</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock5</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 4</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock5</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 5</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock6</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 5</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock6</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 6</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock6</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 6</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock6</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 7</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock7</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 7</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock7</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 8</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock7</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 8</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock9</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 9</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock8</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
-  <SendRequest>
-    <ControlName>LossEffectiveness 9</ControlName>
-    <IsInput>true</IsInput>
-    <InputHeader>ATA55_Lock8</InputHeader>
-    <InPutMin>-45</InPutMin>
-    <InPutMax>45</InPutMax>
-    <SendTopic>Cockpit_Control</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>DI_PROPULSION_PB_ON</SendRequestName>
-    <SendParameters>1</SendParameters>
-  </SendRequest>
+  <!--舵面故障 end-->
 
+  <!--马达故障-->
+  <SendRequest>
+    <ControlId>1</ControlId>
+    <ControlName>MotorLossEffectiveness0</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>MotorLossEffectiveness 0</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>1</ControlId>
+    <ControlName>MotorLossEffectiveness0</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>MotorLossEffectiveness 0</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>MotorLoss0IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>2</ControlId>
+    <ControlName>MotorLossEffectiveness1</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>MotorLossEffectiveness 1</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>2</ControlId>
+    <ControlName>MotorLossEffectiveness1</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>MotorLossEffectiveness 1</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>MotorLoss1IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>3</ControlId>
+    <ControlName>MotorLossEffectiveness2</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>MotorLossEffectiveness 2</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>3</ControlId>
+    <ControlName>MotorLossEffectiveness2</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>MotorLossEffectiveness 2</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>MotorLoss2IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>4</ControlId>
+    <ControlName>MotorLossEffectiveness3</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>MotorLossEffectiveness 3</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>4</ControlId>
+    <ControlName>MotorLossEffectiveness3</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>MotorLossEffectiveness 3</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>MotorLoss3IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>5</ControlId>
+    <ControlName>MotorLossEffectiveness4</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>MotorLossEffectiveness 4</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>5</ControlId>
+    <ControlName>MotorLossEffectiveness4</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>MotorLossEffectiveness 4</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>MotorLoss4IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>6</ControlId>
+    <ControlName>MotorLossEffectiveness5</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>MotorLossEffectiveness 5</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>6</ControlId>
+    <ControlName>MotorLossEffectiveness5</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>MotorLossEffectiveness 5</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>MotorLoss5IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>7</ControlId>
+    <ControlName>MotorLossEffectiveness6</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>MotorLossEffectiveness 6</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>7</ControlId>
+    <ControlName>MotorLossEffectiveness6</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>MotorLossEffectiveness 6</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>MotorLoss6IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>8</ControlId>
+    <ControlName>MotorLossEffectiveness7</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>MotorLossEffectiveness 7</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>8</ControlId>
+    <ControlName>MotorLossEffectiveness7</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>MotorLossEffectiveness 7</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>MotorLoss7IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>9</ControlId>
+    <ControlName>MotorLossEffectiveness8</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>MotorLossEffectiveness 8</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>9</ControlId>
+    <ControlName>MotorLossEffectiveness8</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>MotorLossEffectiveness 8</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>MotorLoss8IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>10</ControlId>
+    <ControlName>MotorLossEffectiveness9</ControlName>
+    <IsInput>true</IsInput>
+    <InputHeader>MotorLossEffectiveness 9</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>10</ControlId>
+    <ControlName>MotorLossEffectiveness9</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>MotorLossEffectiveness 9</InputHeader>
+      <InPutMin>0</InPutMin>
+    <InPutMax>100</InPutMax>
+    <SendTopic>Engines</SendTopic>
+    <SendQueue>Malfunctions</SendQueue>
+    <SendRequestName>Motor_LossEffectiveness_Malfunction</SendRequestName>
+    <VdnField>MotorLoss9IsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <!--马达故障 end-->
 
+  <!--传感器故障-->
+  <SendRequest>
+    <ControlName>INSposition</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSPositionBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSposition</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSPositionBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>3</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSposition</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSPositionBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSspeed</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSVelocityBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSspeed</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSVelocityBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSspeed</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSVelocityBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>3</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSposture</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSAttitudeBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSposture</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSAttitudeBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSposture</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSAttitudeBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>3</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSangularSspeed</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSAngularVelocityBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSangularSspeed</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSAngularVelocityBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSangularSspeed</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSAngularVelocityBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>3</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSacceleration</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSAcceleratedVelocityBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSacceleration</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSAcceleratedVelocityBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSacceleration</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSAcceleratedVelocityBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>3</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSfunctionAvailability</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSFunctionValid</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSfunctionAvailability</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSFunctionValid</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSfunctionAvailability</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSFunctionValid</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>3</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSfunctionAvailability</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSFunctionValid</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>4</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSfunctionAvailability</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSFunctionValid</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>5</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>INSfunctionAvailability</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>INSFunctionValid</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>6</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>ADSBias</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>ADSBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>ADSBias</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>ADSBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>ADSBias</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>ADSBias</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>3</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>ADSfunctionAvailability</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>ADSValid</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>ADSfunctionAvailability</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>ADSValid</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>ADSfunctionAvailability</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>ADSValid</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>3</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>RABiasAndValid</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>RABiasAndValid</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlName>RABiasAndValid</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>8</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>BJMalfunction</SendTopic>
+    <SendQueue>Default</SendQueue>
+    <SendRequestName>RABiasAndValid</SendRequestName>
+    <VdnField></VdnField>
+    <ParameterIndex>2</ParameterIndex>
+  </SendRequest>
+  <!--传感器故障 end-->
 </SendRequests>

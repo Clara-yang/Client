@@ -33,19 +33,6 @@ namespace UAM.Client.Views
             vm.SoliderCompleted(slider.Value);
         }
 
-        private void turbulence_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (turbulence.Angle >= -60 && turbulence.Angle < 120)
-            {
-                turbulence.Angle += 45;
-            }
-            else
-            {
-                turbulence.Angle = -60;
-            }
-            vm.TurbulenceChanged(turbulence.Angle.ToString());
-        }
-
         private void sd_wind_height_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
         {
             vm.HollowHeightChanged(sd_wind_height.Value.ToString());
@@ -53,22 +40,24 @@ namespace UAM.Client.Views
 
         private void clearWind_Click(object sender, RoutedEventArgs e)
         {
-            turbulence.Angle = -60;
+            turbulence.SelectedIndex = 0;
+            sd_wind_height.Value = sd_wind_height.Minimum;
             vm.WindClear();
         }
 
-        // 风切变
-        //private void Windshear_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        //{
-        //    if (windshear.Angle >= -60 && windshear.Angle < 120)
-        //    {
-        //        windshear.Angle += 60;
-        //    }
-        //    else
-        //    {
-        //        windshear.Angle = -60;
-        //    }
-        //    vm.Windshear(windshear.Angle);
-        //}
+        private void turbulence_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem cbi = (ComboBoxItem)(sender as ComboBox).SelectedItem;
+            string selectedText = cbi.Content.ToString();
+            vm.TurbulenceChanged(selectedText);
+        }
+
+        private void tb_IncreasedVisibility_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                vm.SoliderCompleted(slider.Value);
+            }
+        }
     }
 }

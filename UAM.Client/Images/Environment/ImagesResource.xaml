@@ -464,9 +464,9 @@
     <DrawingImage x:Key="Icon_cloud_bar">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="M0, 0 V5 H12 V0 H0 Z">
-                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,-0.125h12.7969v0.25h-12.7969z" />
-                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,2.26562h12.7969v0.25h-12.7969z" />
-                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,4.79688h12.7969v0.25h-12.7969z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,-0.125h12.7969v0.5h-12.7969z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,2.26562h12.7969v0.5h-12.7969z" />
+                <GeometryDrawing Brush="{StaticResource Color_Normal}" Geometry="M0,4.79688h12.7969v0.5h-12.7969z" />
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
@@ -474,9 +474,9 @@
     <DrawingImage x:Key="Icon_cloud_bar_Pressed">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="M0, 0 V5 H12 V0 H0 Z">
-                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M0,-0.125h12.7969v0.25h-12.7969z" />
-                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M0,2.26562h12.7969v0.25h-12.7969z" />
-                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M0,4.79688h12.7969v0.25h-12.7969z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M0,-0.125h12.7969v0.8h-12.7969z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M0,2.26562h12.7969v0.8h-12.7969z" />
+                <GeometryDrawing Brush="{StaticResource Color_Green}" Geometry="M0,4.79688h12.7969v0.8h-12.7969z" />
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>

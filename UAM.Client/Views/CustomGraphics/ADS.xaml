@@ -57,7 +57,7 @@
         </Grid.ColumnDefinitions>
         <Border Style="{StaticResource borderStyle}" Grid.Column="0" Grid.Row="0">
             <DockPanel>
-                <Label Content="ADS偏移" DockPanel.Dock="Top" FontWeight="Bold" FontSize="20"/>
+                <Label Content="ADS偏移" DockPanel.Dock="Top" FontWeight="Bold"/>
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="重置" Command="{Binding ResetCommand}" CommandParameter="ADSBias"/>
                     <Button Content="设置" Command="{Binding SetUpCommand}" CommandParameter="ADSBias"/>
@@ -83,7 +83,7 @@
         </Border>
         <Border Style="{StaticResource borderStyle}" Grid.Column="1" Grid.Row="0">
             <DockPanel>
-                <Label Content="ADS功能可用性" DockPanel.Dock="Top" FontWeight="Bold" FontSize="20"/>
+                <Label Content="ADS功能可用性" DockPanel.Dock="Top" FontWeight="Bold"/>
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="重置" Command="{Binding ResetCommand}" CommandParameter="ADSfunctionAvailability"/>
                     <Button Content="设置" Command="{Binding SetUpCommand}" CommandParameter="ADSfunctionAvailability"/>

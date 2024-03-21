@@ -11,7 +11,7 @@
       xmlns:cov="clr-namespace:UAM.Client.Converters"
       xmlns:sys="system"
       mc:Ignorable="d" 
-      Title="Environment"> 
+      Title="Environment">
     <Page.Resources>
         <cov:ValueToBoolConverter x:Key="Value2BoolCov"/>
         <SolidColorBrush x:Key="Color_Back" Color="#FF808080"/>
@@ -620,8 +620,8 @@
                             <TextBox x:Name="tb_wind_direction_ground"
                                      Text="{Binding GroundWindDirection,UpdateSourceTrigger=PropertyChanged}"
                                      Style="{StaticResource InputTextBoxStyle}"
-                                     cuc:TextBoxHelper.Watermarks="请输入0~50"
-                                     Width="80" Height="22"
+                                     cuc:TextBoxHelper.Watermarks="请输入0~360"
+                                     Width="85" Height="22"
                                      Grid.Row="2"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Bottom"
@@ -643,7 +643,7 @@
                             <TextBox x:Name="tb_wind_velocity_ground"
                                      Text="{Binding GroundWindVelocity,UpdateSourceTrigger=PropertyChanged}"
                                      Style="{StaticResource InputTextBoxStyle}"
-                                     cuc:TextBoxHelper.Watermarks="请输入0~360"
+                                     cuc:TextBoxHelper.Watermarks="请输入0~50"
                                      Width="80" Height="22"
                                      Grid.Row="2"
                                      HorizontalAlignment="Right"
@@ -661,7 +661,21 @@
                                    Style="{StaticResource TitleLabelStyle}"
                                    Grid.Row="1" Grid.Column="1"
                                    Margin="0 0 5 0"/>
-                            <Image Source="..\Images\Environment\Turbulence.png"
+                            <StackPanel Margin="20"  Grid.Row="2" Grid.Column="1" Orientation="Vertical">
+                                <TextBlock Text="湍流等级:" FontSize="15"/>
+                                <ComboBox Name="turbulence"  
+                                          FontSize="15"
+                                          Margin="10"
+                                          SelectionChanged="turbulence_SelectionChanged">
+                                    <ComboBoxItem>1</ComboBoxItem>
+                                    <ComboBoxItem>2</ComboBoxItem>
+                                    <ComboBoxItem>3</ComboBoxItem>
+                                    <ComboBoxItem>4</ComboBoxItem>
+                                    <ComboBoxItem>5</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                           
+                            <!--<Image Source="..\Images\Environment\Turbulence.png"
                                    Stretch="None"
                                    Grid.Row="2" Grid.Column="1"
                                    HorizontalAlignment="Left"
@@ -680,7 +694,7 @@
                                                      CenterX="32.5" 
                                                      CenterY="32.5"/>
                                 </Image.RenderTransform>
-                            </Image>
+                            </Image>-->
                             <Button Content="清除所有风"
                                     x:Name="clearWind"
                                     Grid.Column="2" Grid.Row="2" 
@@ -715,7 +729,7 @@
                                      Text="{Binding HollowDirection,UpdateSourceTrigger=PropertyChanged}"
                                      Style="{StaticResource InputTextBoxStyle}"
                                      cuc:TextBoxHelper.Watermarks="请输入0~360"
-                                     Width="80" Height="22"
+                                     Width="85" Height="22"
                                      Grid.Row="4"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Bottom"
@@ -757,10 +771,8 @@
                                    Margin="0 5"/>
                             <Slider x:Name="sd_wind_height"
                                     Minimum="1000" Maximum="10000"
-                                    Ticks="1000,5000,10000" 
-                                    TickFrequency="10"
+                                    TickFrequency="1"
                                     IsSnapToTickEnabled="True"
-                                    TickPlacement="BottomRight"
                                     Orientation="Vertical"
                                     Height="88" Width="36"
                                     HorizontalAlignment="Right"
@@ -801,7 +813,7 @@
                                    VerticalAlignment="Top"
                                    Margin="50 20"/>
                             <TextBlock Text="{Binding ElementName=tb_Gust_Speed,Path=Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                       FontSize="15.5"
+                                       FontSize="15"
                                        Foreground="#FFF2F2F2"
                                        Margin="70 52 0 0"
                                        HorizontalAlignment="Left"
@@ -930,7 +942,7 @@
                                 <TextBox x:Name="tb_cloud_Height_1"
                                          Text="{Binding CloudHeight1,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay, StringFormat={}{0:f0}}"
                                          Style="{StaticResource InputTextBoxStyle}"
-                                         Width="80" Height="20"
+                                         Width="110" Height="20"
                                          cuc:TextBoxHelper.Watermarks="请输入6000~9000"/>
                             </StackPanel>
                             <Slider Orientation="Vertical"
@@ -1004,7 +1016,7 @@
 
                                 <TextBox Style="{StaticResource InputTextBoxStyle}"
                                          Text="{Binding CloudHeight2,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay, StringFormat={}{0:f0}}"
-                                         Width="80" Height="20"
+                                         Width="110" Height="20"
                                          cuc:TextBoxHelper.Watermarks="请输入2000~6000"/>
                             </StackPanel>
                             <Slider Orientation="Vertical"
@@ -1078,7 +1090,7 @@
 
                                 <TextBox Style="{StaticResource InputTextBoxStyle}"
                                          Text="{Binding CloudHeight3,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay, StringFormat={}{0:f0}}"
-                                         Width="80" Height="20"
+                                         Width="110" Height="20"
                                          cuc:TextBoxHelper.Watermarks="请输入0~2000"/>
                             </StackPanel>
                             <Slider Orientation="Vertical"
@@ -1280,7 +1292,7 @@
                                 HorizontalAlignment="Center">
                         <TextBlock x:Name="tb_IncreasedVisibility"
                                    Text="50"
-                                   FontSize="45"
+                                   FontSize="45" 
                                    Foreground="{StaticResource Color_Normal}"/>
                         <TextBlock Text="km"
                                    FontSize="20"
@@ -1307,6 +1319,7 @@
                                  Style="{StaticResource InputTextBoxStyle}"
                                  cuc:TextBoxHelper.Watermarks="请输入0~50"
                                  Width="154" Height="21"
+                                 KeyDown="tb_IncreasedVisibility_KeyDown"
                                  HorizontalAlignment="Center"
                                  Margin="0 15 0 0"/>
                     </StackPanel>

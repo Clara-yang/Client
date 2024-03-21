@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAM.Model", "UAM.Model\UAM.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAM.Plugin", "UAM.Plugin\UAM.Plugin.csproj", "{4090DE75-5E1D-47DD-BA54-F07FDE98BE0B}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ClientSetup", "ClientSetup\ClientSetup.vdproj", "{004C809B-1832-4A0D-BAAE-D82DC720EC82}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,10 +41,6 @@ Global
 		{4090DE75-5E1D-47DD-BA54-F07FDE98BE0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4090DE75-5E1D-47DD-BA54-F07FDE98BE0B}.Release|x64.ActiveCfg = Release|x64
 		{4090DE75-5E1D-47DD-BA54-F07FDE98BE0B}.Release|x64.Build.0 = Release|x64
-		{004C809B-1832-4A0D-BAAE-D82DC720EC82}.Debug|Any CPU.ActiveCfg = Debug
-		{004C809B-1832-4A0D-BAAE-D82DC720EC82}.Debug|x64.ActiveCfg = Debug
-		{004C809B-1832-4A0D-BAAE-D82DC720EC82}.Release|Any CPU.ActiveCfg = Release
-		{004C809B-1832-4A0D-BAAE-D82DC720EC82}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

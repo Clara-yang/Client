@@ -104,8 +104,6 @@ namespace UAM.Client.ViewModel
             timer.Tick += new EventHandler(RefreshATAState);
             timer.Start();
 
-            dataUpdate.PropertyChanged += DataUpdate_PropertyChanged;
-
             Chapters = PubVar.g_MalfunctionList.GroupBy(x => x.ATAChapterID).Select(x => x.First()).ToList();
 
             foreach (var chapter in Chapters)
@@ -123,10 +121,13 @@ namespace UAM.Client.ViewModel
         {
             foreach (var item in Malfunctions)
             {
-                item.ATASelected = Malfunctions.Exists(s => s.MalfunctionSelected == true && s.ATAChapterID == item.ATAChapterID) ? true : false;
+                item.ATASelected = Malfunctions.Exists(s => s.MalfunctionSelected == true && s.ATAChapterID == item.ATAChapterID) ? true : false; 
+
+                var vdnEnable = CommonMethod.GetPropertiesValue(dataUpdate,item.VdnEnableField);
+                item.IsEnable = bool.Parse(vdnEnable.ToString());
             }
 
-            if (vdnField != "")
+            if (vdnField == selectedMal.VdnActiveField)
             {
                 subValue = CommonMethod.GetPropertiesValue(dataUpdate, vdnField);
                 selectedMal.MalfunctionSelected = bool.Parse(subValue.ToString());
@@ -140,34 +141,6 @@ namespace UAM.Client.ViewModel
                     selectedMal.ValueEnable = Visibility.Collapsed;
                 }
             }
-
-            if (Malfunctions.Exists(s => s.MalfunctionSelected == true))
-            {
-                var selected = Malfunctions.Find(a => a.MalfunctionSelected == true);
-                Malfunctions.Remove(selected);
-                foreach (var item in Malfunctions)
-                {
-                    item.IsEnable = false;
-                }
-                Malfunctions.Add(selected);
-            }
-            else
-            {
-                foreach (var item in Malfunctions)
-                {
-                    item.IsEnable = true;
-                }
-            }
-        }
-
-        /// <summary>
-        /// 刷新subscribe的值
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataUpdate_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-
         }
 
         /// <summary>

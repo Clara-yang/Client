@@ -59,7 +59,7 @@
         </Grid.ColumnDefinitions>
         <Border Style="{StaticResource borderStyle}" Grid.Column="0" Grid.Row="0">
             <DockPanel>
-                <Label Content="RA设置内容" DockPanel.Dock="Top" FontWeight="Bold" FontSize="20"/>
+                <Label Content="RA设置内容" DockPanel.Dock="Top" FontWeight="Bold"/>
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="重置" Command="{Binding ResetCommand}" CommandParameter="RABiasAndValid"/>
                     <Button Content="设置" Command="{Binding SetUpCommand}" CommandParameter="RABiasAndValid"/>
@@ -71,7 +71,7 @@
                         <TextBox Background="White" Text="{Binding RABias}"/>
                     </DockPanel>
                     <DockPanel>
-                        <CheckBox Content="Position" DockPanel.Dock="Left" IsChecked="{Binding Valid}"/>
+                        <CheckBox Content="RA Bias Valid" DockPanel.Dock="Left" IsChecked="{Binding Valid}"/>
                     </DockPanel>
                 </StackPanel>
             </DockPanel>

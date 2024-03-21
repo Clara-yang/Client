@@ -45,7 +45,7 @@
   <StickModel>
     <Name>虚拟操纵杆</Name>
     <Id>8</Id>
-    <Default>fakse</Default>
+    <Default>false</Default>
     <Visible>true</Visible>
   </StickModel>
 </Joysticks>

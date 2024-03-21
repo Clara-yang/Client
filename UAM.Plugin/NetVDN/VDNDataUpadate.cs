@@ -101,6 +101,36 @@ namespace UAM.Plugin.NetVDN
             get => _Weather;
             set { _Weather = value; RaisePropertyChanged("Weather"); }
         }
+        private string _GroundWindDirection;
+        public string GroundWindDirection
+        {
+            get => _GroundWindDirection;
+            set { _GroundWindDirection = value; RaisePropertyChanged("GroundWindDirection"); }
+        }
+        private string _GroundWindVelocity;
+        public string GroundWindVelocity
+        {
+            get => _GroundWindVelocity;
+            set { _GroundWindVelocity = value; RaisePropertyChanged("GroundWindVelocity"); }
+        }
+        private string _HollowDirection;
+        public string HollowDirection
+        {
+            get => _HollowDirection;
+            set { _HollowDirection = value; RaisePropertyChanged("HollowDirection"); }
+        }
+        private string _HollowVelocity;
+        public string HollowVelocity
+        {
+            get => _HollowVelocity;
+            set { _HollowVelocity = value; RaisePropertyChanged("HollowVelocity"); }
+        }
+        private string _GustSpeed;
+        public string GustSpeed
+        {
+            get => _GustSpeed;
+            set { _GustSpeed = value; RaisePropertyChanged("GustSpeed"); }
+        }
         private string _Latitude;
         public string Latitude
         {
@@ -553,6 +583,11 @@ namespace UAM.Plugin.NetVDN
                 HostConnect = vdnData.GetConnectState();
                 VisualConnect = VDNData.VisualConnect;
                 Weather = VDNData.CIGIWeather;
+                GroundWindDirection = VDNData.GroundWindDirection;
+                GroundWindVelocity = VDNData.GroundWindVelocity;
+                HollowDirection = VDNData.HollowDirection;
+                HollowVelocity = VDNData.HollowVelocity;
+                GustSpeed = VDNData.GustSpeed;
                 Latitude = VDNData.Latitude.ToString("0.00000");
                 Longitude = VDNData.Longitude.ToString("0.00000");
                 Altitude = VDNData.Altitude.ToString("0.00000");
@@ -582,26 +617,27 @@ namespace UAM.Plugin.NetVDN
                 CtrSurLoss7IsEnable = VDNData.CtrSurLoss7IsEnable;
                 CtrSurLoss8IsEnable = VDNData.CtrSurLoss8IsEnable;
                 CtrSurLoss9IsEnable = VDNData.CtrSurLoss9IsEnable;
-                CtrSurLock0IsActive = VDNData.CtrSurLock0IsActive && CtrSurLock0IsEnable;
-                CtrSurLock1IsActive = VDNData.CtrSurLock1IsActive && CtrSurLock1IsEnable;
-                CtrSurLock2IsActive = VDNData.CtrSurLock2IsActive && CtrSurLock2IsEnable;
-                CtrSurLock3IsActive = VDNData.CtrSurLock3IsActive && CtrSurLock3IsEnable;
-                CtrSurLock4IsActive = VDNData.CtrSurLock4IsActive && CtrSurLock4IsEnable;
-                CtrSurLock5IsActive = VDNData.CtrSurLock5IsActive && CtrSurLock5IsEnable;
-                CtrSurLock6IsActive = VDNData.CtrSurLock6IsActive && CtrSurLock6IsEnable;
-                CtrSurLock7IsActive = VDNData.CtrSurLock7IsActive && CtrSurLock7IsEnable;
-                CtrSurLock8IsActive = VDNData.CtrSurLock8IsActive && CtrSurLock8IsEnable;
-                CtrSurLock9IsActive = VDNData.CtrSurLock9IsActive && CtrSurLock9IsEnable;
-                CtrSurLoss0IsActive = VDNData.CtrSurLoss0IsActive && CtrSurLoss0IsEnable;
-                CtrSurLoss1IsActive = VDNData.CtrSurLoss1IsActive && CtrSurLoss1IsEnable;
-                CtrSurLoss2IsActive = VDNData.CtrSurLoss2IsActive && CtrSurLoss2IsEnable;
-                CtrSurLoss3IsActive = VDNData.CtrSurLoss3IsActive && CtrSurLoss3IsEnable;
-                CtrSurLoss4IsActive = VDNData.CtrSurLoss4IsActive && CtrSurLoss4IsEnable;
-                CtrSurLoss5IsActive = VDNData.CtrSurLoss5IsActive && CtrSurLoss5IsEnable;
-                CtrSurLoss6IsActive = VDNData.CtrSurLoss6IsActive && CtrSurLoss6IsEnable;
-                CtrSurLoss7IsActive = VDNData.CtrSurLoss7IsActive && CtrSurLoss7IsEnable;
-                CtrSurLoss8IsActive = VDNData.CtrSurLoss8IsActive && CtrSurLoss8IsEnable;
-                CtrSurLoss9IsActive = VDNData.CtrSurLoss9IsActive && CtrSurLoss9IsEnable;
+
+                CtrSurLock0IsActive = VDNData.CtrSurLock0IsActive;
+                CtrSurLock1IsActive = VDNData.CtrSurLock1IsActive;
+                CtrSurLock2IsActive = VDNData.CtrSurLock2IsActive;
+                CtrSurLock3IsActive = VDNData.CtrSurLock3IsActive;
+                CtrSurLock4IsActive = VDNData.CtrSurLock4IsActive;
+                CtrSurLock5IsActive = VDNData.CtrSurLock5IsActive;
+                CtrSurLock6IsActive = VDNData.CtrSurLock6IsActive;
+                CtrSurLock7IsActive = VDNData.CtrSurLock7IsActive;
+                CtrSurLock8IsActive = VDNData.CtrSurLock8IsActive;
+                CtrSurLock9IsActive = VDNData.CtrSurLock9IsActive;
+                CtrSurLoss0IsActive = VDNData.CtrSurLoss0IsActive;
+                CtrSurLoss1IsActive = VDNData.CtrSurLoss1IsActive;
+                CtrSurLoss2IsActive = VDNData.CtrSurLoss2IsActive;
+                CtrSurLoss3IsActive = VDNData.CtrSurLoss3IsActive;
+                CtrSurLoss4IsActive = VDNData.CtrSurLoss4IsActive;
+                CtrSurLoss5IsActive = VDNData.CtrSurLoss5IsActive;
+                CtrSurLoss6IsActive = VDNData.CtrSurLoss6IsActive;
+                CtrSurLoss7IsActive = VDNData.CtrSurLoss7IsActive;
+                CtrSurLoss8IsActive = VDNData.CtrSurLoss8IsActive;
+                CtrSurLoss9IsActive = VDNData.CtrSurLoss9IsActive;
 
                 MotorLoss0IsEnable = VDNData.MotorLoss0IsEnable;
                 MotorLoss1IsEnable = VDNData.MotorLoss1IsEnable;
@@ -613,16 +649,17 @@ namespace UAM.Plugin.NetVDN
                 MotorLoss7IsEnable = VDNData.MotorLoss7IsEnable;
                 MotorLoss8IsEnable = VDNData.MotorLoss8IsEnable;
                 MotorLoss9IsEnable = VDNData.MotorLoss9IsEnable;
-                MotorLoss0IsActive = VDNData.MotorLoss0IsActive && MotorLoss0IsEnable;
-                MotorLoss1IsActive = VDNData.MotorLoss1IsActive && MotorLoss1IsEnable;
-                MotorLoss2IsActive = VDNData.MotorLoss2IsActive && MotorLoss2IsEnable;
-                MotorLoss3IsActive = VDNData.MotorLoss3IsActive && MotorLoss3IsEnable;
-                MotorLoss4IsActive = VDNData.MotorLoss4IsActive && MotorLoss4IsEnable;
-                MotorLoss5IsActive = VDNData.MotorLoss5IsActive && MotorLoss5IsEnable;
-                MotorLoss6IsActive = VDNData.MotorLoss6IsActive && MotorLoss6IsEnable;
-                MotorLoss7IsActive = VDNData.MotorLoss7IsActive && MotorLoss7IsEnable;
-                MotorLoss8IsActive = VDNData.MotorLoss8IsActive && MotorLoss8IsEnable;
-                MotorLoss9IsActive = VDNData.MotorLoss9IsActive && MotorLoss9IsEnable;
+
+                MotorLoss0IsActive = VDNData.MotorLoss0IsActive;
+                MotorLoss1IsActive = VDNData.MotorLoss1IsActive;
+                MotorLoss2IsActive = VDNData.MotorLoss2IsActive;
+                MotorLoss3IsActive = VDNData.MotorLoss3IsActive;
+                MotorLoss4IsActive = VDNData.MotorLoss4IsActive;
+                MotorLoss5IsActive = VDNData.MotorLoss5IsActive;
+                MotorLoss6IsActive = VDNData.MotorLoss6IsActive;
+                MotorLoss7IsActive = VDNData.MotorLoss7IsActive;
+                MotorLoss8IsActive = VDNData.MotorLoss8IsActive;
+                MotorLoss9IsActive = VDNData.MotorLoss9IsActive;
             }
             catch (Exception ex)
             {

@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UAM.Client.Views.CustomGraphics"
-      Background="#666666"
+      Background="{StaticResource PrimaryHueDarkBrush}"
       Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
       mc:Ignorable="d"
       Title="INS">
@@ -57,7 +57,7 @@
         </Grid.ColumnDefinitions>
         <Border Style="{StaticResource borderStyle}" Grid.Column="0" Grid.Row="0">
             <DockPanel>
-                <Label Content="INS 位置偏移" DockPanel.Dock="Top" FontWeight="Bold" FontSize="35"/>
+                <Label Content="INS 位置偏移" DockPanel.Dock="Top" FontWeight="Bold"/>
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="重置" Command="{Binding ResetCommand}" CommandParameter="INSposition"/>
                     <Button Content="设置" Command="{Binding SetUpCommand}" CommandParameter="INSposition"/>
@@ -83,7 +83,7 @@
         </Border>
         <Border Style="{StaticResource borderStyle}" Grid.Column="1" Grid.Row="0">
             <DockPanel>
-                <Label Content="INS 速度偏移" DockPanel.Dock="Top" FontWeight="Bold" FontSize="35"/>
+                <Label Content="INS 速度偏移" DockPanel.Dock="Top" FontWeight="Bold"/>
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="重置" Command="{Binding ResetCommand}" CommandParameter="INSspeed"/>
                     <Button Content="设置" Command="{Binding SetUpCommand}" CommandParameter="INSspeed"/>
@@ -109,7 +109,7 @@
         </Border>
         <Border Style="{StaticResource borderStyle}" Grid.Column="2" Grid.Row="0">
             <DockPanel>
-                <Label Content="INS 姿态偏移" DockPanel.Dock="Top" FontWeight="Bold" FontSize="35"/>
+                <Label Content="INS 姿态偏移" DockPanel.Dock="Top" FontWeight="Bold"/>
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="重置" Command="{Binding ResetCommand}" CommandParameter="INSposture"/>
                     <Button Content="设置" Command="{Binding SetUpCommand}" CommandParameter="INSposture"/>
@@ -135,7 +135,7 @@
         </Border>
         <Border Style="{StaticResource borderStyle}" Grid.Column="0" Grid.Row="1">
             <DockPanel>
-                <Label Content="INS 角速度偏移" DockPanel.Dock="Top" FontWeight="Bold" FontSize="35"/>
+                <Label Content="INS 角速度偏移" DockPanel.Dock="Top" FontWeight="Bold"/>
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="重置" Command="{Binding ResetCommand}" CommandParameter="INSangularSspeed"/>
                     <Button Content="设置" Command="{Binding SetUpCommand}" CommandParameter="INSangularSspeed"/>
@@ -161,7 +161,7 @@
         </Border>
         <Border Style="{StaticResource borderStyle}" Grid.Column="1" Grid.Row="1">
             <DockPanel>
-                <Label Content="INS 加速度偏移" DockPanel.Dock="Top" FontWeight="Bold" FontSize="35"/>
+                <Label Content="INS 加速度偏移" DockPanel.Dock="Top" FontWeight="Bold"/>
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="重置" Command="{Binding ResetCommand}" CommandParameter="INSacceleration"/>
                     <Button Content="设置" Command="{Binding SetUpCommand}" CommandParameter="INSacceleration"/>
@@ -187,7 +187,7 @@
         </Border>
         <Border Style="{StaticResource borderStyle}" Grid.Column="2" Grid.Row="1">
             <DockPanel>
-                <Label Content="INS 功能可用性" DockPanel.Dock="Top" FontWeight="Bold" FontSize="35"/>
+                <Label Content="INS 功能可用性" DockPanel.Dock="Top" FontWeight="Bold"/>
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="重置" Command="{Binding ResetCommand}" CommandParameter="INSfunctionAvailability"/>
                     <Button Content="设置" Command="{Binding SetUpCommand}" CommandParameter="INSfunctionAvailability"/>

@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Xml.Serialization;
+using UAM.Client.Common;
 using UAM.Client.Views;
 using UAM.Model.Models;
 using UAM.Plugin;
@@ -165,12 +166,20 @@ namespace UAM.Client.ViewModel
             executeAllRequest.SendParameters.Add(name);
 
             VDNData.SendRequset(executeAllRequest);
-            VDNData.SendRequset(execVehicleRequest);
-            VDNData.SendRequset(destinationRequest);
-            VDNData.SendRequset(departureRequest);
-            VDNData.SendRequset(execChangeStickRequest);
-            VDNData.SendRequset(execChangeDayRequestModel);
-            VDNData.SendRequset(execChangeSeasonRequestModel);
+            VDNData.SendRequset(CommonMethod.SendRequestMethod(execVehicleRequest.SendTopic, execVehicleRequest.SendQueue,
+                execVehicleRequest.SendRequestName, execVehicleRequest.SendParameters));
+            VDNData.SendRequset(CommonMethod.SendRequestMethod(destinationRequest.SendTopic, destinationRequest.SendQueue,
+                destinationRequest.SendRequestName, destinationRequest.SendParameters));
+            VDNData.SendRequset(CommonMethod.SendRequestMethod(departureRequest.SendTopic, departureRequest.SendQueue,
+                departureRequest.SendRequestName, departureRequest.SendParameters));
+            VDNData.SendRequset(CommonMethod.SendRequestMethod(execChangeStickRequest.SendTopic, execChangeStickRequest.SendQueue,
+                execChangeStickRequest.SendRequestName, execChangeStickRequest.SendParameters));
+            VDNData.SendRequset(CommonMethod.SendRequestMethod(execChangeDayRequestModel.SendTopic, execChangeDayRequestModel.SendQueue,
+                execChangeDayRequestModel.SendRequestName, execChangeDayRequestModel.SendParameters));
+            VDNData.SendRequset(CommonMethod.SendRequestMethod(execChangeSeasonRequestModel.SendTopic, execChangeSeasonRequestModel.SendQueue,
+                execChangeSeasonRequestModel.SendRequestName, execChangeSeasonRequestModel.SendParameters));
+
+            Thread.Sleep(1000);
 
             Flight flight = new Flight();
             NextPage(flight);
@@ -181,7 +190,7 @@ namespace UAM.Client.ViewModel
             PubVar.CurrentAircraft = SelectedAir?.AircraftCode;
             PubVar.CurrentAircraftName = SelectedAir?.AircraftName;
 
-            execVehicleRequest = new SendRequest("eVTOLAirframe", "Default", "ChangeAircraftCode");
+            execVehicleRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "vehicleChange");
             execVehicleRequest.SendParameters.Add(PubVar.CurrentAircraft);
         }
 
@@ -197,10 +206,10 @@ namespace UAM.Client.ViewModel
             Int64 destination = Int64.Parse(selectedRoute.DestinationId);
             Int64 departure = Int64.Parse(selectedRoute.DepartureId);
 
-            destinationRequest = new SendRequest("ReLocate", "Default", "Vertiport_Destination");
+            destinationRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "RouteDestination");
             destinationRequest.SendParameters.Add(destination);
 
-            departureRequest = new SendRequest("ReLocate", "Default", "Vertiport_Active");
+            departureRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "RouteActive");
             departureRequest.SendParameters.Add(departure);
         }
 
@@ -214,21 +223,21 @@ namespace UAM.Client.ViewModel
         {
             PubVar.g_CurrentStick = SelectedStick;
 
-            execChangeStickRequest = new SendRequest("FlightControlWrapper", "Default", "ControlStickType_Request");
+            execChangeStickRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "stickChange");
             execChangeStickRequest.SendParameters.Add(SelectedStick.Id);
         }
 
         public void ExecChangeDay()
         {
             PubVar.CurrentDay = selectedDawnDusk;
-            execChangeDayRequestModel = new SendRequest("Day", "Default", "ChangeDay");
+            execChangeDayRequestModel = PubVar.g_SendRequestList.Find(q => q.ControlName == "DayChange");
             execChangeDayRequestModel.SendParameters.Add(PubVar.CurrentDay);
         }
 
         public void ExecChangeSeason()
         {
             PubVar.CurrentSeason = selectedSeason;
-            execChangeSeasonRequestModel = new SendRequest("Season", "Default", "ChangeDay");
+            execChangeSeasonRequestModel = PubVar.g_SendRequestList.Find(q => q.ControlName == "SeasonChange");
             execChangeSeasonRequestModel.SendParameters.Add(PubVar.CurrentSeason);
         }
 

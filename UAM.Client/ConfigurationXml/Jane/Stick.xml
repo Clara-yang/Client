@@ -4,7 +4,7 @@
     <Name>罗技操纵杆</Name>
     <Id>1</Id>
     <Default>false</Default>
-    <Visible>false</Visible>
+    <Visible>true</Visible>
   </StickModel>
   <StickModel>
     <Name>安胜操纵杆</Name>

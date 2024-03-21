@@ -24,6 +24,7 @@ namespace UAM.Client.ViewModel
     {
         VDNData vdnData = new VDNData();
         VDNDataUpadate dataUpdate = VDNDataUpadate.Instance;
+        public List<object> param;
 
         #region Property
         public int Route { get; set; } = PubVar.CurrentRoute;
@@ -124,51 +125,48 @@ namespace UAM.Client.ViewModel
 
         public void ExecClick(ButtonModel e)
         {
+            param = new List<object>();
             switch (e.Parameter)
             {
                 case "cockpitView":
-                    SendRequest cockpitViewRequest = new SendRequest("Visual", "Default", "ChangeView");
-                    cockpitViewRequest.SendParameters.Add("Cockpit_View");
-                    vdnData.SendRequset(cockpitViewRequest);
+                    SendRequest cockpitViewRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "cockpitView");
+                    param.Add("Cockpit_View");
+                    vdnData.SendRequset(CommonMethod.SendRequestMethod(cockpitViewRequest.SendTopic, cockpitViewRequest.SendQueue, cockpitViewRequest.SendRequestName, param));
                     break;
                 case "thirdView":
-                    SendRequest thirdViewRequest = new SendRequest("Visual", "Default", "ChangeView");
-                    thirdViewRequest.SendParameters.Add("Third_View");
-                    vdnData.SendRequset(thirdViewRequest);
+                    SendRequest thirdViewRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "cockpitView");
+                    param.Add("Third_View");
+                    vdnData.SendRequset(CommonMethod.SendRequestMethod(thirdViewRequest.SendTopic, thirdViewRequest.SendQueue, thirdViewRequest.SendRequestName, param));
                     break;
                 case "newFlyPlans":
-                    if (PubVar.g_CurrentUser.UserName.Trim() == "BoundaryAI")
+                    SendRequest flayPlanRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "newFlyPlans");
+                    var flightFreezeVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, flayPlanRequest.VdnField);
+                    if (flightFreezeVdnValue.ToString() != "true" && flightFreezeVdnValue.ToString() != "false")
                     {
-                        SendRequest ActiveFlayPlanRequest = new SendRequest("Fms", "Default", "GetFixedRouteFlyPlan");
-                        ActiveFlayPlanRequest.SendParameters.Add(true);
-                        SendRequest CancelFlayPlanRequest = new SendRequest("Fms", "Default", "GetFixedRouteFlyPlan");
-                        CancelFlayPlanRequest.SendParameters.Add(false);
-                        if (VDNData.FlightPlanGenerated)
+                        if (flightFreezeVdnValue.ToString() == "true")
                         {
-                            vdnData.SendRequset(CancelFlayPlanRequest);
+                            param.Add(false);
+                            vdnData.SendRequset(CommonMethod.SendRequestMethod(flayPlanRequest.SendTopic, flayPlanRequest.SendQueue, flayPlanRequest.SendRequestName, param));
                         }
                         else
                         {
-                            vdnData.SendRequset(ActiveFlayPlanRequest);
+                            param.Add(true);
+                            vdnData.SendRequset(CommonMethod.SendRequestMethod(flayPlanRequest.SendTopic, flayPlanRequest.SendQueue, flayPlanRequest.SendRequestName, param));
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Generate a flight plan for Vertax");
-                        SendRequest flayPlanRequest = new SendRequest("Fms", "Default", "GetFixedRouteFlyPlan");
-                        flayPlanRequest.SendParameters.Add(VDNData.DestinationLat);
-                        flayPlanRequest.SendParameters.Add(VDNData.DestinationLon);
-                        flayPlanRequest.SendParameters.Add(VDNData.DestinationAlt);
-                        flayPlanRequest.SendParameters.Add(VDNData.DestinationHeading);
-                        vdnData.SendRequset(flayPlanRequest);
+                        param.Add(VDNData.DestinationLat);
+                        param.Add(VDNData.DestinationLon);
+                        param.Add(VDNData.DestinationAlt);
+                        param.Add(VDNData.DestinationHeading);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(flayPlanRequest.SendTopic, flayPlanRequest.SendQueue, flayPlanRequest.SendRequestName, param));
                     }
                     break;
                 case "APActive":
-                    SendRequest apActiveRequest;
-                    apActiveRequest = new SendRequest("FlightControlWrapper", "Default", "AP_Button_Available_Request");
-                    var s = Int64.Parse("1");
-                    apActiveRequest.SendParameters.Add(s);
-                    vdnData.SendRequset(apActiveRequest);
+                    SendRequest apActiveRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "APActive");
+                    param.Add(Int64.Parse("1"));
+                    vdnData.SendRequset(CommonMethod.SendRequestMethod(apActiveRequest.SendTopic, apActiveRequest.SendQueue, apActiveRequest.SendRequestName, param));
                     break;
                 default: break;
             }
@@ -182,10 +180,10 @@ namespace UAM.Client.ViewModel
 
         public void ChangePosition(string param)
         {
-            SendRequest requestModel = new SendRequest("ReLocate", "Default", "Vertiport_Position");
-            var s = Int64.Parse(param);
-            requestModel.SendParameters.Add(s);
-            vdnData.SendRequset(requestModel);
+            SendRequest changePositionRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "ChangePosition");
+            changePositionRequest.SendParameters.Add(Int64.Parse(param));
+            vdnData.SendRequset(CommonMethod.SendRequestMethod(changePositionRequest.SendTopic, changePositionRequest.SendQueue,
+                changePositionRequest.SendRequestName, changePositionRequest.SendParameters));
             PubVar.g_AirRePosition = true;
         }
     }

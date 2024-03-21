@@ -27,7 +27,12 @@
   </PageModel>
   <PageModel>
     <PageName>Plot</PageName> 
-    <DisplayName>起飞降落图</DisplayName> 
+    <DisplayName>起飞降落图</DisplayName>
+    <IsSelected>true</IsSelected>
+  </PageModel>
+  <PageModel>
+    <PageName>Sensor</PageName>
+    <DisplayName>传感器设置</DisplayName>
     <IsSelected>true</IsSelected>
   </PageModel>
   <PageModel>

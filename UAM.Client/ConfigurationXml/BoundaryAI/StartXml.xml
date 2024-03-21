@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <connectFields>
-  <Host IP="10.9.17.200"
-        VdnPort="22222"
-        User="jane"
-        Password="jane"
-        Host_Exec_Cmd="cd /home/jane/Projects/uam_host &amp;&amp; ./build/UAMHostExecD -c conf/UAMHostCsf_"
-        Host_Stop_Cmd="ps -ef |grep UAMHostExecD |grep -v grep |awk '{ print $2 }'|xargs kill -9">
-    <!--/home/carina/Workspace/UamHostGIt/my_test/uam_host_dev_virtualstick-->
-  </Host>
-  <Visual VisualType="P3D">
+	<Host IP="192.168.100.2"
+		  VdnPort="22000"
+		  User="accel"
+		  Password="Accel4You!"
+		  Host_Exec_Cmd="cd /home/accel/UAM_Projects/development/uam_host &amp;&amp; ./build/UAMHostExecD -c conf/UAMHostCsf_"
+		  Host_Stop_Cmd="ps -ef |grep UAMHostExecD |grep -v grep |awk '{ print $2 }'|xargs kill -9">
+		<!--/home/carina/Workspace/UamHostGIt/my_test/uam_host_dev_virtualstick-->
+	</Host>
+	<Visual VisualType="P3D">
 
-  </Visual>
+	</Visual>
 </connectFields>

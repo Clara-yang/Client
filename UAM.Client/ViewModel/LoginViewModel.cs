@@ -25,6 +25,8 @@ using System.Windows.Forms.DataVisualization.Charting;
 using GalaSoft.MvvmLight;
 using System.Windows.Forms;
 using System.Linq;
+using System.Windows.Media;
+using System.Security.Policy;
 
 namespace UAM.Client.ViewModel
 {
@@ -103,21 +105,19 @@ namespace UAM.Client.ViewModel
 
         private void DoWork(object sender, DoWorkEventArgs e)
         {
+            GetXMLData();
             ProgressState = Visibility.Visible;
             for (int i = 0; i <= 100; i++)
             {
                 if (i == 1)
                 {
-                    ProgressText = "开启视景程序";
+                    ProgressText = "开启视景程序中...";
                     StartVisual();
                 }
                 else if (i == 40)
                 {
-                    if (PubVar.g_CurrentUser.UserName.Trim() == "Vertax")
-                    {
-                        ProgressText = "开启御风未来程序";
-                        StartApp();
-                    }
+                    ProgressText = "开启其他程序中...";
+                    StartApp();
                 }
                 else if (i == 70)
                 {
@@ -126,17 +126,16 @@ namespace UAM.Client.ViewModel
                 }
                 else if (i == 100)
                 {
-                    if (PubVar.g_NetVdnClient.State == HostConnectionState.Connected)
+                    do
                     {
-                        ProgressText = "连接主程序成功";
+                        Thread.Sleep(2000);
                     }
-                    else
-                    {
-                        ProgressText = "连接主程序失败";
-                    }
+                    while (vdnData.GetConnectState() == "Connected");
+
+                    ProgressText = "连接主程序成功";
                 }
                 //Reports the progress
-                if (PubVar.g_NetVdnClient.State == HostConnectionState.Connected)
+                if (vdnData.GetConnectState() == "Connected")
                 {
                     i = 100;
                 }
@@ -152,7 +151,6 @@ namespace UAM.Client.ViewModel
 
         private void ProgressCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            GetXMLData();
             Configure Confogure = new Configure();
             NextPage(Confogure);
         }
@@ -187,21 +185,33 @@ namespace UAM.Client.ViewModel
         }
 
         /// <summary>
-        /// 启动御风未来的程序
+        /// 启动指定程序
         /// </summary>
         private async void StartApp()
         {
+            List<UrlModel> appUrls = new List<UrlModel>();
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            string appUrl = PubVar.g_ConfigureUrl.Find(s => s.AppName == "VertaxBinary").AppUrl;
-            await Task.Run(() => StartProcesses(appUrl));
+            appUrls = PubVar.g_ConfigureUrl.FindAll(s => s.AppName == "Binary");
 
-            while (true)
+            if (appUrls != null && appUrls.Count != 0)
             {
-                if (m_finishTaskCount >= 1)
+                foreach (var url in appUrls)
                 {
-                    break;
+                    if (url.AppUrl != "")
+                    {
+                        await Task.Run(() => StartProcesses(url.AppUrl));
+                    }
+                    Interlocked.Increment(ref m_finishTaskCount);
+                }
+
+                while (true)
+                {
+                    if (m_finishTaskCount >= appUrls.Count())
+                    {
+                        break;
+                    }
                 }
             }
             sw.Stop();
@@ -215,7 +225,7 @@ namespace UAM.Client.ViewModel
                 {
                     p.StartInfo.FileName = exePath;
                     p.Start();
-                    p.WaitForExit();
+                    //p.WaitForExit();
                 }
                 catch
                 {
@@ -228,9 +238,26 @@ namespace UAM.Client.ViewModel
         /// <summary>
         /// 启动视景程序
         /// </summary>
-        private void StartVisual()
+        private async void StartVisual()
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
 
+            var visualUrl = PubVar.g_ConfigureUrl.Find(s => s.AppName == "Visual").AppUrl;
+
+            if (visualUrl != null && visualUrl != "")
+            {
+                await Task.Run(() => StartProcesses(visualUrl));
+
+                while (true)
+                {
+                    if (m_finishTaskCount >= 1)
+                    {
+                        break;
+                    }
+                }
+            }
+            sw.Stop();
         }
 
     }

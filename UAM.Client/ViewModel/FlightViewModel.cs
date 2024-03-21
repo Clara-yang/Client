@@ -23,6 +23,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
+using UAM.Client.Common;
 using UAM.Client.Views;
 using UAM.Model;
 using UAM.Model.Models;
@@ -38,6 +39,8 @@ namespace UAM.Client.ViewModel
         VDNConnectHelper vdnHelper = new VDNConnectHelper();
         VDNData vdnData = new VDNData();
         VDNDataUpadate dataUpdate = VDNDataUpadate.Instance;
+        public List<object> param;
+        public SendRequest controlRequest = new SendRequest();
 
         #region property
         public List<ButtonModel> BtnCollection { get; set; }
@@ -225,226 +228,198 @@ namespace UAM.Client.ViewModel
         /// <param name="e"></param>
         public void ExecClick(ButtonModel e)
         {
+            param = new List<object>();
             switch (e.Parameter)
             {
                 case "simFreeze":
-                    SendRequest freezeRequest;
-                    SendRequest runRequest;
-                    if (PubVar.g_CurrentUser.UserName.Trim() == "BoundaryAI")
+                    SendRequest simFreezeRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "simFreeze");
+                    var simFreezeVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, simFreezeRequest.VdnField);
+                    if (simFreezeVdnValue.ToString() == "true" || simFreezeVdnValue.ToString() == "false")
                     {
-                        freezeRequest = new SendRequest("BJInterface", "Default", "Total_Freeze");
-                        freezeRequest.SendParameters.Add(true);
-                        runRequest = new SendRequest("BJInterface", "Default", "Total_Freeze");
-                        runRequest.SendParameters.Add(false);
-                        if (VDNData.BJKernelModeString)
+                        if (simFreezeVdnValue.ToString() == "true")
                         {
-                            vdnData.SendRequset(runRequest);
+                            param.Add(false);
+                            vdnData.SendRequset(CommonMethod.SendRequestMethod(simFreezeRequest.SendTopic, simFreezeRequest.SendQueue, simFreezeRequest.SendRequestName, param));
                         }
                         else
                         {
-                            vdnData.SendRequset(freezeRequest);
+                            param.Add(true);
+                            vdnData.SendRequset(CommonMethod.SendRequestMethod(simFreezeRequest.SendTopic, simFreezeRequest.SendQueue, simFreezeRequest.SendRequestName, param));
                         }
                     }
                     else
                     {
-                        freezeRequest = new SendRequest("Kernel", "Default", "Freeze");
-                        freezeRequest.SendParameters.Add(true);
-                        runRequest = new SendRequest("Kernel", "Default", "Run");
-                        runRequest.SendParameters.Add(true);
-                        if (VDNData.KernelModeString == "freeze:normal")
+                        if (simFreezeVdnValue.ToString() == "freeze:normal")
                         {
-                            vdnData.SendRequset(runRequest);
+                            controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "simRun");
+                            param.Add(true);
+                            vdnData.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
                         }
-                        else if (VDNData.KernelModeString == "run:normal")
+                        else
                         {
-                            vdnData.SendRequset(freezeRequest);
+                            param.Add(true);
+                            vdnData.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
                         }
                     }
                     break;
                 case "flightFreeze":
-                    SendRequest flightRequest = new SendRequest("EquationsOfMotion", "Freezes", "Flight_Freeze");
-                    flightRequest.SendParameters.Add(false);
-                    SendRequest flightFreezeRequestModel = new SendRequest("EquationsOfMotion", "Freezes", "Flight_Freeze");
-                    flightFreezeRequestModel.SendParameters.Add(true);
-
-                    if (VDNData.FlightFreeze)
+                    SendRequest flightFreezeRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "flightFreeze");
+                    var flightFreezeVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, flightFreezeRequest.VdnField);
+                    if (flightFreezeVdnValue.Equals(true))
                     {
-                        vdnData.SendRequset(flightRequest);
+                        param.Add(false);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(flightFreezeRequest.SendTopic, flightFreezeRequest.SendQueue, flightFreezeRequest.SendRequestName, param));
                     }
                     else
                     {
-                        vdnData.SendRequset(flightFreezeRequestModel);
+                        param.Add(true);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(flightFreezeRequest.SendTopic, flightFreezeRequest.SendQueue, flightFreezeRequest.SendRequestName, param));
                     }
                     break;
                 case "powerFreeze":
-                    SendRequest activeFreezeRequest = new SendRequest("ElectricPower", "Default", "BATTERY_FREEZE");
-                    activeFreezeRequest.SendParameters.Add(true);
-                    SendRequest cancelFreezeRequest = new SendRequest("ElectricPower", "Default", "BATTERY_FREEZE");
-                    cancelFreezeRequest.SendParameters.Add(false);
-
-                    if (VDNData.PowerFreeze)
+                    SendRequest powerFreezeRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "powerFreeze");
+                    var powerFreezeVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, powerFreezeRequest.VdnField);
+                    if (powerFreezeVdnValue.Equals(true))
                     {
-                        vdnData.SendRequset(cancelFreezeRequest);
+                        param.Add(false);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(powerFreezeRequest.SendTopic, powerFreezeRequest.SendQueue, powerFreezeRequest.SendRequestName, param));
                     }
                     else
                     {
-                        vdnData.SendRequset(activeFreezeRequest);
+                        param.Add(true);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(powerFreezeRequest.SendTopic, powerFreezeRequest.SendQueue, powerFreezeRequest.SendRequestName, param));
                     }
                     break;
                 case "locationFreeze":
-                    SendRequest activeLocationFreezeRequest = new SendRequest("AircraftLocation", "Freezes", "Position");
-                    activeLocationFreezeRequest.SendParameters.Add(true);
-                    SendRequest cancelLocationFreezeRequest = new SendRequest("AircraftLocation", "Freezes", "Position");
-                    cancelLocationFreezeRequest.SendParameters.Add(false);
-
-                    if (VDNData.LocationFreeze)
+                    SendRequest locationFreezeRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "locationFreeze");
+                    var locationFreezeVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, locationFreezeRequest.VdnField);
+                    if (locationFreezeVdnValue.Equals(true))
                     {
-                        vdnData.SendRequset(cancelLocationFreezeRequest);
+                        param.Add(false);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(locationFreezeRequest.SendTopic, locationFreezeRequest.SendQueue, locationFreezeRequest.SendRequestName, param));
                     }
                     else
                     {
-                        vdnData.SendRequset(activeLocationFreezeRequest);
+                        param.Add(true);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(locationFreezeRequest.SendTopic, locationFreezeRequest.SendQueue, locationFreezeRequest.SendRequestName, param));
                     }
                     break;
                 case "highlyFreeze":
-                    SendRequest activeHighlyFreezeRequest = new SendRequest("AircraftLocation", "Freezes", "Altitude");
-                    activeHighlyFreezeRequest.SendParameters.Add(true);
-                    SendRequest cancelHighlyFreezeRequest = new SendRequest("AircraftLocation", "Freezes", "Altitude");
-                    cancelHighlyFreezeRequest.SendParameters.Add(false);
-
-                    if (VDNData.HighlyFreeze)
+                    SendRequest highlyFreezeRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "highlyFreeze");
+                    var highlyFreezeVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, highlyFreezeRequest.VdnField);
+                    if (highlyFreezeVdnValue.Equals(true))
                     {
-                        vdnData.SendRequset(cancelHighlyFreezeRequest);
+                        param.Add(false);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(highlyFreezeRequest.SendTopic, highlyFreezeRequest.SendQueue, highlyFreezeRequest.SendRequestName, param));
                     }
                     else
                     {
-                        vdnData.SendRequset(activeHighlyFreezeRequest);
+                        param.Add(true);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(highlyFreezeRequest.SendTopic, highlyFreezeRequest.SendQueue, highlyFreezeRequest.SendRequestName, param));
                     }
                     break;
                 case "powerOn":
-                    SendRequest PowerOnRequest = new SendRequest("Cockpit_Control", "Default", "DI_BATTERY_PB_ON");
-                    var a = Int64.Parse("1");
-                    PowerOnRequest.SendParameters.Add(a);
-                    vdnData.SendRequset(PowerOnRequest);
-                    //To VertaxCockpitIo SE
-                    //SendRequest requestModel = new SendRequest("CockpitIo", "Default", "PowerOn_Request");
-                    //Int64 i = Int64.Parse("1");
-                    //requestModel.SendParameters.Add(i); 
+                    SendRequest powerOnRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "powerOn");
+                    param.Add(Int64.Parse("1"));
+                    vdnData.SendRequset(CommonMethod.SendRequestMethod(powerOnRequest.SendTopic, powerOnRequest.SendQueue,
+                        powerOnRequest.SendRequestName, param));
                     break;
                 case "powerReset":
-                    SendRequest PowerResetRequest = new SendRequest("ElectricPower", "Default", "BATTERY_RESET");
-                    PowerResetRequest.SendParameters.Add(true);
-                    vdnData.SendRequset(PowerResetRequest);
+                    SendRequest powerResetRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "powerReset");
+                    param.Add(true);
+                    vdnData.SendRequset(CommonMethod.SendRequestMethod(powerResetRequest.SendTopic, powerResetRequest.SendQueue, powerResetRequest.SendRequestName, param));
                     break;
                 case "engineOn":
-                    SendRequest engineOnRequest = new SendRequest("ElectricPower", "Default", "DI_PROPULSION_PB_ON");
-                    engineOnRequest.SendParameters.Add(true);
-                    SendRequest engineOffRequest = new SendRequest("ElectricPower", "Default", "DI_PROPULSION_PB_ON");
-                    engineOffRequest.SendParameters.Add(false);
-                    ////vertax
-                    //VDNRequestModel requestModel = new VDNRequestModel("CockpitIo", "Default", "StartPropeller_Request");
-                    //Int64 i = Int64.Parse("1");
-                    //requestModel.Parameters.Add(i);
-                    //vdnClient.SendRequset(requestModel);
-                    if (VDNData.EngineOn)
+                    SendRequest engineOnRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "engineOn");
+                    var engineOnVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, engineOnRequest.VdnField);
+                    if (engineOnVdnValue.Equals(true) || engineOnVdnValue.Equals(false))
                     {
-                        vdnData.SendRequset(engineOffRequest);
+                        if (engineOnVdnValue.Equals(true))
+                        {
+                            param.Add(false);
+                            vdnData.SendRequset(CommonMethod.SendRequestMethod(engineOnRequest.SendTopic, engineOnRequest.SendQueue, engineOnRequest.SendRequestName, param));
+                        }
+                        else
+                        {
+                            param.Add(true);
+                            vdnData.SendRequset(CommonMethod.SendRequestMethod(engineOnRequest.SendTopic, engineOnRequest.SendQueue, engineOnRequest.SendRequestName, param));
+                        }
                     }
                     else
                     {
-                        vdnData.SendRequset(engineOnRequest);
+                        param.Add(Int64.Parse("1"));
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(engineOnRequest.SendTopic, engineOnRequest.SendQueue, engineOnRequest.SendRequestName, param));
                     }
+
                     break;
                 case "crashOverride":
-                    SendRequest crashOnRequest;
-                    SendRequest crashOffRequest;
-
-                    crashOnRequest = new SendRequest("Crash", "Default", "Crash_Override");
-                    crashOnRequest.SendParameters.Add(true);
-                    crashOffRequest = new SendRequest("Crash", "Default", "Crash_Override");
-                    crashOffRequest.SendParameters.Add(false);
-
-                    if (PubVar.g_CurrentUser.UserName.Trim() == "BoundaryAI")
+                    SendRequest crashOverrideRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "crashOverride");
+                    var crashOverrideVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, crashOverrideRequest.VdnField);
+                    if (crashOverrideVdnValue.Equals(true))
                     {
-                        if (VDNData.BJCrashOverride)
-                        {
-                            vdnData.SendRequset(crashOffRequest);
-                        }
-                        else
-                        {
-                            vdnData.SendRequset(crashOnRequest);
-                        }
+                        param.Add(false);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(crashOverrideRequest.SendTopic, crashOverrideRequest.SendQueue, crashOverrideRequest.SendRequestName, param));
                     }
                     else
                     {
-                        if (VDNData.CrashOverride)
-                        {
-                            vdnData.SendRequset(crashOffRequest);
-                        }
-                        else
-                        {
-                            vdnData.SendRequset(crashOnRequest);
-                        }
+                        param.Add(true);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(crashOverrideRequest.SendTopic, crashOverrideRequest.SendQueue, crashOverrideRequest.SendRequestName, param));
                     }
                     break;
                 case "cleanCrash":
-                    SendRequest cleanCrashOnRequest = new SendRequest("Crash", "Default", "Clear_Crash");
-                    cleanCrashOnRequest.SendParameters.Add(true);
-                    SendRequest cleanCrashOffRequest = new SendRequest("Crash", "Default", "Clear_Crash");
-                    cleanCrashOffRequest.SendParameters.Add(false);
-
-                    if (VDNData.BJClearCrash)
+                    SendRequest cleanCrashRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "cleanCrash");
+                    var cleanCrashVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, cleanCrashRequest.VdnField);
+                    if (cleanCrashVdnValue.Equals(true))
                     {
-                        vdnData.SendRequset(cleanCrashOffRequest);
+                        param.Add(false);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(cleanCrashRequest.SendTopic, cleanCrashRequest.SendQueue, cleanCrashRequest.SendRequestName, param));
                     }
                     else
                     {
-                        vdnData.SendRequset(cleanCrashOnRequest);
+                        param.Add(true);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(cleanCrashRequest.SendTopic, cleanCrashRequest.SendQueue, cleanCrashRequest.SendRequestName, param));
                     }
                     break;
                 case "motionPre":
-                    SendRequest motionStartRequest = new SendRequest("Motion", "Default", "Toggle_Motion_State");
-                    motionStartRequest.SendParameters.Add(1);
-                    SendRequest motionRequest = new SendRequest("Motion", "Default", "Toggle_Motion_State");
-                    motionRequest.SendParameters.Add(2);
-
-                    if (VDNData.MotionSwitch == 1)
+                    SendRequest motionPreRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "motionPre");
+                    var motionPreVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, motionPreRequest.VdnField);
+                    if (motionPreVdnValue.Equals(1))
                     {
-                        vdnData.SendRequset(motionRequest);
+                        param.Add(2);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(motionPreRequest.SendTopic, motionPreRequest.SendQueue, motionPreRequest.SendRequestName, param));
                     }
-                    else if (VDNData.MotionSwitch == 3)
+                    else if (motionPreVdnValue.Equals(3))
                     {
-                        vdnData.SendRequset(motionStartRequest);
+                        param.Add(1);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(motionPreRequest.SendTopic, motionPreRequest.SendQueue, motionPreRequest.SendRequestName, param));
                     }
                     break;
                 case "motionFreeze":
-                    SendRequest cancelFreezeModel = new SendRequest("Motion", "Freezes", "Motion");
-                    cancelFreezeModel.SendParameters.Add(false);
-                    SendRequest freezeMotionRequest = new SendRequest("Motion", "Freezes", "Motion");
-                    freezeMotionRequest.SendParameters.Add(true);
-
-                    if (VDNData.MotionFreeze)
+                    SendRequest motionFreezeRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "motionFreeze");
+                    var motionFreezeVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, motionFreezeRequest.VdnField);
+                    if (motionFreezeVdnValue.Equals(1))
                     {
-                        vdnData.SendRequset(cancelFreezeModel);
+                        param.Add(false);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(motionFreezeRequest.SendTopic, motionFreezeRequest.SendQueue, motionFreezeRequest.SendRequestName, param));
                     }
                     else
                     {
-                        vdnData.SendRequset(freezeMotionRequest);
+                        param.Add(true);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(motionFreezeRequest.SendTopic, motionFreezeRequest.SendQueue, motionFreezeRequest.SendRequestName, param));
                     }
                     break;
                 case "visualConnect":
-                    SendRequest closeVisualModel = new SendRequest("Visual", "Default", "Set_Visual_On");
-                    closeVisualModel.SendParameters.Add(false);
-                    SendRequest openVisualRequest = new SendRequest("Visual", "Default", "Set_Visual_On");
-                    openVisualRequest.SendParameters.Add(true);
-
-                    if (VDNData.VisualConnect)
+                    SendRequest visualConnectRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "visualConnect");
+                    var visualConnectVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, visualConnectRequest.VdnField);
+                    if (visualConnectVdnValue.Equals(true))
                     {
-                        vdnData.SendRequset(closeVisualModel);
+                        param.Add(false);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(visualConnectRequest.SendTopic, visualConnectRequest.SendQueue, visualConnectRequest.SendRequestName, param));
                     }
                     else
                     {
-                        vdnData.SendRequset(openVisualRequest);
+                        param.Add(true);
+                        vdnData.SendRequset(CommonMethod.SendRequestMethod(visualConnectRequest.SendTopic, visualConnectRequest.SendQueue, visualConnectRequest.SendRequestName, param));
                     }
                     break;
 
@@ -464,6 +439,8 @@ namespace UAM.Client.ViewModel
         {
             vdnHelper.StopProgram();
             vdnHelper.StopProcess("AircraftSimulation");
+            vdnHelper.StopProcess("fcRehost");
+            vdnHelper.StopProcess("hostPrevTrim");
             Application.Current.Shutdown();
             Environment.Exit(0);
         }

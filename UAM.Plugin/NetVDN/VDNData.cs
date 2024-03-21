@@ -18,9 +18,12 @@ namespace UAM.Plugin
     public class VDNData
     {
         private static VDNConnectHelper connectHelper = new VDNConnectHelper();
-        private static VDNConnectHelper helper = VDNConnectHelper.CreateInstance();
-        private DispatcherTimer timer;
+        private static VDNConnectHelper helper = VDNConnectHelper.CreateInstance(); 
+        private static NetVdnClient m_NetVdnClient = helper.GetClient();
+        private Thread connectThread;
+        private Timer thread_Time;
 
+        #region
         public static int MotionSwitch = 2;
         public static bool MotionFreeze = false;
         public static string KernelModeString = "";
@@ -50,13 +53,17 @@ namespace UAM.Plugin
         public static string CIGISeason = "";
         public static string CIGITimeOfDay = "";
         public static string CIGIWeather = "";
+        public static string GroundWindDirection = "";
+        public static string GroundWindVelocity = "";
+        public static string HollowDirection = "";
+        public static string HollowVelocity = "";
+        public static string GustSpeed = "";
         public static bool CIGIRandomLightningEnable = false;
         public static int CIGISeverity = 0;
         public static double CIGIThickness = 0.00;
         public static double CIGITransitionBand = 0.00;
         public static double CIGIVisibility = 0.00;
-
-        public static string HostConnect = PubVar.g_NetVdnClient.State.ToString();
+         
         public static bool VisualConnect = false;
 
         public static double Latitude = 0.00;
@@ -127,27 +134,32 @@ namespace UAM.Plugin
         public static bool MotorLoss2IsEnable = false;
         public static bool MotorLoss1IsEnable = false;
         public static bool MotorLoss0IsEnable = false;
-
-        public VDNData()
-        {
-            PubVar.g_NetVdnClient = helper.GetClient();
-            timer = new DispatcherTimer();
-            timer.Tick += CheckNetVdnStatus;
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
-            timer.Start();
-        }
+        #endregion 
 
         public void Init()
         {
             connectHelper.Init();
+            Start();
         }
-
-        public void CheckNetVdnStatus(object sender, EventArgs e)
+        public void Start()
         {
-            if (PubVar.g_NetVdnClient.State == HostConnectionState.Connected)
+            connectThread = new Thread(DoSubscribe);
+            connectThread.Start();
+            thread_Time = new Timer(UpdateVariable, null, 10000, 10000);
+        }
+        public void Stop()
+        {
+            thread_Time.Dispose();
+            if (m_NetVdnClient != null)
             {
-                DoSubscribe();
-                timer.Stop();
+                m_NetVdnClient.Disconnect();
+            }
+        }
+        private void UpdateVariable(object state)
+        {
+            if (m_NetVdnClient != null)
+            {
+                m_NetVdnClient.State.ToString();
             }
         }
         public string GetConnectState()
@@ -437,7 +449,7 @@ namespace UAM.Plugin
             VdnVariable MotionSwitch_var = PubVar.g_NetVdnClient.Subscribe(MotionSwitch);
             MotionSwitch_var.ValueChanged += MotionSwitch_var_ValueChanged;
 
-            FullVdnName BJKernelModeString_name = new FullVdnName("BJInterface", "TotalFreezeResponse_commandAccept", "N/A", VdnScope.Outputs, VdnType.Bool);
+            FullVdnName BJKernelModeString_name = new FullVdnName("BJInterface", "FreezeStatus_TotalFreeze", "N/A", VdnScope.Outputs, VdnType.Bool);
             VdnVariable BJKernelModeString_var = PubVar.g_NetVdnClient.Subscribe(BJKernelModeString_name);
             BJKernelModeString_var.ValueChanged += BJKernelModeString_var_ValueChanged;
 
@@ -495,7 +507,24 @@ namespace UAM.Plugin
             // Visual_Weather天气具体情况
             FullVdnName Weather_name = new FullVdnName("Visual", "Weather.Current_Weather", "N/A", VdnScope.Outputs, VdnType.Text);
             VdnVariable Weather_var = PubVar.g_NetVdnClient.Subscribe(Weather_name);
-            Weather_var.ValueChanged += Weather_var_ValueChanged;                    // Visual_CloudType 云类型
+            Weather_var.ValueChanged += Weather_var_ValueChanged;
+            // 风
+            FullVdnName GroundWindDirection_name = new FullVdnName("Wind", "Surface_Winds_Direction", "deg", VdnScope.Outputs, VdnType.Float64);
+            VdnVariable GroundWindDirection_var = PubVar.g_NetVdnClient.Subscribe(GroundWindDirection_name);
+            GroundWindDirection_var.ValueChanged += GroundWindDirection_var_ValueChanged;
+            FullVdnName GroundWindVelocity_name = new FullVdnName("Wind", "Surface_Winds_Speed", "kt", VdnScope.Outputs, VdnType.Float64);
+            VdnVariable GroundWindVelocity_var = PubVar.g_NetVdnClient.Subscribe(GroundWindVelocity_name);
+            GroundWindVelocity_var.ValueChanged += GroundWindVelocity_var_ValueChanged;
+            FullVdnName HollowDirection_name = new FullVdnName("Wind", "Intermediate_Winds_Direction", "deg", VdnScope.Outputs, VdnType.Float64);
+            VdnVariable HollowDirection_var = PubVar.g_NetVdnClient.Subscribe(HollowDirection_name);
+            HollowDirection_var.ValueChanged += HollowDirection_var_ValueChanged;
+            FullVdnName HollowVelocity_name = new FullVdnName("Wind", "Intermediate_Winds_Speed", "kt", VdnScope.Outputs, VdnType.Float64);
+            VdnVariable HollowVelocity_var = PubVar.g_NetVdnClient.Subscribe(HollowVelocity_name);
+            HollowVelocity_var.ValueChanged += HollowVelocity_var_ValueChanged;
+            FullVdnName GustSpeed_name = new FullVdnName("Wind", "Change_Wind_Gusts", "kt", VdnScope.Outputs, VdnType.Float64);
+            VdnVariable GustSpeed_var = PubVar.g_NetVdnClient.Subscribe(GustSpeed_name);
+            GustSpeed_var.ValueChanged += GustSpeed_var_ValueChanged;
+            // Visual_CloudType 云类型
             FullVdnName Cloud_Type = new FullVdnName("Visual", "Weather.CloudType", "N/A", VdnScope.Outputs, VdnType.Int64);
             VdnVariable Cloud_var = PubVar.g_NetVdnClient.Subscribe(Cloud_Type);
             Cloud_var.ValueChanged += CloudyType_var_ValueChanged;
@@ -878,6 +907,26 @@ namespace UAM.Plugin
         private void Weather_var_ValueChanged(object sender, object lastValue)
         {
             CIGIWeather = (sender as VdnVariable).Value.ToString();
+        }
+        private void GroundWindDirection_var_ValueChanged(object sender, object lastValue)
+        {
+            GroundWindDirection = (sender as VdnVariable).Value.ToString();
+        }
+        private void GroundWindVelocity_var_ValueChanged(object sender, object lastValue)
+        {
+            GroundWindVelocity = (sender as VdnVariable).Value.ToString();
+        }
+        private void HollowDirection_var_ValueChanged(object sender, object lastValue)
+        {
+            HollowDirection = (sender as VdnVariable).Value.ToString();
+        }
+        private void HollowVelocity_var_ValueChanged(object sender, object lastValue)
+        {
+            HollowVelocity = (sender as VdnVariable).Value.ToString();
+        }
+        private void GustSpeed_var_ValueChanged(object sender, object lastValue)
+        {
+            GustSpeed = (sender as VdnVariable).Value.ToString();
         }
         private void DestinationHeading_var_ValueChanged(object sender, object lastValue)
         {

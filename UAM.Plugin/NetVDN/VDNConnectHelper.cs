@@ -47,9 +47,9 @@ namespace UAM.Plugin
             try
             {
                 StopProgram();
-                Thread.Sleep(1000);
                 client = new SshClient(PubVar.g_HostIP, CommunicationModel.Host_User, CommunicationModel.Host_Password);
                 client.Connect();
+                Thread.Sleep(1000);
                 SshCommand startCmd = client.CreateCommand(CommunicationModel.Host_Exec_Cmd);
                 startCmd.BeginExecute();
                 Thread.Sleep(1000);
@@ -69,6 +69,7 @@ namespace UAM.Plugin
                 client.Connect();
                 SshCommand stopCmd = client.CreateCommand(CommunicationModel.Host_Stop_Cmd);
                 stopCmd.Execute();
+                Thread.Sleep(1000);
                 client.Dispose();
             }
         }

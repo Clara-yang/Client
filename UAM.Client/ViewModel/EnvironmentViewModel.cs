@@ -27,7 +27,7 @@ namespace UAM.Client.ViewModel
         private DispatcherTimer timer;
         VDNDataUpadate dataUpdate = VDNDataUpadate.Instance;
         public List<object> param;
-        public SendRequest request = new SendRequest();
+        public SendRequest controlRequest = new SendRequest();
 
         #region property
         private string m_HollowDirection;
@@ -363,6 +363,7 @@ namespace UAM.Client.ViewModel
 
         private void DataUpdate_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
+           
             Weather = dataUpdate.Weather;
         }
 
@@ -371,16 +372,22 @@ namespace UAM.Client.ViewModel
         /// </summary>
         public void WindClear()
         {
+            controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "WindClear");
             param = new List<object>();
-            param.Add(true);
-            request = CommonMethod.SendRequestMethod("Wind", "Default", "Change_Intermediate_Winds_Altitude", param);
-            vdnClient.SendRequset(request);
+            param.Add(Convert.ToBoolean(true));
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
 
             GroundWindDirection = "";
             GroundWindVelocity = "";
-            HollowDirection = "";
             HollowVelocity = "";
+            HollowDirection = "";
             GustSpeed = "";
+
+            GroundDirectionChanged("0");
+            GroundWindVelocityChanged("0");
+            HollowDirectionChanged("0");
+            HollowVelocityChanged("0");
+            GustSpeedChanged("0");
         }
 
         /// <summary>
@@ -398,32 +405,32 @@ namespace UAM.Client.ViewModel
         /// <param name="angle"></param>
         public void TurbulenceChanged(string angle)
         {
-            int angletype = 0;
-            if (int.TryParse(angle, out angletype))
-                switch (angle)
-                {
-                    case "-60":
-                        angletype = 1;
-                        break;
-                    case "-15":
-                        angletype = 2;
-                        break;
-                    case "30":
-                        angletype = 3;
-                        break;
-                    case "75":
-                        angletype = 4;
-                        break;
-                    case "120":
-                        angletype = 5;
-                        break;
-                    default:
-                        break;
-                }
+            //int angletype = 0;
+            //if (int.TryParse(angle, out angletype))
+            //    switch (angle)
+            //    {
+            //        case "-60":
+            //            angletype = 1;
+            //            break;
+            //        case "-15":
+            //            angletype = 2;
+            //            break;
+            //        case "30":
+            //            angletype = 3;
+            //            break;
+            //        case "75":
+            //            angletype = 4;
+            //            break;
+            //        case "120":
+            //            angletype = 5;
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "Turbulence");
             param = new List<object>();
-            param.Add(Convert.ToInt64(angletype));
-            request = CommonMethod.SendRequestMethod("Wind", "Default", "Change_Turbulence_Level", param);
-            vdnClient.SendRequset(request);
+            param.Add(Convert.ToInt64(angle));
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
         }
 
         /// <summary>
@@ -433,10 +440,10 @@ namespace UAM.Client.ViewModel
         {
             if (num != "")
             {
+                controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "GroundDirection");
                 param = new List<object>();
-                param.Add(Convert.ToInt64(num));
-                request = CommonMethod.SendRequestMethod("Wind", "Default", "Change_Surface_Wind_Heading", param);
-                vdnClient.SendRequset(request);
+                param.Add(Convert.ToDouble(num));
+                vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
             }
         }
 
@@ -448,10 +455,10 @@ namespace UAM.Client.ViewModel
         {
             if (num != "")
             {
+                controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "GroundWindVelocity");
                 param = new List<object>();
-                param.Add(Convert.ToInt64(num));
-                request = CommonMethod.SendRequestMethod("Wind", "Default", "Change_Surface_Wind_Speed", param);
-                vdnClient.SendRequset(request);
+                param.Add(Convert.ToDouble(num));
+                vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
             }
         }
 
@@ -462,10 +469,10 @@ namespace UAM.Client.ViewModel
         {
             if (num != "")
             {
+                controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "HollowDirection");
                 param = new List<object>();
-                param.Add(Convert.ToInt64(num));
-                request = CommonMethod.SendRequestMethod("Wind", "Default", "Change_Intermediate_Wind_Heading", param);
-                vdnClient.SendRequset(request);
+                param.Add(Convert.ToDouble(num));
+                vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
             }
         }
 
@@ -476,10 +483,10 @@ namespace UAM.Client.ViewModel
         {
             if (num != "")
             {
+                controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "HollowVelocity");
                 param = new List<object>();
-                param.Add(Convert.ToInt64(num));
-                request = CommonMethod.SendRequestMethod("Wind", "Default", "Change_Intermediate_Wind_Speed", param);
-                vdnClient.SendRequset(request);
+                param.Add(Convert.ToDouble(num));
+                vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
             }
         }
 
@@ -490,10 +497,10 @@ namespace UAM.Client.ViewModel
         {
             if (num != "")
             {
+                controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "HollowHeight");
                 param = new List<object>();
-                param.Add(Convert.ToInt64(num));
-                request = CommonMethod.SendRequestMethod("Wind", "Default", "Change_Intermediate_Winds_Altitude", param);
-                vdnClient.SendRequset(request);
+                param.Add(Convert.ToDouble(num));
+                vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
             }
 
         }
@@ -505,12 +512,11 @@ namespace UAM.Client.ViewModel
         {
             if (num != "")
             {
+                controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "GustSpeed");
                 param = new List<object>();
-                param.Add(Convert.ToInt64(num));
-                request = CommonMethod.SendRequestMethod("Wind", "Default", "Change_Wind_Gusts", param);
-                vdnClient.SendRequset(request);
+                param.Add(Convert.ToDouble(num));
+                vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
             }
-
         }
 
         /// <summary>
@@ -518,22 +524,24 @@ namespace UAM.Client.ViewModel
         /// </summary>
         public void CloudyClear()
         {
-            SendRequest requestModel = new SendRequest("Visual", "Default", "ChangeCloud");
+            controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "CloudyClear");
+            param = new List<object>();
             int Cloud_Type = 0;
             int Cloud_Density = 0;
             double Cloud_Altitude = 20000;
-            requestModel.SendParameters.Add(Cloud_Type);
-            requestModel.SendParameters.Add(Cloud_Density);
-            requestModel.SendParameters.Add(Cloud_Altitude);
-            vdnClient.SendRequset(requestModel);
+            param.Add(Cloud_Type);
+            param.Add(Cloud_Density);
+            param.Add(Cloud_Altitude);
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
         }
 
         public void SoliderCompleted(double num)
         {
-            SendRequest requestModel = new SendRequest("Visual", "Default", "ChangeVisibility");
-            var s = num * 1000;
-            requestModel.SendParameters.Add(s);
-            vdnClient.SendRequset(requestModel);
+            controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "VisibilityChange");
+            var q = num * 1000;
+            param = new List<object>();
+            param.Add(q);
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
         }
 
         /// <summary>
@@ -542,11 +550,11 @@ namespace UAM.Client.ViewModel
         /// <param name="weather"></param>
         private void WeatherChanged(string weather)
         {
-            Console.WriteLine(weather);
-
-            SendRequest requestModel = new SendRequest("Visual", "Default", "ChangeWeather");
-            requestModel.SendParameters.Add((VDNData.CIGIWeather != weather) ? weather : "Sunny");
-            vdnClient.SendRequset(requestModel);
+            controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "WeatherChanged");
+            param = new List<object>();
+            param.Add((VDNData.CIGIWeather != weather) ? weather : "Sunny");
+            var d = CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param);
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
         }
 
         /// <summary>
@@ -555,10 +563,11 @@ namespace UAM.Client.ViewModel
         /// <param name="obj"></param>
         private void PrecipitationChanged(string precipitation)
         {
-            SendRequest requestModel = new SendRequest("Visual", "Default", "ChangePrecipitation");
-            var s = Int64.Parse(precipitation);
-            requestModel.SendParameters.Add(s);
-            vdnClient.SendRequset(requestModel);
+            controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "PrecipitationChanged");
+            param = new List<object>();
+            var q = Int64.Parse(precipitation);
+            param.Add(q);
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
             Precipitation = precipitation;
         }
         private void SetCloudType(string type)
@@ -616,11 +625,12 @@ namespace UAM.Client.ViewModel
                     break;
             }
             // Send Cloud Request
-            SendRequest requestModel = new SendRequest("Visual", "Default", "ChangeCloud");
-            requestModel.SendParameters.Add(Cloud_Type);
-            requestModel.SendParameters.Add(Cloud_Density);
-            requestModel.SendParameters.Add(Cloud_Altitude);
-            vdnClient.SendRequset(requestModel);
+            controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "CloudChange");
+            param = new List<object>();
+            param.Add(Cloud_Type);
+            param.Add(Cloud_Density);
+            param.Add(Cloud_Altitude);
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
         }
 
         /// <summary>
@@ -645,9 +655,10 @@ namespace UAM.Client.ViewModel
         /// </summary>
         private void SetHumidity()
         {
-            SendRequest requestModel = new SendRequest("Visual", "Default", "SetHumidity");
-            requestModel.SendParameters.Add((double)Humidity);
-            vdnClient.SendRequset(requestModel);
+            controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "HumiditySet");
+            param = new List<object>();
+            param.Add((double)Humidity);
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
         }
 
         /// <summary>
@@ -655,31 +666,32 @@ namespace UAM.Client.ViewModel
         /// </summary>
         private void SetTemperature()
         {
-            SendRequest requestModel = new SendRequest("Atmosphere", "Default", "Set_Msl_Temperature");
-            requestModel.SendParameters.Add((double)Temperature);
-            vdnClient.SendRequset(requestModel);
+            controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "TemperatureSet");
+            param = new List<object>();
+            param.Add((double)Temperature);
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
         }
         /// <summary>
         /// 激活时间设置
         /// </summary>
         private void SetTime()
         {
-            //修改季节
-            SendRequest requestModel_season = new SendRequest("Visual", "Default", "ChangeSeason");
-            requestModel_season.SendParameters.Add(Season);
-            vdnClient.SendRequset(requestModel_season);
+            //修改季节 
+            var seasonReq = PubVar.g_SendRequestList.Find(s => s.ControlName == "SeasonChange");
+            seasonReq.SendParameters.Add(Season);
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(seasonReq.SendTopic, seasonReq.SendQueue, seasonReq.SendRequestName, seasonReq.SendParameters));
 
             //修改时刻
-            SendRequest requestModel_timeofday = new SendRequest("Visual", "Default", "ChangeTimeOfDay");
-            requestModel_timeofday.SendParameters.Add(TimeOfDay);
-            vdnClient.SendRequset(requestModel_timeofday);
+            var dayReq = PubVar.g_SendRequestList.Find(s => s.ControlName == "DayChange");
+            dayReq.SendParameters.Add(TimeOfDay);
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(dayReq.SendTopic, dayReq.SendQueue, dayReq.SendRequestName, dayReq.SendParameters));
 
             //修改时间
-            SendRequest requestModel_time = new SendRequest("Visual", "Default", "ChangeTime");
-            requestModel_time.SendParameters.Add(Hour);
-            requestModel_time.SendParameters.Add(Minute);
-            requestModel_time.SendParameters.Add(Second);
-            vdnClient.SendRequset(requestModel_time);
+            var timeReq = PubVar.g_SendRequestList.Find(s => s.ControlName == "TimeChange");
+            timeReq.SendParameters.Add(Hour);
+            timeReq.SendParameters.Add(Minute);
+            timeReq.SendParameters.Add(Second);
+            vdnClient.SendRequset(CommonMethod.SendRequestMethod(dayReq.SendTopic, dayReq.SendQueue, dayReq.SendRequestName, timeReq.SendParameters));
         }
 
         #endregion
