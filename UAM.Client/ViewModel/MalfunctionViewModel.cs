@@ -21,19 +21,16 @@ using System.Windows.Controls;
 using System.Windows;
 using UAM.Client.Common;
 using Csf.Imets.ToolCore.Vdn;
+using static Csf.Imets.ToolCore.Common.Controls.UICustomEventEditor;
 
 namespace UAM.Client.ViewModel
 {
     public class MalfunctionViewModel : ViewModelBase
     {
-        VDNData vdnClient = new VDNData();
         private DispatcherTimer timer;
         VDNDataUpadate dataUpdate = VDNDataUpadate.Instance;
         MalfunctionModel selectedMal = new MalfunctionModel();
         List<SendRequest> requests = new List<SendRequest>();
-        object subValue = "";
-        string vdnField = string.Empty;
-        string keyValue = string.Empty;
 
         #region property
         public string _Description;
@@ -81,14 +78,15 @@ namespace UAM.Client.ViewModel
             }
             set { _MalclickCommand = value; }
         }
-        private RelayCommand<MalfunctionModel> _ActiveMalCommand;
-        public RelayCommand<MalfunctionModel> ActiveMalCommand
+        private RelayCommand<MouseButtonEventArgs> _ActiveMalCommand;
+        public RelayCommand<MouseButtonEventArgs> ActiveMalCommand
         {
             get
             {
-                return new RelayCommand<MalfunctionModel>(e =>
+                return new RelayCommand<MouseButtonEventArgs>(e =>
                 {
-                    ActiveMalEvent(e);
+                    ActiveMalEvent(selectedMal);
+                    e.Handled = true;
                 });
             }
             set { _ActiveMalCommand = value; }
@@ -121,24 +119,22 @@ namespace UAM.Client.ViewModel
         {
             foreach (var item in Malfunctions)
             {
-                item.ATASelected = Malfunctions.Exists(s => s.MalfunctionSelected == true && s.ATAChapterID == item.ATAChapterID) ? true : false; 
+                item.ATASelected = Malfunctions.Exists(s => s.MalfunctionSelected == true && s.ATAChapterID == item.ATAChapterID) ? true : false;
 
-                var vdnEnable = CommonMethod.GetPropertiesValue(dataUpdate,item.VdnEnableField);
+                var vdnEnable = CommonMethod.GetPropertiesValue(dataUpdate, item.VdnEnableField);
                 item.IsEnable = bool.Parse(vdnEnable.ToString());
-            }
 
-            if (vdnField == selectedMal.VdnActiveField)
-            {
-                subValue = CommonMethod.GetPropertiesValue(dataUpdate, vdnField);
-                selectedMal.MalfunctionSelected = bool.Parse(subValue.ToString());
-                if (selectedMal.MalfunctionSelected)
+                var vdnActive = CommonMethod.GetPropertiesValue(dataUpdate, item.VdnActiveField);
+                item.MalfunctionSelected = bool.Parse(vdnActive.ToString());
+                if (item.MalfunctionSelected)
                 {
-                    selectedMal.ValueEnable = Visibility.Visible;
-                    selectedMal.SelectedValue = keyValue.ToString();
+                    item.ActiveEnable = Visibility.Visible;
+                    item.ValueEnable = Visibility.Visible;
                 }
                 else
                 {
-                    selectedMal.ValueEnable = Visibility.Collapsed;
+                    item.ActiveEnable = Visibility.Collapsed;
+                    item.ValueEnable = Visibility.Collapsed;
                 }
             }
         }
@@ -166,6 +162,7 @@ namespace UAM.Client.ViewModel
         {
             selectedMal = Malfunctions.Find(s => s.MalfunctionName == param.MalfunctionName);
             Description = selectedMal.MalfunctionDescription;
+            param.ActiveEnable = Visibility.Visible;
 
             requests = PubVar.g_SendRequestList.FindAll(a => a.ControlName == param.MalfunctionName).OrderBy(x => x.ParameterIndex).ToList();
         }
@@ -177,15 +174,8 @@ namespace UAM.Client.ViewModel
         public void ActiveMalEvent(MalfunctionModel param)
         {
             var returnValue = CommonMethod.SendRequest_Mal(requests);
-            if (returnValue.Count > 1)
-            {
-                keyValue = returnValue[0];
-                vdnField = returnValue[1];
-            }
-            else
-            {
-                vdnField = returnValue.FirstOrDefault();
-            }
+            string keyValue = returnValue.FirstOrDefault();
+            param.SelectedValue = keyValue;
         }
 
     }

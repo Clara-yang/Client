@@ -1636,17 +1636,5 @@
     <VdnField></VdnField>
     <ParameterIndex>1</ParameterIndex>
   </SendRequest>
-  <SendRequest>
-    <ControlName>dayChange</ControlName>
-    <IsInput>false</IsInput>
-    <InputHeader></InputHeader>
-    <InPutMin></InPutMin>
-    <InPutMax></InPutMax>
-    <SendTopic>FlightControlWrapper</SendTopic>
-    <SendQueue>Default</SendQueue>
-    <SendRequestName>ControlStickType_Request</SendRequestName>
-    <VdnField></VdnField>
-    <ParameterIndex>1</ParameterIndex>
-  </SendRequest>
   <!-- 航线机型等配置 end -->
 </SendRequests>

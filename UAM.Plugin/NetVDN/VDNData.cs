@@ -449,7 +449,7 @@ namespace UAM.Plugin
             VdnVariable MotionSwitch_var = PubVar.g_NetVdnClient.Subscribe(MotionSwitch);
             MotionSwitch_var.ValueChanged += MotionSwitch_var_ValueChanged;
 
-            FullVdnName BJKernelModeString_name = new FullVdnName("BJInterface", "FreezeStatus_TotalFreeze", "N/A", VdnScope.Outputs, VdnType.Bool);
+            FullVdnName BJKernelModeString_name = new FullVdnName("BJInterface", "FreezeStatus_TotalFreeze", "", VdnScope.Outputs, VdnType.Bool);
             VdnVariable BJKernelModeString_var = PubVar.g_NetVdnClient.Subscribe(BJKernelModeString_name);
             BJKernelModeString_var.ValueChanged += BJKernelModeString_var_ValueChanged;
 
@@ -657,7 +657,7 @@ namespace UAM.Plugin
         }
         private void MotorLoss5IsEnable_var_ValueChanged(object sender, object lastValue)
         {
-            MotorLoss0IsEnable = bool.Parse((sender as VdnVariable).Value.ToString());
+            MotorLoss5IsEnable = bool.Parse((sender as VdnVariable).Value.ToString());
         }
         private void MotorLoss6IsEnable_var_ValueChanged(object sender, object lastValue)
         {

@@ -55,7 +55,6 @@ namespace UAM.Client.Common
         public static List<string> SendRequest_Mal(List<SendRequest> requests)
         {
             string keypadValue = string.Empty;
-            string vdnField = string.Empty;
             object subValue = "";
             List<string> str = new List<string>();
             var sendParams = new List<object>();
@@ -84,13 +83,10 @@ namespace UAM.Client.Common
                         if (item.VdnField != "" && item.VdnField != null)
                             subValue = GetPropertiesValue(dataUpdate, item.VdnField);
                         subValue = subValue.ToString() == "" ? false : subValue;
-
                         sendParams.Add(!bool.Parse(subValue.ToString()));
-
-                        vdnField = item.VdnField;
                     }
 
-                    if (item.IsInput == true)
+                    if (item.IsInput == true && subValue.Equals(false))
                     {
                         sendParams.Add(Convert.ToInt64(controlId));
                         keypadValue = KeypadDisplay(item);
@@ -112,7 +108,6 @@ namespace UAM.Client.Common
             var sendRequest = SendRequestMethod(topicName, queueName, reqName, sendParams);
             vdnClient.SendRequset(sendRequest);
 
-            str.Add(vdnField);
             return str;
         }
 

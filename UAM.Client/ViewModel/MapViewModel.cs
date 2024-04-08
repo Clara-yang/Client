@@ -25,6 +25,8 @@ namespace UAM.Client.ViewModel
         VDNData vdnData = new VDNData();
         VDNDataUpadate dataUpdate = VDNDataUpadate.Instance;
         public List<object> param;
+        SendRequest destinationRequest;
+        SendRequest departureRequest;
 
         #region Property
         public int Route { get; set; } = PubVar.CurrentRoute;
@@ -88,6 +90,14 @@ namespace UAM.Client.ViewModel
             {
                 btn.BtnClickCommand = BottomBtnClick;
             }
+
+            destinationRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "RouteDestination");
+            destinationRequest.SendParameters.Add(PubVar.DestinationId);
+           
+
+            departureRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "RouteActive");
+            departureRequest.SendParameters.Add(PubVar.DepartureId);
+           
         }
 
         private void DataUpdate_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -180,6 +190,12 @@ namespace UAM.Client.ViewModel
 
         public void ChangePosition(string param)
         {
+            // Reposition之前发送航线起点和终点
+            vdnData.SendRequset(CommonMethod.SendRequestMethod(departureRequest.SendTopic, departureRequest.SendQueue,
+               departureRequest.SendRequestName, departureRequest.SendParameters));
+            vdnData.SendRequset(CommonMethod.SendRequestMethod(destinationRequest.SendTopic, destinationRequest.SendQueue,
+               destinationRequest.SendRequestName, destinationRequest.SendParameters));
+
             SendRequest changePositionRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "ChangePosition");
             changePositionRequest.SendParameters.Add(Int64.Parse(param));
             vdnData.SendRequset(CommonMethod.SendRequestMethod(changePositionRequest.SendTopic, changePositionRequest.SendQueue,

@@ -33,8 +33,6 @@ namespace UAM.Client.ViewModel
         VDNDataUpadate dataUpdate = VDNDataUpadate.Instance;
         SendRequest executeAllRequest;
         SendRequest execVehicleRequest;
-        SendRequest destinationRequest;
-        SendRequest departureRequest;
         SendRequest execChangeStickRequest;
         SendRequest execChangeDayRequestModel;
         SendRequest execChangeSeasonRequestModel;
@@ -168,10 +166,6 @@ namespace UAM.Client.ViewModel
             VDNData.SendRequset(executeAllRequest);
             VDNData.SendRequset(CommonMethod.SendRequestMethod(execVehicleRequest.SendTopic, execVehicleRequest.SendQueue,
                 execVehicleRequest.SendRequestName, execVehicleRequest.SendParameters));
-            VDNData.SendRequset(CommonMethod.SendRequestMethod(destinationRequest.SendTopic, destinationRequest.SendQueue,
-                destinationRequest.SendRequestName, destinationRequest.SendParameters));
-            VDNData.SendRequset(CommonMethod.SendRequestMethod(departureRequest.SendTopic, departureRequest.SendQueue,
-                departureRequest.SendRequestName, departureRequest.SendParameters));
             VDNData.SendRequset(CommonMethod.SendRequestMethod(execChangeStickRequest.SendTopic, execChangeStickRequest.SendQueue,
                 execChangeStickRequest.SendRequestName, execChangeStickRequest.SendParameters));
             VDNData.SendRequset(CommonMethod.SendRequestMethod(execChangeDayRequestModel.SendTopic, execChangeDayRequestModel.SendQueue,
@@ -202,15 +196,8 @@ namespace UAM.Client.ViewModel
             PubVar.DepartureVertiport = selectedRoute.DepartureVertiport;
             PubVar.DestinationPad = selectedRoute.DestinationPad;
             PubVar.DestinationVertiport = selectedRoute.DestinationVertiport;
-
-            Int64 destination = Int64.Parse(selectedRoute.DestinationId);
-            Int64 departure = Int64.Parse(selectedRoute.DepartureId);
-
-            destinationRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "RouteDestination");
-            destinationRequest.SendParameters.Add(destination);
-
-            departureRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "RouteActive");
-            departureRequest.SendParameters.Add(departure);
+            PubVar.DepartureId = Int64.Parse(selectedRoute.DepartureId);
+            PubVar.DestinationId = Int64.Parse(selectedRoute.DestinationId);
         }
 
         public void ExecChangeTime()

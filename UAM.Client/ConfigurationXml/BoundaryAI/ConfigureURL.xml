@@ -12,6 +12,12 @@
 		<AppName>Binary</AppName>
 		<AppUrl>D:\UAM_Projects\Integration\2024.1.31Rehost\fcRehost\launch\fcRehost.exe</AppUrl>
 	</UrlModel>
+  <UrlModel>
+    <MapName></MapName>
+    <MapUrl></MapUrl>
+    <AppName>Binary</AppName>
+    <AppUrl>D:\Accel\uam_aural\x64\Debug\PlaySound.exe</AppUrl>
+  </UrlModel>
 	<UrlModel>
 		<MapName></MapName>
 		<MapUrl></MapUrl>

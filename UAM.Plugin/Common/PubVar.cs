@@ -48,8 +48,10 @@ namespace UAM.Plugin.Common
         public static string AircraftName;
         public static string DepartureVertiport;
         public static string DeparturePad;
+        public static Int64 DepartureId;
         public static string DestinationVertiport;
         public static string DestinationPad;
+        public static Int64 DestinationId;
         public static string AircraftCode;
         public static string CurrentDay;
         public static string CurrentSeason;

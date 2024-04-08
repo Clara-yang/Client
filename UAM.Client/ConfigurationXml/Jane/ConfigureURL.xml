@@ -3,13 +3,7 @@
   <UrlModel>
     <MapName>MainMap</MapName>
     <MapUrl>http://localhost:3000/ClientMap</MapUrl> 
-    <AppName></AppName>
-    <AppUrl></AppUrl>
-  </UrlModel>
-  <UrlModel>
-    <MapName></MapName>
-    <MapUrl></MapUrl>
-    <AppName>Visual</AppName>
+    <AppName>Binary</AppName>
     <AppUrl></AppUrl>
   </UrlModel>
   <UrlModel>
@@ -18,5 +12,10 @@
     <AppName>Binary</AppName>
     <AppUrl></AppUrl>
   </UrlModel>
-  
+  <UrlModel>
+    <MapName></MapName>
+    <MapUrl></MapUrl>
+    <AppName>Visual</AppName>
+    <AppUrl></AppUrl>
+  </UrlModel>
 </URLs>

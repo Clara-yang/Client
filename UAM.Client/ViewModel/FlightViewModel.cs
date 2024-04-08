@@ -40,7 +40,6 @@ namespace UAM.Client.ViewModel
         VDNData vdnData = new VDNData();
         VDNDataUpadate dataUpdate = VDNDataUpadate.Instance;
         public List<object> param;
-        public SendRequest controlRequest = new SendRequest();
 
         #region property
         public List<ButtonModel> BtnCollection { get; set; }
@@ -233,10 +232,11 @@ namespace UAM.Client.ViewModel
             {
                 case "simFreeze":
                     SendRequest simFreezeRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "simFreeze");
+                    SendRequest simRunRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "simRun");
                     var simFreezeVdnValue = CommonMethod.GetPropertiesValue(dataUpdate, simFreezeRequest.VdnField);
-                    if (simFreezeVdnValue.ToString() == "true" || simFreezeVdnValue.ToString() == "false")
+                    if (simFreezeVdnValue.Equals(true) || simFreezeVdnValue.Equals(false))
                     {
-                        if (simFreezeVdnValue.ToString() == "true")
+                        if (simFreezeVdnValue.Equals(true))
                         {
                             param.Add(false);
                             vdnData.SendRequset(CommonMethod.SendRequestMethod(simFreezeRequest.SendTopic, simFreezeRequest.SendQueue, simFreezeRequest.SendRequestName, param));
@@ -251,14 +251,13 @@ namespace UAM.Client.ViewModel
                     {
                         if (simFreezeVdnValue.ToString() == "freeze:normal")
                         {
-                            controlRequest = PubVar.g_SendRequestList.Find(s => s.ControlName == "simRun");
                             param.Add(true);
-                            vdnData.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
+                            vdnData.SendRequset(CommonMethod.SendRequestMethod(simRunRequest.SendTopic, simRunRequest.SendQueue, simRunRequest.SendRequestName, param));
                         }
                         else
                         {
                             param.Add(true);
-                            vdnData.SendRequset(CommonMethod.SendRequestMethod(controlRequest.SendTopic, controlRequest.SendQueue, controlRequest.SendRequestName, param));
+                            vdnData.SendRequset(CommonMethod.SendRequestMethod(simFreezeRequest.SendTopic, simFreezeRequest.SendQueue, simFreezeRequest.SendRequestName, param));
                         }
                     }
                     break;
@@ -441,6 +440,7 @@ namespace UAM.Client.ViewModel
             vdnHelper.StopProcess("AircraftSimulation");
             vdnHelper.StopProcess("fcRehost");
             vdnHelper.StopProcess("hostPrevTrim");
+            vdnHelper.StopProcess("PlaySound");
             Application.Current.Shutdown();
             Environment.Exit(0);
         }

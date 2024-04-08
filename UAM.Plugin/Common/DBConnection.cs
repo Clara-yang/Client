@@ -19,7 +19,6 @@ namespace UAM.Plugin.Common
         public static string UserConnectString;
         public DBConnection()
         {
-            //UserConnectString = ;
             ConnectString = ConfigurationManager.AppSettings["DatabaseConnString"].ToString();
             if (string.IsNullOrEmpty(ConnectString))
             {

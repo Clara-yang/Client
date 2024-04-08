@@ -3,7 +3,7 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                     xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors"
-                    xmlns:cuc="clr-namespace:UAM.Client.UILibrary" 
+                    xmlns:cuc="clr-namespace:UAM.Client.UILibrary"
                     xmlns:i="http://schemas.microsoft.com/expression/2010/interactions">
     <Style x:Key="PageItemSytle" TargetType="ListBoxItem">
         <Setter Property="Margin" Value="10" />
@@ -148,8 +148,8 @@
                                     Height="15"  
                                     Margin="5,0"
                                     CornerRadius="5"
-                                    Visibility="{Binding ValueEnable}"
                                     DockPanel.Dock="Left"
+                                    Visibility="{Binding ValueEnable}"
                                     Background="{DynamicResource PrimaryHueMidBrush}">
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                         <TextBlock Text="{Binding MalMsg}"
@@ -170,6 +170,7 @@
                                     Height="15"
                                     Margin="5,0"
                                     CornerRadius="5"
+                                    Visibility="{Binding ActiveEnable}"
                                     HorizontalAlignment="Right"
                                     Background="{DynamicResource PrimaryHueMidBrush}">
                                     <TextBlock Text="激活中" 
@@ -180,7 +181,7 @@
                                     <Behaviors:Interaction.Triggers>
                                         <Behaviors:EventTrigger EventName="MouseUp">
                                             <Behaviors:InvokeCommandAction Command="{Binding ActiveMalEvent}" 
-                                                               CommandParameter="{Binding}" />
+                                                               PassEventArgsToCommand="True" />
                                         </Behaviors:EventTrigger>
                                     </Behaviors:Interaction.Triggers>
                                 </Border>
@@ -196,6 +197,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="true">
                             <Setter TargetName="lbl" Property="Background" Value="#cccccc"/>
+                            <Setter TargetName="txt" Property="Visibility" Value="Visible"/>
                         </Trigger>
                         <DataTrigger Binding="{Binding MalfunctionSelected}" Value="true">
                             <Setter TargetName="txt" Property="Background" Value="red"/>
