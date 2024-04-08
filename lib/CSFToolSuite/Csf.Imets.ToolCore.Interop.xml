@@ -1,0 +1,1218 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "Csf.Imets.ToolCore.Interop"
+    </assembly>
+    <members>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlFontManager.ClearContextGroup(System.String)">
+            <summary>
+Clears the reference to the ContextGroup. 
+Every SetContextGroup should have a matchin ClearContextGroup when 
+the context is destroyed.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlFontManager.SetContextGroup(System.String)">
+            <summary>
+Sets the current context to use the context group GlFontManager.
+This should be used when sharing lists with other RenderingContexts.
+</summary>
+        </member>
+        <member name="T:Csf.Imets.ToolCore.OpenGL.GlFontManager">
+            <summary>
+The GlFontManager class is used to allow Managed interface
+to the native GlFontManager class.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlFont.Font">
+            <summary>
+Gets the pointer to the native GlFont instance.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlFont.default(System.Int32)">
+            <summary>
+Gets the info of the char at the given index.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlFont.CharCount">
+            <summary>
+Gets the char count for the font.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlFont.ImageFile">
+            <summary>
+Gets the ImageFile for the font.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlFont.ScaleHeight">
+            <summary>
+Gets the scale height.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlFont.ScaleWidth">
+            <summary>
+Gets the scale width.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlFont.Base">
+            <summary>
+Gets the base of the font.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlFont.LineHeight">
+            <summary>
+Gets the line height.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlFont.Size">
+            <summary>
+Gets the size of the font in pixels.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlFont.FontFace">
+            <summary>
+Gets the name of the font.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlFont.Dispose">
+            <summary>
+Deconstructor clears all resources.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlFont.#ctor(Csf.Imets.ToolCore.Native.OpenGL.GlFont*)">
+            <summary>
+Creates a new instance of the GlFont class.
+</summary>
+        </member>
+        <member name="T:Csf.Imets.ToolCore.OpenGL.GlFont">
+            <summary>
+A managed class to interface with an unmanged GlFont.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.CharInfo.#ctor(Csf.Imets.ToolCore.Native.OpenGL.CharInfo*)">
+            <summary>
+Initialize a new instance of the CharInfo class.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.CharInfo.XAdvance">
+            <summary>
+Gets the XAdvance of the Char.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.CharInfo.YOffset">
+            <summary>
+Gets the YOffset of the Char.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.CharInfo.XOffset">
+            <summary>
+Gets the XOffset of the Char.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.CharInfo.Height">
+            <summary>
+Gets the Height of the Char.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.CharInfo.Width">
+            <summary>
+Gets the Width of the Char.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.CharInfo.Y">
+            <summary>
+Gets the Y position of the Cha.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.CharInfo.X">
+            <summary>
+Gets the X position of the Char.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.VectorGraphic.AddShape(Csf.Imets.ToolCore.OpenGL.Drawing.IShape)">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.VectorGraphic.Clone">
+
+ICloneable
+
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.VectorGraphic.Visible">
+End IStroke
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.VectorGraphic.m_Stroke">
+IStroke
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.VectorGraphic.Dispose">
+
+Destructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.VectorGraphic.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.VectorGraphic)">
+
+Copy Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.VectorGraphic.#ctor">
+
+Constructor
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Triangle.m_DrawingObject">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Triangle.Clone">
+End Polygon
+
+ICloneable
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Triangle.Draw">
+
+Polygon
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Triangle.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.Triangle)">
+
+Copy Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Triangle.#ctor">
+
+Constructor
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.RegularPolygon.m_DrawingObject">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.RegularPolygon.Clone">
+End Polygon
+
+ICloneable
+
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.RegularPolygon.Size">
+
+Polygon
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.RegularPolygon.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.RegularPolygon)">
+
+Copy Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.RegularPolygon.#ctor">
+
+Constructor
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Quad.m_Bevel">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Quad.Clone">
+End Polygon
+
+ICloneable
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Quad.Draw">
+
+Polygon
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Quad.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.Quad)">
+
+Copy Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Quad.#ctor">
+
+Constructor
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Polyline.m_Width">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Polyline.Clone">
+End IShape
+
+ICloneable
+
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.Polyline.Visible">
+End IShape
+
+IShape
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Polyline.m_Visible">
+
+IShape
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Polyline.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.Polyline)">
+
+Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Polyline.#ctor">
+
+Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Path.SubPath.AddPoint(System.Drawing.PointF)">
+Add a point to the subpath.  This method tracks the min/max X,Y values
+for the subpath to assist in calculating a bounding box
+@arg point Point to be added to subpath
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Path.Clear">
+            <summary>
+Clears all information stored in the Path object and allows reuse.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Path.MoveTo(System.Drawing.PointF,System.Boolean)">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Path.Clone">
+End ITessellation
+
+ICloneable
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Path.TessBegin(System.UInt32)">
+
+ITessellation
+
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.Path.Stroke">
+End IShape
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.Path.Visible">
+
+IShape
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Path.m_Modified">
+End IShape
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Path.m_Visible">
+
+IShape
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Path.Dispose">
+
+Destructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Path.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.Path)">
+
+Copy Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Path.#ctor">
+
+Constructor
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Line.m_DrawingObject">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Line.Clone">
+End IShape
+
+ICloneable
+
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.Line.Visible">
+
+IShape
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Line.m_EndPoint">
+End IShape
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Line.m_Visible">
+
+IShape
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Line.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.Line)">
+
+Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Line.#ctor">
+
+Constructor
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.SimplePolygon.m_DrawingObject">
+End ITessellation
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.SimplePolygon.TessBegin(System.UInt32)">
+
+ITessellation
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.SimplePolygon.Tessellate">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.SimplePolygon.Clone">
+End Polygon
+
+ICloneable
+
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.SimplePolygon.Size">
+
+Polygon
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.SimplePolygon.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.SimplePolygon)">
+
+Copy Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.SimplePolygon.#ctor">
+
+Constructor
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Polygon.m_Size">
+End IShape
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Polygon.m_Visible">
+
+IShape
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Polygon.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.Polygon)">
+            <summary>
+Initializes a new instance of the <see cref="M:Polygon(HDC__*,tagPOINT!System.Runtime.CompilerServices.IsConst*,System.Int32)" /> class.
+</summary>
+            <param name="copy">The copy.</param>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Polygon.#ctor">
+            <summary>
+Initializes a new instance of the <see cref="M:Polygon(HDC__*,tagPOINT!System.Runtime.CompilerServices.IsConst*,System.Int32)" /> class.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.BezierCurve.AddControlPoint(System.Drawing.PointF)">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.BezierCurve.Clone">
+
+ICloneable
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.BezierCurve.m_Width">
+End IShape
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.BezierCurve.Visible">
+
+IShape
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.BezierCurve.m_Segments">
+End IShape
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.BezierCurve.m_Visible">
+
+IShape
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.BezierCurve.Dispose">
+
+Destructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.BezierCurve.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.BezierCurve)">
+
+Copy Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.BezierCurve.#ctor">
+
+Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.Unlock">
+            <summary>
+Unlocks the TextureManager.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.Lock">
+            <summary>
+Locks the TextureManager.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.FreeTextures">
+            <summary>
+Frees the textures from memory.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.getAutoLoad">
+            <summary>
+Gets the current value of the AutoLoad property.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.setAutoLoad(System.Boolean)">
+            <summary>
+Sets the GlTextureManager to autoload.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.HasUnloadedTextures">
+            <summary>
+Checks to see if the texture manager has unloaded textures.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.LoadUnloadedTextures">
+            <summary>
+If AutoLoad is turned off textures wait to 
+load until this method is called which then steps 
+through and loads all the textures.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.LoadSharedMemoryTexture(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Load the texture with the given filename.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.LoadTexture(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Load the texture with the given filename.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.UnloadAllTextures">
+            <summary>
+Unloads all textures managed by this texture manager.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.Dispose">
+            <summary>
+Deconstructor. Cleans up resources.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager.#ctor">
+            <summary>
+Creates a new instance of the GlTextureManager class.
+</summary>
+        </member>
+        <member name="T:Csf.Imets.ToolCore.Native.OpenGL.GlTextureManager">
+            <summary>
+Manages textures for the current Rendering Context.
+stores them in memory and allows look up based on file name.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Geo.Position.convertDtoDMS(System.Double,System.Boolean)">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.Position.Clone">
+
+ICloneable
+
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.Position.LongitudeString">
+@brief Longitude String property
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.Position.LatitudeString">
+@brief Latitude String property
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.Position.ToString">
+@brief ToString override
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.Position.MGRS">
+@brief MGRS Coordinate property
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.Position.UTM">
+@brief UTM Coordinate property
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.Position.Altitude">
+@brief Altitude property
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.Position.Longitude">
+@brief Longitude property
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.Position.Latitude">
+@brief Latitude property
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.Position.Dispose">
+@brief destructor
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.Position.#ctor(Csf.Imets.ToolCore.Geo.Position)">
+@brief Copy Constructor
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.Position.#ctor(Csf.Imets.ToolCore.Geo.UTMCoordinate)">
+@brief Constructor
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.Position.#ctor(Csf.Imets.ToolCore.Geo.MGRSCoordinate)">
+@brief Constructor
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.Position.#ctor(System.Double,System.Double,System.Double)">
+@brief Constructor
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.Position.#ctor">
+@brief Constructor
+</member>
+        <member name="F:Csf.Imets.ToolCore.Geo.MGRSCoordinate.m_Precision">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.MGRSCoordinate.Clone">
+
+ICloneable
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.MGRSCoordinate.ToString">
+@brief ToString override
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.MGRSCoordinate.Precision">
+@brief Precision property
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.MGRSCoordinate.CoordinateString">
+@brief Coordinate String property
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.MGRSCoordinate.Dispose">
+@brief destructor
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.MGRSCoordinate.#ctor(Csf.Imets.ToolCore.Geo.MGRSCoordinate)">
+@brief Copy Constructor
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.MGRSCoordinate.#ctor(System.String,Csf.Imets.ToolCore.Geo.PrecisionType)">
+@brief Constructor
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.MGRSCoordinate.#ctor">
+@brief Constructor
+</member>
+        <member name="F:Csf.Imets.ToolCore.Geo.UTMCoordinate.m_Zone">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.UTMCoordinate.Clone">
+
+ICloneable
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.UTMCoordinate.ToString">
+methods
+@brief ToString override
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.UTMCoordinate.Northing">
+@brief Northing property
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.UTMCoordinate.Easting">
+@brief Easting property
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.UTMCoordinate.Hemisphere">
+@brief Hemisphere property
+</member>
+        <member name="P:Csf.Imets.ToolCore.Geo.UTMCoordinate.Zone">
+Properties
+@brief Zone property
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.UTMCoordinate.Dispose">
+@brief destructor
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.UTMCoordinate.#ctor(Csf.Imets.ToolCore.Geo.UTMCoordinate)">
+@brief Copy Constructor
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.UTMCoordinate.#ctor(System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,System.Double,System.Double)">
+@brief Constructor
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.UTMCoordinate.#ctor">
+@brief Constructor
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Circle.m_DrawingObject">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Circle.Clone">
+End IArc
+
+ICloneable
+
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.Circle.Segments">
+End IShape
+
+IArc
+
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.Circle.Visible">
+
+IShape
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Circle.m_Radius">
+End IArc
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Circle.m_Segments">
+End IShape
+
+IArc
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Circle.m_Visible">
+
+IShape
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Circle.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.Circle)">
+
+Copy Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Circle.#ctor">
+
+Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.Unlock">
+            <summary>
+Unlocks the font manager.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.Lock">
+            <summary>
+Locks the font manager.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.LoadFontDirectory">
+            <summary>
+Loads the Font Dictionary of all fonts available.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.LoadFontInfo">
+            <summary>
+Loads all font info.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.Dispose">
+            <summary>
+Cleans up font managers resources.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.#ctor(HGLRC__*)">
+            <summary>
+Creats an instance of the GlFontManager with the given context.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.#ctor">
+            <summary>
+Creates an instance of the GlFontManager.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.UnloadFont(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,Csf.Imets.ToolCore.Native.OpenGL.FontType,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+Unloads the given font from memory.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.UnloadFont(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+Unloads the given font from memory.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.LoadFont(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,Csf.Imets.ToolCore.Native.OpenGL.FontType,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+Loads the font into memory with the given format.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.LoadFont(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+Loads the font into memory with the given format.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.getAvailableFonts">
+            <summary>
+Returns the list of available fonts found on the pc.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.ClearContextGroup(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst)">
+            <summary>
+Clears the reference to the ContextGroup. 
+Every SetContextGroup should have a matchin ClearContextGroup when 
+the context is destroyed.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.SetContextGroup(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst)">
+            <summary>
+Sets the current context to use the context group GlFontManager.
+This should be used when sharing lists with other RenderingContexts.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlFontManager.GetInstance">
+            <summary>
+Gets an instance of the GlFontManager.
+The font manager creates an instance for each context.
+If sharing contexts you need to call SetContextGroup when the font manager is first created.
+</summary>
+        </member>
+        <member name="T:Csf.Imets.ToolCore.Native.OpenGL.FontRef">
+            <summary>
+A reference to a given font.
+</summary>
+        </member>
+        <member name="T:Csf.Imets.ToolCore.Native.OpenGL.FontInfo">
+            <summary>
+Information about a single font. 
+</summary>
+        </member>
+        <member name="T:Csf.Imets.ToolCore.Native.OpenGL.FontType">
+            <summary>
+The Type of Font to draw.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.ArcRing.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.ArcRing)">
+
+Copy Constructor
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.ArcRing.#ctor">
+
+Constructor
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Arc.m_DrawingObject">
+End ICloneable
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Arc.Clone">
+End IArc
+
+ICloneable
+
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.Arc.Segments">
+End IShape
+
+IArc
+
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.Arc.Visible">
+
+IShape
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Arc.m_Modified">
+End IArc
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Arc.m_Segments">
+End IShape
+
+IArc
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.Drawing.Arc.m_Visible">
+
+IShape
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Arc.#ctor(Csf.Imets.ToolCore.OpenGL.Drawing.Arc)">
+            <summary>
+Initializes a new instance of the <see cref="M:Arc(HDC__*,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)" /> class.
+</summary>
+            <param name="copy">The copy.</param>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.Arc.#ctor">
+            <summary>
+Initializes a new instance of the <see cref="M:Arc(HDC__*,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)" /> class.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.IArc.Stroke">
+End IShape
+</member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.IArc.Visible">
+
+IShape
+
+</member>
+        <member name="F:Csf.Imets.ToolCore.OpenGL.GlImage.m_Image">
+            <summary>Pointer to unmanaged image</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.LoadSize(System.String,System.Int32@,System.Int32@)">
+            <summary>Load size of image</summary>
+            <param name="fileName">filename from which to load size</param>
+            <param name="width">Reference to width variable [out]</param>
+            <param name="height">Reference to height variable [out]</param>
+            <return>Successs</return>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlImage.FileName">
+            <summary>Image filename property</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlImage.IsLoaded">
+            <summary>Is image loaded flag</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlImage.Height">
+            <summary>Image height</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlImage.Invert">
+            <summary>Invert image flag</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlImage.Width">
+            <summary>Image width</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.ResetAnimation">
+            <summary />
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.EndAnimation">
+            <summary>Stop image animation</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.BeginAnimation(System.Single,System.Single)">
+            <summary>Start image animation</summary>
+            <param name="x">X coordinate</param>
+            <param name="y">Y coordinate</param>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.Bind">
+            <summary>Bind image</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.LoadTexture(System.Drawing.Bitmap)">
+            <summary>Load texture from bitmap</summary>
+            <return>Success</return>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.LoadTexture">
+            <summary>Load texture from filename property</summary>
+            <return>Success</return>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.LoadTexture(System.String)">
+            <summary>Load texture from supplied filename</summary>
+            <return>Success</return>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.Dispose">
+            <summary>Destructor</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Constructor</summary>
+            <param name="image_filename">Filename to load</param>
+            <param name="width">Width to load</param>
+            <param name="height">Height to load</param>
+            <param name="bytes">Number of bytes to load</param>
+            <param name="format">Pixel format</param>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.#ctor(Csf.Imets.ToolCore.Native.OpenGL.GlImage*)">
+            <summary>Constructor</summary>
+            <param name="image">Unmanaged image to copy</param>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlImage.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.flipDDSBlock(System.Byte*,System.Byte*,System.Int32)">
+            <summary>Flips and copies a dds block from source to destination.
+        This can handle accepting src and dest being the same pointer.
+</summary>
+            <param name="src">A pointer to the DDS block to flip.</param>
+            <param name="dest">A pointer to store the Flipped DDS block.</param>
+            <param name="factor">The DDS Format type. (GL_COMPRESSED_RGBA_S3TC_DXT1_EXT,GL_COMPRESSED_RGBA_S3TC_DXT3_EXT,GL_COMPRESSED_RGBA_S3TC_DXT5_EXT)</param>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.freeDDSTextureFile(Csf.Imets.ToolCore.Native.OpenGL.GlImage.DDS_IMAGE_DATA*)">
+            <summary>Frees a pointer to a DDS image struct.</summary>
+            <param name="pDDSImageData">A pointer to the struct to free.</param>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.loadDDSTextureFile(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Loads DDS texture from supplied filename</summary>
+            <param name="filename">Path to file to load.</param>
+            <return>A pointer to a struct about the file. NULL if the file could not be loaded.</return>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.openSharedMem(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32)">
+            <summary>Open shared memory location specified</summary>
+            <param name="name">Name of shared memory handle</param>
+            <param name="size">Size of shared memory segment</param>
+            <return>Texture id</return>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.loadSize(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Opens the file gets the size and closes the file.
+</summary>
+            <return>True on success; False on failure</return>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.loadSharedMemoryTexture(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Boolean)">
+            <summary />
+            <summary>Loads texture from shared memory</summary>
+            <param name="name">Name of shared memory handle</param>
+            <param name="repeat">Flag indicating texture tile</param>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.loadCompressedTexture(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.UInt32*,System.UInt32*,System.Boolean)">
+            <summary>Loads a compressed texture from the supplied filename</summary>
+            <param name="name">Compressed texture filename</param>
+            <param name="width">Pointer to width variable [out]</param>
+            <param name="height">Pointer to height variable [out]</param>
+            <param name="repeat">Flag indicating texture tile</param>
+            <return>Texture id</return>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.getFileName">
+            <summary>Returns the filename of the image</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.loadTexture(System.Void*,System.Int32,System.Int32,System.Boolean,System.UInt32,System.UInt32)">
+            <summary>Loads a texture described by the supplied parameters</summary>
+            <param name="pixels">The pixels containing the texture to be loaded</param>
+            <param name="width">Width of the texture</param>
+            <param name="height">Height of the texture</param>
+            <param name="tiled">Tile texture flag</param>
+            <param name="format">Pixel format</param>
+            <param name="type">Pixel type</param>
+            <return>Texture ID</return>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.getInvertImage">
+            <summary>Returns the invert image flag</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.setInvertImage(System.Boolean!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the invert image flag</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.setAnimateRateY(System.Single)">
+            <summary>Sets the animation rate in the y axis</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.setAnimateRateX(System.Single)">
+            <summary>Sets the anmiation rate in the x axis</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.getAnimateRateY">
+            <summary>Returns animation rate in the y axis</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.getAnimateRateX">
+            <summary>Returns animation rate in the x axis</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.getIsLoaded">
+            <summary>Returns true if texture is loaded</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.getHeight">
+            <summary>Returns image height</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.getWidth">
+            <summary>Returns image width</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.ResetAnimation">
+            <summary>Reset animation of texture</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.EndAnimation">
+            <summary>Stop animation of texture</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.BeginAnimation(System.Single,System.Single)">
+            <summary>Start animation at supplied coordinates</summary>
+            <param name="x">X coordinate</param>
+            <param name="y">Y coordinate</param>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.Bind">
+            <summary>OpenGL bind image</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.UnloadTexture">
+            <summary>Unloads texture</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.LoadTexture(System.Drawing.Bitmap,System.Boolean)">
+            <summary>Load texture defined by supplied bitmap</summary>
+            <param name="bitmap">Bitmap to create texture from</param>
+            <param name="tiled">Repeat image in texture</param>
+            <return>Success</return>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.LoadTexture(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Load texture from supplied filename</summary>
+            <return>Success</return>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.LoadTexture">
+            <summary>Load Texture using filename property</summary>
+            <return>Success</return>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.Dispose">
+            <summary>Destructor</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.#ctor(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Opens image from supplied filename and image parameters</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.#ctor(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Opens image from supplied filename</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.#ctor(Csf.Imets.ToolCore.Native.OpenGL.GlImage*)">
+            <summary>
+Constructor that makes a copy from the image pointer argument
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.Native.OpenGL.GlImage.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="T:Csf.Imets.ToolCore.Native.OpenGL.GlImage.DDS_IMAGE_DATA">
+            <summary>DDS Image Data struct definition</summary>
+        </member>
+        <member name="T:Csf.Imets.ToolCore.Native.OpenGL.GlImage">
+            <summary>Image abstraction for an OpenGL Texture</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.IShape.IsPointInShape(System.Drawing.PointF)">
+            <summary>
+The point in shape method
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.IShape.PackDrawingObject(Csf.Imets.ToolCore.OpenGL.GlDrawingObject)">
+            <summary>
+The draw method.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.IShape.Draw(Csf.Imets.ToolCore.OpenGL.GlDrawingObject,System.Int32)">
+            <summary>
+The draw method.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.Drawing.IShape.Draw">
+            <summary>
+The draw method.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.IShape.DrawingObject">
+            <summary />
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.IShape.Rotation">
+            <summary>
+The degree of rotation. 
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.IShape.CurrentLocation">
+            <summary>
+Returns the value of the current location
+factoring in the offset position.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.IShape.OffsetY">
+            <summary>
+Gets or sets the Y.
+</summary>
+            <value>The Y.</value>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.IShape.OffsetX">
+            <summary>
+Gets or sets the X.
+</summary>
+            <value>The X.</value>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.IShape.Location">
+            <summary>
+Gets or sets the location.
+</summary>
+            <value>The location.</value>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.Drawing.IShape.Visible">
+            <summary>
+Gets or sets the Visibility
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlDrawingObject.CallDisplayList(System.Int32)">
+            <summary>
+Calls the display list.
+</summary>
+            <param name="id">Type of the fill.</param>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlDrawingObject.EndDisplayList">
+            <summary>
+Ends the display list.
+</summary>
+        </member>
+        <member name="M:Csf.Imets.ToolCore.OpenGL.GlDrawingObject.GenerateDisplayListId">
+            <summary>
+Generates a new display list and opens it.
+</summary>
+        </member>
+        <member name="P:Csf.Imets.ToolCore.OpenGL.GlDrawingObject.Count">
+            <summary>
+This is the current number of Vertices not the number
+of items stored in the array.
+</summary>
+        </member>
+        <member name="M:MSP.CCS.CoordinateConversionException.#ctor(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+Creates a new instance of CoordinateConversionException
+
+</member>
+        <member name="M:MSP.CCS.CoordinateConversionService.convertTargetToSourceCollection(std.vector&lt;MSP.CCS.CoordinateTuple**,std.allocator&lt;MSP.CCS.CoordinateTuple**&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.vector&lt;MSP.CCS.Accuracy**,std.allocator&lt;MSP.CCS.Accuracy**&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.vector&lt;MSP.CCS.CoordinateTuple**,std.allocator&lt;MSP.CCS.CoordinateTuple**&gt;&gt;*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.vector&lt;MSP.CCS.Accuracy**,std.allocator&lt;MSP.CCS.Accuracy**&gt;&gt;*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+  The function convertTargetToSourceCollection will convert a list of target coordinates to a list of source coordinates
+  in a single step.
+
+ @param[in] targetCoordinates - Converted coordinates of the target coordinate system 
+ @param[in] targetAccuracy - Target circular, linear and spherical errors 
+ @param[out] sourceCoordinates - Coordinates of the source coordinate system to be converted
+ @param[out] sourceAccuracy - Source circular, linear and spherical errors 
+ 
+
+</member>
+        <member name="M:MSP.CCS.CoordinateConversionService.convertSourceToTargetCollection(std.vector&lt;MSP.CCS.CoordinateTuple**,std.allocator&lt;MSP.CCS.CoordinateTuple**&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.vector&lt;MSP.CCS.Accuracy**,std.allocator&lt;MSP.CCS.Accuracy**&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.vector&lt;MSP.CCS.CoordinateTuple**,std.allocator&lt;MSP.CCS.CoordinateTuple**&gt;&gt;*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.vector&lt;MSP.CCS.Accuracy**,std.allocator&lt;MSP.CCS.Accuracy**&gt;&gt;*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+  The function convertSourceToTargetCollection will convert a list of source coordinates to a list of target coordinates
+  in a single step.
+
+ @param[in] sourceCoordinates - Coordinates of the source coordinate system to be converted
+ @param[in] sourceAccuracy - Source circular, linear and spherical errors 
+ @param[out] targetCoordinates - Converted coordinates of the target coordinate system 
+ @param[out] targetAccuracy - Target circular, linear and spherical errors 
+ 
+
+</member>
+        <member name="M:MSP.CCS.CoordinateConversionService.convertTargetToSource(MSP.CCS.CoordinateTuple*,MSP.CCS.Accuracy*,MSP.CCS.CoordinateTuple*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,MSP.CCS.Accuracy*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+  The function convertTargetToSource converts the current target coordinates in the coordinate
+  system defined by the current target coordinate system parameters and target datum,
+  into source coordinates in the coordinate system defined by the source coordinate
+  system parameters and source datum.
+
+ @param[in] targetCoordinates - Converted coordinates of the target coordinate system 
+ @param[in] targetAccuracy - Target circular, linear and spherical errors 
+ @param[out] sourceCoordinates - Coordinates of the source coordinate system to be converted
+ @param[out] sourceAccuracy - Source circular, linear and spherical errors 
+ 
+
+</member>
+        <member name="M:MSP.CCS.CoordinateConversionService.convertSourceToTarget(MSP.CCS.CoordinateTuple*,MSP.CCS.Accuracy*,MSP.CCS.CoordinateTuple*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,MSP.CCS.Accuracy*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+  The function convertSourceToTarget converts the current source coordinates in the coordinate
+  system defined by the current source coordinate system parameters and source datum,
+  into target coordinates in the coordinate system defined by the target coordinate
+  system parameters and target datum.
+
+ @param[in] sourceCoordinates - Coordinates of the source coordinate system to be converted
+ @param[in] sourceAccuracy - Source circular, linear and spherical errors 
+ @param[out] targetCoordinates - Converted coordinates of the target coordinate system 
+ @param[out] targetAccuracy - Target circular, linear and spherical errors 
+ 
+
+</member>
+        <member name="M:MSP.CCS.CoordinateConversionService.op_Assign(MSP.CCS.CoordinateConversionService!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+  Operator =
+
+ @param[in] - Instance of Coordinate Conversion Service
+
+</member>
+        <member name="M:MSP.CCS.CoordinateConversionService.Dispose">
+Destructor
+
+</member>
+        <member name="M:MSP.CCS.CoordinateConversionService.#ctor(MSP.CCS.CoordinateConversionService!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+  Copy constructor
+
+  @param[in] - Instance of Coordinate Conversion Service
+
+</member>
+        <member name="M:MSP.CCS.CoordinateConversionService.#ctor(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*,MSP.CCS.CoordinateSystemParameters*,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*,MSP.CCS.CoordinateSystemParameters*)">
+  The constructor sets the initial state of the coordinate conversion service in
+  in preparation for coordinate conversion and/or datum transformation
+  operations.
+
+ @param[in] sourceDatumCode - standard 5-letter datum code
+ @param[in] sourceParameters - input coordinate system
+ @param[in] targetDatumCode - standard 5-letter datum code
+ @param[in] targetParameters - output coordinate system
+
+
+</member>
+        <member name="T:MSP.CCS.CoordinateConversionService">
+Main Interface for Coordinate Conversion Service
+
+</member>
+        <member name="T:MSP.CCS.Color.Enum">
+Color Enum 
+</member>
+        <member name="T:MSP.CCS.Color">
+Constants used for determining conversion validity 
+
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.GeoConversion.convertUTMToGeodetic(System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,System.Double,System.Double,System.Double@,System.Double@)">
+@brief convert UTM to Geodetic coordinate system
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.GeoConversion.convertGeodeticToUTM(System.Double,System.Double,System.Int32@,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte@,System.Double@,System.Double@)">
+@brief convert Geodetic to UTM coordinate system
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.GeoConversion.convertMGRSToGeodetic(System.String,Csf.Imets.ToolCore.Geo.PrecisionType,System.Double@,System.Double@)">
+@brief Convert MGRS to Geodetic coordinate system
+</member>
+        <member name="M:Csf.Imets.ToolCore.Geo.GeoConversion.convertGeodeticToMGRS(System.Double,System.Double,System.String@,Csf.Imets.ToolCore.Geo.PrecisionType@)">
+@brief Convert Geodetic to MGRS coordinate system
+</member>
+        <member name="T:Csf.Imets.ToolCore.Geo.PrecisionType">
+@brief types of percision 
+</member>
+    </members>
+</doc>
