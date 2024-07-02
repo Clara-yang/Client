@@ -267,7 +267,7 @@
                                       SelectedItem="{Binding SelectedRoute}"  
                                       Style="{StaticResource dgStyle}"  >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="序号" Width="1*" Binding="{Binding Id}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                                    <DataGridTextColumn Header="序号" Width="1*" Binding="{Binding RouteId}" ElementStyle="{StaticResource contentCenterStyle}"/>
                                     <DataGridTextColumn Header="航线名称" Width="3*" Binding="{Binding RouteName}" ElementStyle="{StaticResource contentCenterStyle}"/>
                                     <DataGridTextColumn Header="飞行距离" Width="3*" Binding="{Binding Distance}" ElementStyle="{StaticResource contentCenterStyle}"/>
                                     <DataGridTextColumn Header="飞行时长" Width="3*" Binding="{Binding Interval}" ElementStyle="{StaticResource contentCenterStyle}"/>

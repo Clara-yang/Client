@@ -17,6 +17,36 @@ namespace UAM.Plugin.NetVDN
         public static VDNDataUpadate Instance => dataUpdate;
 
         #region VDNData Fields
+        private int _MotionSwitch;
+        public int MotionSwitch
+        {
+            get => _MotionSwitch;
+            set { _MotionSwitch = value; RaisePropertyChanged("MotionSwitch"); }
+        }
+        private bool _MotionFreeze;
+        public bool MotionFreeze
+        {
+            get => _MotionFreeze;
+            set { _MotionFreeze = value; RaisePropertyChanged("MotionFreeze"); }
+        }
+        private bool _FlighControl1MalIsActive;
+        public bool FlighControl1MalIsActive
+        {
+            get => _FlighControl1MalIsActive;
+            set { _FlighControl1MalIsActive = value; RaisePropertyChanged("FlighControl1MalIsActive"); }
+        }
+        private bool _FlighControl2MalIsActive;
+        public bool FlighControl2MalIsActive
+        {
+            get => _FlighControl2MalIsActive;
+            set { _FlighControl2MalIsActive = value; RaisePropertyChanged("FlighControl2MalIsActive"); }
+        }
+        private bool _FlighControl3MalIsActive;
+        public bool FlighControl3MalIsActive
+        {
+            get => _FlighControl3MalIsActive;
+            set { _FlighControl3MalIsActive = value; RaisePropertyChanged("FlighControl3MalIsActive"); }
+        }
         private string _KernelModeString;
         public string KernelModeString
         {
@@ -569,6 +599,11 @@ namespace UAM.Plugin.NetVDN
         {
             try
             {
+                MotionSwitch = VDNData.MotionSwitch;
+                MotionFreeze = VDNData.MotionFreeze;
+                FlighControl3MalIsActive = VDNData.FlighControl3MalIsActive;
+                FlighControl2MalIsActive = VDNData.FlighControl2MalIsActive;
+                FlighControl1MalIsActive = VDNData.FlighControl1MalIsActive;
                 KernelModeString = VDNData.KernelModeString;
                 BJKernelModeString = VDNData.BJKernelModeString;
                 FlightFreeze = VDNData.FlightFreeze;

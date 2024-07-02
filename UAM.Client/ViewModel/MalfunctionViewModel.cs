@@ -121,21 +121,29 @@ namespace UAM.Client.ViewModel
             {
                 item.ATASelected = Malfunctions.Exists(s => s.MalfunctionSelected == true && s.ATAChapterID == item.ATAChapterID) ? true : false;
 
-                var vdnEnable = CommonMethod.GetPropertiesValue(dataUpdate, item.VdnEnableField);
-                item.IsEnable = bool.Parse(vdnEnable.ToString());
-
                 var vdnActive = CommonMethod.GetPropertiesValue(dataUpdate, item.VdnActiveField);
                 item.MalfunctionSelected = bool.Parse(vdnActive.ToString());
-                if (item.MalfunctionSelected)
+
+                if (item.VdnEnableField != "" && item.VdnEnableField != null)
                 {
-                    item.ActiveEnable = Visibility.Visible;
-                    item.ValueEnable = Visibility.Visible;
+                    var vdnEnable = CommonMethod.GetPropertiesValue(dataUpdate, item.VdnEnableField);
+                    item.IsEnable = bool.Parse(vdnEnable.ToString());
+                    if (item.MalfunctionSelected)
+                    {
+                        item.ActiveEnable = Visibility.Visible;
+                        item.ValueEnable = Visibility.Visible;
+                    }
+                    else
+                    {
+                        item.ActiveEnable = Visibility.Collapsed;
+                        item.ValueEnable = Visibility.Collapsed;
+                    }
                 }
                 else
                 {
-                    item.ActiveEnable = Visibility.Collapsed;
-                    item.ValueEnable = Visibility.Collapsed;
+                    item.ActiveEnable = item.MalfunctionSelected ? Visibility.Visible : Visibility.Collapsed;
                 }
+
             }
         }
 

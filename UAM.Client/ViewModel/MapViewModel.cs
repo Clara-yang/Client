@@ -92,10 +92,12 @@ namespace UAM.Client.ViewModel
             }
 
             destinationRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "RouteDestination");
+            destinationRequest.SendParameters.Clear();
             destinationRequest.SendParameters.Add(PubVar.DestinationId);
            
 
             departureRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "RouteActive");
+            departureRequest.SendParameters.Clear();
             departureRequest.SendParameters.Add(PubVar.DepartureId);
            
         }
@@ -197,6 +199,7 @@ namespace UAM.Client.ViewModel
                destinationRequest.SendRequestName, destinationRequest.SendParameters));
 
             SendRequest changePositionRequest = PubVar.g_SendRequestList.Find(q => q.ControlName == "ChangePosition");
+            changePositionRequest.SendParameters.Clear();
             changePositionRequest.SendParameters.Add(Int64.Parse(param));
             vdnData.SendRequset(CommonMethod.SendRequestMethod(changePositionRequest.SendTopic, changePositionRequest.SendQueue,
                 changePositionRequest.SendRequestName, changePositionRequest.SendParameters));

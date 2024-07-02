@@ -56,7 +56,7 @@
                 BorderThickness="1"
                 CornerRadius="10">
             <DockPanel>
-                <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Visibility="Hidden">
+                <StackPanel DockPanel.Dock="Left" Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
                         <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"
                                 cuc:ButtonHelper.MainIcon_Press="../Images/Environment/Toggle_1_Off.png"
@@ -118,7 +118,7 @@
                         </StackPanel>
                     </Border>
                 </StackPanel>
-                <StackPanel DockPanel.Dock="Right" Visibility="Hidden">
+                <StackPanel DockPanel.Dock="Right">
                     <StackPanel DockPanel.Dock="Left" Orientation="Vertical">
                         <StackPanel Orientation="Horizontal">
                             <Button Content="AHFDQWEGFY" Style="{StaticResource IconButtonStyle}"

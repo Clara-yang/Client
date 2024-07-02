@@ -180,8 +180,6 @@ namespace UAM.Client.ViewModel
 
             string urlXmlPath = @".\ConfigurationXml\" + PubVar.g_CurrentUser.UserName.Trim() + @"\ConfigureURL.xml";
             PubVar.g_ConfigureUrl = XmlManager.GetMapList(urlXmlPath);
-
-
         }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Routes>
   <RouteModel>
-    <Id>1</Id>
+    <RouteId>1</RouteId>
     <RouteName>空中游览</RouteName>
     <DepartureId>66</DepartureId>
     <DepartureCity>ShangHai</DepartureCity>

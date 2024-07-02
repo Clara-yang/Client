@@ -113,6 +113,7 @@ namespace UAM.Plugin
 
         public static VDNConnectHelper CreateInstance()
         {
+            // 先判断当前实例是否存在，不存在再加锁处理
             if (_singleton == null)
             {
                 lock (singlenton_Lock)

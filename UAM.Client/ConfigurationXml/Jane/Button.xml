@@ -68,7 +68,7 @@
     <Parameter>cleanCrash</Parameter>
     <Text>清 除 坠 毁</Text>
     <Position>Top</Position>
-    <Visible>true</Visible>
+    <Visible>false</Visible>
   </ButtonModel>
   <ButtonModel>
     <ButtonName>hostConnectBtn</ButtonName>
@@ -82,21 +82,21 @@
     <Parameter>visualConnect</Parameter>
     <Text>连 接 视 景</Text>
     <Position>Top</Position>
-    <Visible>true</Visible>
+    <Visible>false</Visible>
   </ButtonModel>
   <ButtonModel>
     <ButtonName>motionPreBtn</ButtonName>
     <Parameter>motionPre</Parameter>
     <Text>运 动 预 位</Text>
     <Position>Top</Position>
-    <Visible>false</Visible>
+    <Visible>true</Visible>
   </ButtonModel>
   <ButtonModel>
     <ButtonName>motionFreezeBtn</ButtonName>
     <Parameter>motionFreeze</Parameter>
     <Text>运 动 冻 结</Text>
     <Position>Top</Position>
-    <Visible>false</Visible>
+    <Visible>true</Visible>
   </ButtonModel>
   <ButtonModel>
     <ButtonName>cockpitBtn</ButtonName>

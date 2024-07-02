@@ -165,9 +165,11 @@ namespace UAM.Client.ViewModel
             {
                 crashBtn.IsChecked = dataUpdate.CrashOverride == true ? true : false;
             }
-            cleanCrashBtn.IsChecked = dataUpdate.BJClearCrash == true ? true : false;
+            //cleanCrashBtn.IsChecked = dataUpdate.BJClearCrash == true ? true : false;
             hostConnectBtn.IsChecked = dataUpdate.HostConnect == "Connected" ? true : false;
-            visualConnectBtn.IsChecked = dataUpdate.VisualConnect == true ? true : false;
+            motionFreezeBtn.IsChecked = dataUpdate.MotionFreeze == true ? true : false;
+            motionPreBtn.IsChecked = dataUpdate.MotionSwitch == 2 ? true : false;
+            //visualConnectBtn.IsChecked = dataUpdate.VisualConnect == true ? true : false;
         }
 
         /// <summary>

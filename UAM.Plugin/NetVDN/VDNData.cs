@@ -18,12 +18,14 @@ namespace UAM.Plugin
     public class VDNData
     {
         private static VDNConnectHelper connectHelper = new VDNConnectHelper();
-        private static VDNConnectHelper helper = VDNConnectHelper.CreateInstance(); 
+        private static VDNConnectHelper helper = VDNConnectHelper.CreateInstance();
         private static NetVdnClient m_NetVdnClient = helper.GetClient();
-        private Thread connectThread;
         private Timer thread_Time;
 
         #region
+        public static bool FlighControl3MalIsActive = false;
+        public static bool FlighControl2MalIsActive = false;
+        public static bool FlighControl1MalIsActive = false;
         public static int MotionSwitch = 2;
         public static bool MotionFreeze = false;
         public static string KernelModeString = "";
@@ -63,7 +65,7 @@ namespace UAM.Plugin
         public static double CIGIThickness = 0.00;
         public static double CIGITransitionBand = 0.00;
         public static double CIGIVisibility = 0.00;
-         
+
         public static bool VisualConnect = false;
 
         public static double Latitude = 0.00;
@@ -133,7 +135,7 @@ namespace UAM.Plugin
         public static bool MotorLoss3IsEnable = false;
         public static bool MotorLoss2IsEnable = false;
         public static bool MotorLoss1IsEnable = false;
-        public static bool MotorLoss0IsEnable = false;
+        public static bool MotorLoss0IsEnable = false; 
         #endregion 
 
         public void Init()
@@ -143,8 +145,7 @@ namespace UAM.Plugin
         }
         public void Start()
         {
-            connectThread = new Thread(DoSubscribe);
-            connectThread.Start();
+            DoSubscribe();
             thread_Time = new Timer(UpdateVariable, null, 10000, 10000);
         }
         public void Stop()
@@ -200,21 +201,19 @@ namespace UAM.Plugin
 
         public void DoSubscribe()
         {
-            FullVdnName DestinationLat_name = new FullVdnName("ReLocate", "Destination_Reposition_Lat", "deg", VdnScope.Outputs, VdnType.Float64);
-            VdnVariable DestinationLat_var = PubVar.g_NetVdnClient.Subscribe(DestinationLat_name);
-            DestinationLat_var.ValueChanged += DestinationLat_var_ValueChanged;
+            #region 飞控故障
+            FullVdnName FlighControl3MalIsActive_name = new FullVdnName("Crash", "Crash_Override", "", VdnScope.Outputs, VdnType.Bool);
+            VdnVariable FlighControl3MalIsActive_var = PubVar.g_NetVdnClient.Subscribe(FlighControl3MalIsActive_name);
+            FlighControl3MalIsActive_var.ValueChanged += FlighControl3MalIsActive_ValueChanged;
 
-            FullVdnName DestinationLon_name = new FullVdnName("ReLocate", "Destination_Reposition_Lon", "deg", VdnScope.Outputs, VdnType.Float64);
-            VdnVariable DestinationLon_var = PubVar.g_NetVdnClient.Subscribe(DestinationLon_name);
-            DestinationLon_var.ValueChanged += DestinationLon_var_ValueChanged;
+            FullVdnName FlighControl2MalIsActive_name = new FullVdnName("AircraftLocation", "Altitude_Freeze", "", VdnScope.Outputs, VdnType.Bool);
+            VdnVariable FlighControl2MalIsActive_var = PubVar.g_NetVdnClient.Subscribe(FlighControl2MalIsActive_name);
+            FlighControl2MalIsActive_var.ValueChanged += FlighControl2MalIsActive_ValueChanged;
 
-            FullVdnName DestinationAlt_name = new FullVdnName("ReLocate", "Destination_Reposition_Alt", "ft", VdnScope.Meta, VdnType.Float64);
-            VdnVariable DestinationAlt_var = PubVar.g_NetVdnClient.Subscribe(DestinationAlt_name);
-            DestinationAlt_var.ValueChanged += DestinationAlt_var_ValueChanged;
-
-            FullVdnName DestinationHeading_name = new FullVdnName("ReLocate", "Destination_Reposition_Heading", "deg", VdnScope.Outputs, VdnType.Float64);
-            VdnVariable DestinationHeading_var = PubVar.g_NetVdnClient.Subscribe(DestinationHeading_name);
-            DestinationHeading_var.ValueChanged += DestinationHeading_var_ValueChanged;
+             FullVdnName FlighControl1MalIsActive_name = new FullVdnName("AircraftLocation", "Position_Freeze", "", VdnScope.Outputs, VdnType.Bool);
+            VdnVariable FlighControl1MalIsActive_var = PubVar.g_NetVdnClient.Subscribe(FlighControl1MalIsActive_name);
+            FlighControl1MalIsActive_var.ValueChanged += FlighControl1MalIsActive_ValueChanged;
+            #endregion
 
             #region Malfunction  
             FullVdnName CtrSurLock0IsActive_name = new FullVdnName("ControlSurface", "Malfunction.Lock_Malfunction_Active[0]", "n/a", VdnScope.Outputs, VdnType.Bool);
@@ -429,6 +428,22 @@ namespace UAM.Plugin
             #endregion
 
             #region 主页面控制按钮状态
+            FullVdnName DestinationLat_name = new FullVdnName("ReLocate", "Destination_Reposition_Lat", "deg", VdnScope.Outputs, VdnType.Float64);
+            VdnVariable DestinationLat_var = PubVar.g_NetVdnClient.Subscribe(DestinationLat_name);
+            DestinationLat_var.ValueChanged += DestinationLat_var_ValueChanged;
+
+            FullVdnName DestinationLon_name = new FullVdnName("ReLocate", "Destination_Reposition_Lon", "deg", VdnScope.Outputs, VdnType.Float64);
+            VdnVariable DestinationLon_var = PubVar.g_NetVdnClient.Subscribe(DestinationLon_name);
+            DestinationLon_var.ValueChanged += DestinationLon_var_ValueChanged;
+
+            FullVdnName DestinationAlt_name = new FullVdnName("ReLocate", "Destination_Reposition_Alt", "ft", VdnScope.Meta, VdnType.Float64);
+            VdnVariable DestinationAlt_var = PubVar.g_NetVdnClient.Subscribe(DestinationAlt_name);
+            DestinationAlt_var.ValueChanged += DestinationAlt_var_ValueChanged;
+
+            FullVdnName DestinationHeading_name = new FullVdnName("ReLocate", "Destination_Reposition_Heading", "deg", VdnScope.Outputs, VdnType.Float64);
+            VdnVariable DestinationHeading_var = PubVar.g_NetVdnClient.Subscribe(DestinationHeading_name);
+            DestinationHeading_var.ValueChanged += DestinationHeading_var_ValueChanged;
+
             FullVdnName Motion = new FullVdnName("Motion", "requestTest", "none", VdnScope.Outputs, VdnType.Int64);
             VdnVariable Motion_var = PubVar.g_NetVdnClient.Subscribe(Motion);
             Motion_var.ValueChanged += MotionSwitch_var_ValueChanged;
@@ -594,6 +609,18 @@ namespace UAM.Plugin
         }
 
         #region 值改变事件
+        private void FlighControl1MalIsActive_ValueChanged(object sender, object lastValue)
+        {
+            FlighControl1MalIsActive = bool.Parse((sender as VdnVariable).Value.ToString());
+        }
+        private void FlighControl2MalIsActive_ValueChanged(object sender, object lastValue)
+        {
+            FlighControl2MalIsActive = bool.Parse((sender as VdnVariable).Value.ToString());
+        }
+        private void FlighControl3MalIsActive_ValueChanged(object sender, object lastValue)
+        {
+            FlighControl3MalIsActive = bool.Parse((sender as VdnVariable).Value.ToString());
+        }
         private void MotorLoss0IsActive_var_ValueChanged(object sender, object lastValue)
         {
             MotorLoss0IsActive = bool.Parse((sender as VdnVariable).Value.ToString());

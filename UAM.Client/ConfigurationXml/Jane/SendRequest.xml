@@ -1,5 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <SendRequests>
+  <SendRequest>
+    <ControlId>0</ControlId>
+    <ControlName>飞控1</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLock 0</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>FlightControlMalfunction</SendTopic>
+    <SendQueue>default</SendQueue>
+    <SendRequestName>FlightControl1</SendRequestName>
+    <VdnField>FlighControl1MalIsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>0</ControlId>
+    <ControlName>飞控2</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLock 0</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>FlightControlMalfunction</SendTopic>
+    <SendQueue>default</SendQueue>
+    <SendRequestName>FlightControl2</SendRequestName>
+    <VdnField>FlighControl2MalIsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <SendRequest>
+    <ControlId>0</ControlId>
+    <ControlName>飞控3</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLock 0</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>FlightControlMalfunction</SendTopic>
+    <SendQueue>default</SendQueue>
+    <SendRequestName>FlightControl3</SendRequestName>
+    <VdnField>FlighControl3MalIsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>
+  <!--<SendRequest>
+    <ControlId>1</ControlId>
+    <ControlName>飞控1</ControlName>
+    <IsInput>false</IsInput>
+    <InputHeader>ControlSurLock 0</InputHeader>
+    <InPutMin>-45</InPutMin>
+    <InPutMax>45</InPutMax>
+    <SendTopic>FlightControlMalfunction</SendTopic>
+    <SendQueue>default</SendQueue>
+    <SendRequestName>FlightControl1</SendRequestName>
+    <VdnField>FlighControl1MalIsActive</VdnField>
+    <ParameterIndex>1</ParameterIndex>
+  </SendRequest>-->
   <!-- 舵面故障 -->
   <SendRequest>
     <ControlId>1</ControlId>
@@ -529,7 +581,7 @@
     <ControlName>MotorLossEffectiveness0</ControlName>
     <IsInput>true</IsInput>
     <InputHeader>MotorLossEffectiveness 0</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -542,7 +594,7 @@
     <ControlName>MotorLossEffectiveness0</ControlName>
     <IsInput>false</IsInput>
     <InputHeader>MotorLossEffectiveness 0</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -555,7 +607,7 @@
     <ControlName>MotorLossEffectiveness1</ControlName>
     <IsInput>true</IsInput>
     <InputHeader>MotorLossEffectiveness 1</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -568,7 +620,7 @@
     <ControlName>MotorLossEffectiveness1</ControlName>
     <IsInput>false</IsInput>
     <InputHeader>MotorLossEffectiveness 1</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -581,7 +633,7 @@
     <ControlName>MotorLossEffectiveness2</ControlName>
     <IsInput>true</IsInput>
     <InputHeader>MotorLossEffectiveness 2</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -594,7 +646,7 @@
     <ControlName>MotorLossEffectiveness2</ControlName>
     <IsInput>false</IsInput>
     <InputHeader>MotorLossEffectiveness 2</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -607,7 +659,7 @@
     <ControlName>MotorLossEffectiveness3</ControlName>
     <IsInput>true</IsInput>
     <InputHeader>MotorLossEffectiveness 3</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -620,7 +672,7 @@
     <ControlName>MotorLossEffectiveness3</ControlName>
     <IsInput>false</IsInput>
     <InputHeader>MotorLossEffectiveness 3</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -633,7 +685,7 @@
     <ControlName>MotorLossEffectiveness4</ControlName>
     <IsInput>true</IsInput>
     <InputHeader>MotorLossEffectiveness 4</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -646,7 +698,7 @@
     <ControlName>MotorLossEffectiveness4</ControlName>
     <IsInput>false</IsInput>
     <InputHeader>MotorLossEffectiveness 4</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -659,7 +711,7 @@
     <ControlName>MotorLossEffectiveness5</ControlName>
     <IsInput>true</IsInput>
     <InputHeader>MotorLossEffectiveness 5</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -672,7 +724,7 @@
     <ControlName>MotorLossEffectiveness5</ControlName>
     <IsInput>false</IsInput>
     <InputHeader>MotorLossEffectiveness 5</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -685,7 +737,7 @@
     <ControlName>MotorLossEffectiveness6</ControlName>
     <IsInput>true</IsInput>
     <InputHeader>MotorLossEffectiveness 6</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -698,7 +750,7 @@
     <ControlName>MotorLossEffectiveness6</ControlName>
     <IsInput>false</IsInput>
     <InputHeader>MotorLossEffectiveness 6</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -711,7 +763,7 @@
     <ControlName>MotorLossEffectiveness7</ControlName>
     <IsInput>true</IsInput>
     <InputHeader>MotorLossEffectiveness 7</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -724,7 +776,7 @@
     <ControlName>MotorLossEffectiveness7</ControlName>
     <IsInput>false</IsInput>
     <InputHeader>MotorLossEffectiveness 7</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -737,7 +789,7 @@
     <ControlName>MotorLossEffectiveness8</ControlName>
     <IsInput>true</IsInput>
     <InputHeader>MotorLossEffectiveness 8</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -750,7 +802,7 @@
     <ControlName>MotorLossEffectiveness8</ControlName>
     <IsInput>false</IsInput>
     <InputHeader>MotorLossEffectiveness 8</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -763,7 +815,7 @@
     <ControlName>MotorLossEffectiveness9</ControlName>
     <IsInput>true</IsInput>
     <InputHeader>MotorLossEffectiveness 9</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -776,7 +828,7 @@
     <ControlName>MotorLossEffectiveness9</ControlName>
     <IsInput>false</IsInput>
     <InputHeader>MotorLossEffectiveness 9</InputHeader>
-      <InPutMin>0</InPutMin>
+    <InPutMin>0</InPutMin>
     <InPutMax>100</InPutMax>
     <SendTopic>Engines</SendTopic>
     <SendQueue>Malfunctions</SendQueue>
@@ -1136,7 +1188,7 @@
     <ParameterIndex>2</ParameterIndex>
   </SendRequest>
   <!--传感器故障 end-->
-  
+
   <!-- 环境 -->
   <SendRequest>
     <ControlName>WindClear</ControlName>
@@ -1355,7 +1407,7 @@
     <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <!-- 环境 end-->
-  
+
   <!-- 功能按钮 -->
   <SendRequest>
     <ControlName>simFreeze</ControlName>
@@ -1586,7 +1638,7 @@
     <ParameterIndex>1</ParameterIndex>
   </SendRequest>
   <!-- 功能按钮end -->
-  
+
   <!-- 航线机型等配置 -->
   <SendRequest>
     <ControlName>vehicleChange</ControlName>

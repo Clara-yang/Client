@@ -80,7 +80,7 @@ namespace UAM.Client.Common
                     controlId = item.ControlId;
                     if (item.VdnField != "")
                     {
-                        if (item.VdnField != "" && item.VdnField != null)
+                        if (item.VdnField != null)
                             subValue = GetPropertiesValue(dataUpdate, item.VdnField);
                         subValue = subValue.ToString() == "" ? false : subValue;
                         sendParams.Add(!bool.Parse(subValue.ToString()));
@@ -97,7 +97,7 @@ namespace UAM.Client.Common
                         }
                     }
                 }
-                if (subValue.ToString() == true.ToString())
+                if (subValue.ToString() == true.ToString() && controlId!= 0)
                 {
                     sendParams.Add(Convert.ToInt64(controlId));
                     sendParams.Add(Convert.ToDouble(0));

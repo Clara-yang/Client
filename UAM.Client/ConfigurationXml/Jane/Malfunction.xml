@@ -1,6 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Malfunctions>
   <MalfunctionModel>
+    <ATAChapterID>23</ATAChapterID>
+    <ATAChapterName>飞控故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>飞控1</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg></MalMsg>
+    <VdnActiveField>FlighControl1MalIsActive</VdnActiveField>
+    <VdnEnableField></VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>23</ATAChapterID>
+    <ATAChapterName>飞控故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>飞控2</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg></MalMsg>
+    <VdnActiveField>FlighControl2MalIsActive</VdnActiveField>
+    <VdnEnableField></VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
+    <ATAChapterID>23</ATAChapterID>
+    <ATAChapterName>飞控故障</ATAChapterName>
+    <MalfunctionID>1</MalfunctionID>
+    <MalfunctionName>飞控3</MalfunctionName>
+    <ATADescription>https://baidu.com</ATADescription>
+    <MalfunctionDescription>https://mail.google.com/mail/u/0/#inbox</MalfunctionDescription>
+    <MalMsg></MalMsg>
+    <VdnActiveField>FlighControl3MalIsActive</VdnActiveField>
+    <VdnEnableField></VdnEnableField>
+    <Visible>true</Visible>
+  </MalfunctionModel>
+  <MalfunctionModel>
     <ATAChapterID>27</ATAChapterID>
     <ATAChapterName>舵面故障</ATAChapterName>
     <MalfunctionID>1</MalfunctionID>

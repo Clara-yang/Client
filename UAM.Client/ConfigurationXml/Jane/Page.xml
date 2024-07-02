@@ -38,12 +38,12 @@
   <PageModel>
     <PageName>AircraftStatusPage</PageName> 
     <DisplayName>飞机状况</DisplayName> 
-    <IsSelected>false</IsSelected>
+    <IsSelected>true</IsSelected>
   </PageModel>
   <PageModel>
     <PageName>OtherPage</PageName> 
     <DisplayName>其他</DisplayName> 
-    <IsSelected>false</IsSelected>
+    <IsSelected>true</IsSelected>
   </PageModel>
   <PageModel>
     <PageName>SlewPage</PageName> 
